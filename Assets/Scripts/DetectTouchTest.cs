@@ -6,6 +6,7 @@ using UnityEngine.TextCore.Text;
 
 public class DetectTouchTest : MonoBehaviour
 {
+    public GameObject chosenChara;
 
     void Update()
     {
@@ -22,8 +23,10 @@ public class DetectTouchTest : MonoBehaviour
                     if(hit.collider.gameObject.CompareTag("Character"))
                     {
                         Debug.Log(hit.collider.gameObject.name);
-                        RandomCharacter.GenerateNewCharacter();
-                        
+                        chosenChara = hit.collider.gameObject;
+                        CharacterInfos.AddInfosToGlobal(chosenChara);
+                            
+                        RandomCharacter.GenerateNewCharacter();       
                     }
                 }
             }
