@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 21765510}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Character
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,7 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0152f750e46d2147afe185bf75be2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters: []
 --- !u!1 &407103363
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +843,7 @@ GameObject:
   - component: {fileID: 424168537}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Character
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1190,7 +1189,7 @@ GameObject:
   - component: {fileID: 615645318}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Character
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3932,7 +3931,7 @@ GameObject:
   - component: {fileID: 1976255338}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Character
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
