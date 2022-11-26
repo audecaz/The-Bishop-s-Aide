@@ -39,18 +39,25 @@ public class RandomCharacter : MonoBehaviour
             ROneText = character.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
             RTwoText = character.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
 
+
             //Debug.Log(jobText);
             if (job == 0) //si pelerin
             {
                 jobText.SetText("Pèlerin");
+                character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
                 ROneText.SetText("OR : +" + ressourceOne);
+                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
                 RTwoText.SetText("FOI : +" + ressourceTwo);
+                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
             }
             else // Artisan
             {
                 jobText.SetText("Artisan");
+                character.GetComponent<CharacterInfos>().job = 1;
                 ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
+                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
                 RTwoText.SetText("OR : -" + ressourceTwo);
+                character.GetComponent<CharacterInfos>().ressourceTwo = -ressourceTwo;
             }
         }
         
