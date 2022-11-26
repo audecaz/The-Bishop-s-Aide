@@ -9,6 +9,8 @@ public class ObjectiveSlider : MonoBehaviour
     public GameObject ObjectivePanel;
     public GameObject opacity;
 
+    private float timerSlider = 0f;
+
     void Start()
     {
         opacity = GameObject.Find("Opacity");
@@ -16,27 +18,40 @@ public class ObjectiveSlider : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (timerSlider > 0)
+        {
+            timerSlider -= Time.deltaTime;
+        }
+    }
+
     public void ShowHideObjective()
     {
-        if(ObjectivePanel != null)
+        if(timerSlider <= 0)
         {
-
-            Animator anim = ObjectivePanel.GetComponent<Animator>();
-            if(anim != null)
+            timerSlider = 1.5f; //initialise le cooldown du saut 
+            if (ObjectivePanel != null)
             {
-                bool isOpen = anim.GetBool("Show");
-                anim.SetBool("Show", !isOpen);
-                MainManager.Instance.objectiveOpen = !isOpen;
 
-                if (MainManager.Instance.objectiveOpen == true)
+                Animator anim = ObjectivePanel.GetComponent<Animator>();
+                if (anim != null)
                 {
-                    opacity.SetActive(true);
-                }
-                else
-                {
-                    opacity.SetActive(false);
+                    bool isOpen = anim.GetBool("Show");
+                    anim.SetBool("Show", !isOpen);
+                    MainManager.Instance.objectiveOpen = !isOpen;
+
+                    if (MainManager.Instance.objectiveOpen == true)
+                    {
+                        opacity.SetActive(true);
+                    }
+                    else
+                    {
+                        opacity.SetActive(false);
+                    }
                 }
             }
         }
+       
     }
 }

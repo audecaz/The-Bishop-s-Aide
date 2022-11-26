@@ -35,6 +35,7 @@ public class RandomCharacter : MonoBehaviour
             ressourceOne = GenerateRessourceValue();
             ressourceTwo = GenerateRessourceValue();
 
+            //Debug.Log(character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>());
             jobText = character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             ROneText = character.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
             RTwoText = character.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
