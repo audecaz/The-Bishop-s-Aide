@@ -22,4 +22,5 @@ public class DetectTouchTest : MonoBehaviour
             }
         }
     }
-}
+} //Rechercher canvas et touch, pk raycast pas bloqué par l'UI
+
