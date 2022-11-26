@@ -5,44 +5,58 @@ using UnityEngine;
 
 public class RandomCharacter : MonoBehaviour
 {
-    public int job; // 0 = pelerin, 1 = artisan, 2 = voleur
-    public int ressourceOne; 
-    public int ressourceTwo;
+    public static int job; // 0 = pelerin, 1 = artisan, 2 = voleur
+    public static int ressourceOne; 
+    public static int ressourceTwo;
 
-    private TextMeshProUGUI jobText;
-    private TextMeshProUGUI ROneText;
-    private TextMeshProUGUI RTwoText;
+    public static TextMeshProUGUI jobText;
+    public static TextMeshProUGUI ROneText;
+    public static TextMeshProUGUI RTwoText;
+
+    public static GameObject[] characters;
+
+    
 
     void Start()
     {
-        jobText = this.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        ROneText = this.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-        RTwoText = this.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-        GenerateNewCharacter();  
+        characters = GameObject.FindGameObjectsWithTag("Character");
+
+        GenerateNewCharacter();
+       
     }
 
-    void GenerateNewCharacter()
+    public static void GenerateNewCharacter()
     {
-        GenerateJob();
-        ressourceOne = GenerateRessourceValue();
-        ressourceTwo = GenerateRessourceValue();
+        foreach (GameObject character in characters)
+        {
+            //Debug.Log(character.name);
+            
+            GenerateJob();
+            ressourceOne = GenerateRessourceValue();
+            ressourceTwo = GenerateRessourceValue();
 
-        //Debug.Log(jobText);
-        if(job == 0) //si pelerin
-        {
-            jobText.SetText("Pèlerin");
-            ROneText.SetText("OR : +" + ressourceOne);
-            RTwoText.SetText("FOI : +" + ressourceTwo);
+            jobText = character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            ROneText = character.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            RTwoText = character.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+
+            //Debug.Log(jobText);
+            if (job == 0) //si pelerin
+            {
+                jobText.SetText("Pèlerin");
+                ROneText.SetText("OR : +" + ressourceOne);
+                RTwoText.SetText("FOI : +" + ressourceTwo);
+            }
+            else // Artisan
+            {
+                jobText.SetText("Artisan");
+                ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
+                RTwoText.SetText("OR : -" + ressourceTwo);
+            }
         }
-        else // Artisan
-        {
-            jobText.SetText("Artisan");
-            ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
-            RTwoText.SetText("OR : -" + ressourceTwo);
-        }
+        
     }
 
-    void GenerateJob()
+    public static void GenerateJob()
     {
         float randomNumber = Random.Range(0, 10);
 
@@ -56,7 +70,7 @@ public class RandomCharacter : MonoBehaviour
         }
     }
 
-    int GenerateRessourceValue()
+    public static int GenerateRessourceValue()
     {
         int randomNumber = Random.Range(5, 10);
         return randomNumber;

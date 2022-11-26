@@ -442,6 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0152f750e46d2147afe185bf75be2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters: []
 --- !u!1 &407103363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,10 +1009,9 @@ GameObject:
   - component: {fileID: 529253106}
   - component: {fileID: 529253105}
   - component: {fileID: 529253104}
-  - component: {fileID: 529253107}
   m_Layer: 0
   m_Name: Pel 3
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,21 +1100,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529253102}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &529253107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529253102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e0866c5241d4d4382b8b8ce234815c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  job: 0
-  ressourceOne: 0
-  ressourceTwo: 0
 --- !u!1 &536641911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,10 +1549,9 @@ GameObject:
   - component: {fileID: 708946712}
   - component: {fileID: 708946711}
   - component: {fileID: 708946710}
-  - component: {fileID: 708946713}
   m_Layer: 0
   m_Name: Pel 4
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1656,21 +1640,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708946708}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &708946713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708946708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e0866c5241d4d4382b8b8ce234815c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  job: 0
-  ressourceOne: 0
-  ressourceTwo: 0
 --- !u!1 &752285740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,10 +2049,9 @@ GameObject:
   - component: {fileID: 975943308}
   - component: {fileID: 975943307}
   - component: {fileID: 975943306}
-  - component: {fileID: 975943309}
   m_Layer: 0
   m_Name: Pel 2
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2172,21 +2140,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975943304}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &975943309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975943304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e0866c5241d4d4382b8b8ce234815c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  job: 0
-  ressourceOne: 0
-  ressourceTwo: 0
 --- !u!1 &986272648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3116,7 @@ GameObject:
   - component: {fileID: 1499104534}
   - component: {fileID: 1499104533}
   - component: {fileID: 1499104537}
+  - component: {fileID: 1499104538}
   m_Layer: 5
   m_Name: Pelerins - Canvas
   m_TagString: Untagged
@@ -3268,6 +3222,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1499104538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499104532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e0866c5241d4d4382b8b8ce234815c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1612190183
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,10 +3827,9 @@ GameObject:
   - component: {fileID: 1968129503}
   - component: {fileID: 1968129502}
   - component: {fileID: 1968129501}
-  - component: {fileID: 1968129504}
   m_Layer: 0
   m_Name: Pel 1
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3953,21 +3918,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968129499}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1968129504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968129499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e0866c5241d4d4382b8b8ce234815c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  job: 0
-  ressourceOne: 0
-  ressourceTwo: 0
 --- !u!1 &1976255336
 GameObject:
   m_ObjectHideFlags: 0

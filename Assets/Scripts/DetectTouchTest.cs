@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class DetectTouchTest : MonoBehaviour
 {
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
@@ -17,7 +18,13 @@ public class DetectTouchTest : MonoBehaviour
             {
                 if(hit.collider != null)
                 {
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log(hit.collider.gameObject.name);
+                    if(hit.collider.gameObject.CompareTag("Character"))
+                    {
+                        Debug.Log(hit.collider.gameObject.name);
+                        RandomCharacter.GenerateNewCharacter();
+                        
+                    }
                 }
             }
         }
