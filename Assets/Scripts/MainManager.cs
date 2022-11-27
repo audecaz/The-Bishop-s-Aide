@@ -13,6 +13,8 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public int SkillCount = 0;
     public int ArtisanCount = 0;
 
+    public bool IsNicolasRecruted = false;
+
     public bool objectiveOpen = false;
 
     private void Awake()
