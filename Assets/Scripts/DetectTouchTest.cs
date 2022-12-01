@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,8 @@ public class DetectTouchTest : MonoBehaviour
 {
     public GameObject chosenChara;
     public ObjectiveSlider slider;
+    //public CharacterInfos characterInfos;
+    //public PopUp_Manager popUp_Manager;
 
 
     void Update()
@@ -26,8 +29,14 @@ public class DetectTouchTest : MonoBehaviour
                     Debug.Log(hit.collider.gameObject.name);
                     if(hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false)
                     {
-                        //Debug.Log(hit.collider.gameObject.name);
+                        Debug.Log(hit.collider.gameObject.name);
+
                         chosenChara = hit.collider.gameObject;
+                        if(chosenChara.GetComponent<CharacterInfos>().job == 2)
+                        {
+                            //Debug.Log(popUp_Manager);
+                            PopUp_Manager.InstanceFact.PopUpVoleur();
+                        }
                         CharacterInfos.AddInfosToGlobal(chosenChara);
                             
                         RandomCharacter.GenerateNewCharacter();       

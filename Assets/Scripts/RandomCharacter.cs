@@ -42,24 +42,32 @@ public class RandomCharacter : MonoBehaviour
 
 
             //Debug.Log(jobText);
-            if (job == 0) //si pelerin
+            if (job == 0 || job == 2) //si pelerin
             {
-                jobText.SetText("Pèlerin");
-                character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
+                if(job == 2) {
+                    jobText.SetText("Voleur");
+                    character.GetComponent<CharacterInfos>().job = 2;
+                }
+                else
+                {
+                    jobText.SetText("Pèlerin");
+                    character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
+                }
+                
                 ROneText.SetText("OR : +" + ressourceOne);
-                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
                 RTwoText.SetText("FOI : +" + ressourceTwo);
-                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
             }
             else // Artisan
             {
                 jobText.SetText("Artisan");
                 character.GetComponent<CharacterInfos>().job = 1;
                 ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
-                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
                 RTwoText.SetText("OR : -" + ressourceTwo);
-                character.GetComponent<CharacterInfos>().ressourceTwo = -ressourceTwo;
-            }
+            }                
+            
+            character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
+            character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+
         }
         
     }
@@ -70,7 +78,15 @@ public class RandomCharacter : MonoBehaviour
 
         if(randomNumber < 7) 
         {
-            job = 0;
+            randomNumber = Random.Range(0, 10);
+            if(randomNumber < 1)
+            {
+                job = 2;
+            }
+            else
+            {
+                job = 0;
+            }
         }
         else
         {
