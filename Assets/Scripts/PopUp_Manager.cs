@@ -38,14 +38,16 @@ public class PopUp_Manager : MonoBehaviour
         IsActive = false;
     }
 
-    public void PopUpVoleur()
+    public void PopUpVoleur(GameObject chosenChara)
     {
+        CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
+
         FactTitle.SetText("Voleur");
         FactContent.SetText("Malheur ! " +
             "\r\nLe pèlerin que vous venez de recruter était en réalité un voleur déguisé." +
             "\r\nLa rumeur se répand et les gens sont plus méfiants." +
-            "\r\n \r\nVous perdez N d'OR" +
-            "\r\nVous perdez N de FOI");
+            "\r\n \r\nVous perdez " + chara.ressourceOne + " d'OR" +
+            "\r\nVous perdez " + chara.ressourceTwo + "  de FOI");
         Open();
     }
 }

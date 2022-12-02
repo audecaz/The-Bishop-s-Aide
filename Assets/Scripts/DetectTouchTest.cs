@@ -35,8 +35,8 @@ public class DetectTouchTest : MonoBehaviour
                         if(chosenChara.GetComponent<CharacterInfos>().job == 2)
                         {
                             //Debug.Log(popUp_Manager);
-                            PopUp_Manager.InstanceFact.PopUpVoleur();
-                        }
+                            PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
+                        } 
                         CharacterInfos.AddInfosToGlobal(chosenChara);
                             
                         RandomCharacter.GenerateNewCharacter();       
