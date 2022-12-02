@@ -7,15 +7,14 @@ public class ObjectiveSlider : MonoBehaviour
 {
 
     public GameObject ObjectivePanel;
-    public GameObject opacity;
+    public MeshRenderer opacity;
 
     private float timerSlider = 0f;
 
     void Start()
     {
-        opacity = GameObject.Find("Opacity");
-        opacity.SetActive(false);
-
+        opacity = GameObject.Find("Opacity").GetComponent<MeshRenderer>();
+        opacity.enabled = false;
     }
 
     private void Update()
@@ -30,7 +29,7 @@ public class ObjectiveSlider : MonoBehaviour
     {
         if(timerSlider <= 0 && !PopUp_Manager.InstanceFact.IsActive)
         {
-            timerSlider = 1.5f; //initialise le cooldown du saut 
+            timerSlider = 1f; //initialise le cooldown du saut 
             if (ObjectivePanel != null)
             {
 
@@ -43,11 +42,11 @@ public class ObjectiveSlider : MonoBehaviour
 
                     if (MainManager.Instance.objectiveOpen == true)
                     {
-                        opacity.SetActive(true);
+                        opacity.enabled = true;
                     }
                     else
                     {
-                        opacity.SetActive(false);
+                        opacity.enabled = false;
                     }
                 }
             }
