@@ -46,7 +46,7 @@ public class ObjectiveList : MonoBehaviour
     void Update()
     {
         //Objective ONE
-        if(MainManager.Instance.GoldCount >= 100)
+        if(MainManager.Instance.GoldCount >= 700)
         {
             IfComplete(objOne, objOneRempli);
             objOneRempli = true;
@@ -66,7 +66,7 @@ public class ObjectiveList : MonoBehaviour
         }
 
         //Objective TWO
-        if (MainManager.Instance.FaithCount >= 70)
+        if (MainManager.Instance.FaithCount >= 550)
         {
             IfComplete(objTwo, objTwoRempli);
             objTwoRempli = true;
@@ -86,7 +86,7 @@ public class ObjectiveList : MonoBehaviour
         }
 
         //Objective THREE
-        if (MainManager.Instance.SkillCount >= 50)
+        if (MainManager.Instance.SkillCount >= 275)
         {
             IfComplete(objThree, objThreeRempli);
             objThreeRempli = true;

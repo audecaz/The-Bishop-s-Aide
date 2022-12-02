@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class RandomCharacter : MonoBehaviour
 {
-    public static int job; // 0 = pelerin, 1 = artisan, 2 = voleur
+    public static int job; // 0 = pelerin, 1 = artisan, 2 = voleur, 3 = pelerin special
     public static int ressourceOne; 
     public static int ressourceTwo;
 
@@ -57,6 +58,28 @@ public class RandomCharacter : MonoBehaviour
                 ROneText.SetText("OR : +" + ressourceOne);
                 RTwoText.SetText("FOI : +" + ressourceTwo);
             }
+            else if (job == 3)
+            {
+                jobText.SetText("Pèlerin Spé");
+                character.GetComponent<CharacterInfos>().job = 3;
+
+                ROneText.SetText("FOI : +" + ressourceOne);
+                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
+
+                int randomObject = Random.Range(0, 2);
+                if(randomObject == 0)
+                {
+                    RTwoText.SetText("Calice en or : +12 d'OR");
+                    ressourceTwo = 12;
+                    character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                }
+                else
+                {
+                    RTwoText.SetText("Coffre précieux : +15 d'OR");
+                    ressourceTwo = 15;
+                    character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                }
+            }
             else // Artisan
             {
                 jobText.SetText("Artisan");
@@ -82,6 +105,10 @@ public class RandomCharacter : MonoBehaviour
             if(randomNumber < 1)
             {
                 job = 2;
+            }
+            else if(randomNumber < 2)
+            {
+                job = 3;
             }
             else
             {

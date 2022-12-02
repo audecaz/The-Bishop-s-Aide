@@ -50,4 +50,15 @@ public class PopUp_Manager : MonoBehaviour
             "\r\nVous perdez " + chara.ressourceTwo + "  de FOI");
         Open();
     }
+
+    public void PopUpObjetSpe(GameObject chosenChara)
+    {
+        CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
+
+        FactTitle.SetText("Titre Objet");
+        FactContent.SetText("Quelle chance !" +
+            "\r\nLe pèlerin que vous venez de recruter vous offre un objet précieux" +
+            "\r\n \r\nVous obtenez " + chara.ressourceTwo + " d'OR");
+        Open();
+    }
 }

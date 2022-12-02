@@ -36,12 +36,15 @@ public class DetectTouchTest : MonoBehaviour
                         {
                             //Debug.Log(popUp_Manager);
                             PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
-                        } 
+                        }
+                        else if(chosenChara.GetComponent<CharacterInfos>().job == 3) {
+                            PopUp_Manager.InstanceFact.PopUpObjetSpe(chosenChara);
+                        }
                         CharacterInfos.AddInfosToGlobal(chosenChara);
                             
                         RandomCharacter.GenerateNewCharacter();       
                     }
-                    if (hit.collider.gameObject.name == "Opacity")
+                    if (hit.collider.gameObject.name == "Opacity") //Si le menu des objectifs est ouvert
                     {
                         slider.ShowHideObjective();
                     }
