@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class RandomCharacter : MonoBehaviour
 {
-    public static int job; // 0 = pelerin, 1 = artisan, 2 = voleur, 3 = pelerin special
+    public static int job; // 0 = pelerin, 1 = artisan, 2 = voleur, 3 = pelerin special, 4 = Nicolas Bachelier
     public static int ressourceOne; 
     public static int ressourceTwo;
 
@@ -79,6 +79,13 @@ public class RandomCharacter : MonoBehaviour
                     ressourceTwo = 15;
                     character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
                 }
+            }else if(job == 4)
+            {
+                jobText.SetText("Nicolas Bachelier");
+                character.GetComponent<CharacterInfos>().job = 4;
+
+                ROneText.SetText("Architecte");
+                RTwoText.SetText("");
             }
             else // Artisan
             {

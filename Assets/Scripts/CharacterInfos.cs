@@ -29,7 +29,7 @@ public class CharacterInfos : MonoBehaviour
             MainManager.Instance.FaithCount += chara.ressourceOne;
             MainManager.Instance.GoldCount += chara.ressourceTwo;
         }
-        else //artisan
+        else if(chara.job == 1) //artisan
         {
             MainManager.Instance.SkillCount += chara.ressourceOne;
             MainManager.Instance.GoldCount -= chara.ressourceTwo;

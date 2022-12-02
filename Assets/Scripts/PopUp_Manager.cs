@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -59,6 +60,17 @@ public class PopUp_Manager : MonoBehaviour
         FactContent.SetText("Quelle chance !" +
             "\r\nLe pèlerin que vous venez de recruter vous offre un objet précieux" +
             "\r\n \r\nVous obtenez " + chara.ressourceTwo + " d'OR");
+        Open();
+    }
+
+    public void PopUpNicolas(GameObject chosenChara)
+    {
+        //CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
+
+        FactTitle.SetText("Nicolas Bachelier");
+        FactContent.SetText("Architecte et ingénieur,\r\n" +
+            "Nicolas Bachelier (1487-1556) est considéré comme l’un des plus grands architectes toulousains de la Renaissance. \r\n\r\n" +
+            "Il a notamment participé à la construction de l’hôtel d’Assézat, du Pont-Neuf ou encore du portail du Capitole de Toulouse.");
         Open();
     }
 }
