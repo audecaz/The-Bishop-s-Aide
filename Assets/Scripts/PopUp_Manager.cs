@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class PopUp_Manager : MonoBehaviour
@@ -60,6 +59,20 @@ public class PopUp_Manager : MonoBehaviour
             "\r\nVous perdez " + chara.ressourceTwo + "  de FOI");
         Open(FactEvent);
     }
+
+    /*
+    public void PopUpSpeVoleur(GameObject chosenChara)
+    {
+        CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
+
+        FactTitle.SetText("Voleur");
+        FactContent.SetText("Malheur ! " +
+            "\r\nLe pèlerin que vous venez de recruter était en réalité un voleur déguisé." +
+            "\r\nVenant " +
+            "\r\n \r\nVous perdez " + chara.ressourceOne + " d'OR" +
+            "\r\nVous perdez " + chara.ressourceTwo + "  de FOI");
+        Open(FactEvent);
+    }*/
 
     public void PopUpObjetSpe(GameObject chosenChara)
     {

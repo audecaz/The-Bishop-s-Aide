@@ -13,7 +13,12 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public int SkillCount = 200;
     public int ArtisanCount = 0;
 
+    public int ThievesCount = 0;
+
     public bool IsNicolasRecruted = false;
+    public bool IsCrocoHere = false;
+    public bool HornStolen = false;
+    public bool HornRetrieved = false;
 
     public bool objectiveOpen = false;
 

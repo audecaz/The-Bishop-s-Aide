@@ -29,14 +29,14 @@ public class DetectTouchTest : MonoBehaviour
                     Debug.Log(hit.collider.gameObject.name);
                     if(hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false)
                     {
-                        Debug.Log(hit.collider.gameObject.name);
+                        //Debug.Log(hit.collider.gameObject.name);
 
                         chosenChara = hit.collider.gameObject;//récupère le personnage sélectionné
 
-
+                        //Test si personnage spécial
                         if(chosenChara.GetComponent<CharacterInfos>().job == 2) // perso est voleur
                         {
-                            //Debug.Log(popUp_Manager);
+                            MainManager.Instance.ThievesCount++;
                             PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
                         }
                         else if(chosenChara.GetComponent<CharacterInfos>().job == 3)// perso est pelerin spécial
@@ -51,9 +51,12 @@ public class DetectTouchTest : MonoBehaviour
                             
                         RandomCharacter.GenerateNewCharacter();       
                     }
-                    if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen == true) //Si le menu des objectifs est ouvert
+                    else if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen == true) //Si le menu des objectifs est ouvert
                     {
                         slider.ShowHideObjective();
+                    }else if(hit.collider.gameObject.name == "City")
+                    {
+
                     }
 
                 }

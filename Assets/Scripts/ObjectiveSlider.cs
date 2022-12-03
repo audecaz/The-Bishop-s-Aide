@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.Port;
 
 public class ObjectiveSlider : MonoBehaviour
 {
 
     public GameObject ObjectivePanel;
-    public MeshRenderer opacity;
+    public GameObject opacity;
 
     private float timerSlider = 0f;
 
     void Start()
     {
-        opacity = GameObject.Find("Opacity").GetComponent<MeshRenderer>();
-        opacity.enabled = false;
+        opacity = GameObject.Find("Opacity");//.GetComponent<MeshRenderer>();
+        opacity.SetActive(false);
     }
 
     private void Update()
@@ -42,11 +41,11 @@ public class ObjectiveSlider : MonoBehaviour
 
                     if (MainManager.Instance.objectiveOpen == true)
                     {
-                        opacity.enabled = true;
+                        opacity.SetActive(true);
                     }
                     else
                     {
-                        opacity.enabled = false;
+                        opacity.SetActive(false);
                     }
                 }
             }

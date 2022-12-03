@@ -404,7 +404,11 @@ MonoBehaviour:
   FaithCount: 0
   SkillCount: 0
   ArtisanCount: 0
+  ThievesCount: 0
   IsNicolasRecruted: 0
+  IsCrocoHere: 0
+  HornStolen: 0
+  HornRetrieved: 0
   objectiveOpen: 0
 --- !u!4 &45651657
 Transform:
@@ -2895,8 +2899,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000015
-  m_Size: 0.7756177
+  m_Value: 1
+  m_Size: 0.77561784
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5230,7 +5234,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889289109}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5781,7 +5785,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -901.3261, y: -143.34914, z: -652.95294, w: 0}
+  m_margin: {x: -1155.1969, y: -143.34914, z: -961.9796, w: 67.364525}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8526,7 +8530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49935, y: -157.85907}
+  m_AnchoredPosition: {x: -91.49935, y: -157.85898}
   m_SizeDelta: {x: 1053.203, y: 1255.436}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -8803,7 +8807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bg: {fileID: 2020872166}
   FactEvent: {fileID: 1384961417}
-  ObtentionObject: {fileID: 0}
+  ObtentionObject: {fileID: 28419257}
   IsActive: 0
 --- !u!1 &1650311746
 GameObject:
@@ -10808,7 +10812,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -2283.3535, w: -563.8535}
+  m_margin: {x: -70.691574, y: 0, z: -2359.0222, w: -563.8535}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
