@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 
 public class DetectTouchTest : MonoBehaviour
@@ -26,7 +27,7 @@ public class DetectTouchTest : MonoBehaviour
             {
                 if(hit.collider != null)
                 {
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log(hit.collider.gameObject.name);
                     if(hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false)
                     {
                         //Debug.Log(hit.collider.gameObject.name);
@@ -56,7 +57,7 @@ public class DetectTouchTest : MonoBehaviour
                         slider.ShowHideObjective();
                     }else if(hit.collider.gameObject.name == "City")
                     {
-
+                        SceneManager.LoadScene(1);
                     }
 
                 }

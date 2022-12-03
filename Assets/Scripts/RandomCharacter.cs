@@ -130,11 +130,11 @@ public class RandomCharacter : MonoBehaviour
             if (randomNumber < 7)
             {
                 randomNumber = Random.Range(0, 10);
-                if (randomNumber < 1)
+                if (randomNumber < 0.5) //voleur
                 {
                     job = 2;
                 }
-                else if (randomNumber < 1.5)
+                else if (randomNumber < 1) //pèlerin spécial
                 {
                     job = 3;
                 }
