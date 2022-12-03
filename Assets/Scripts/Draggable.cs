@@ -9,6 +9,7 @@ public class Draggable : MonoBehaviour
     private Vector3 newPos;
     private Vector3 originalPos;
     private float test;
+    public bool inSlot = false;
 
     public GameObject slot;
 
@@ -21,8 +22,10 @@ public class Draggable : MonoBehaviour
     }
     private void OnMouseDown() //fonctionne pour le touch
     {
-        //Debug.Log("tient");
-        drag = true;
+        if(inSlot == false)
+        {
+            drag = true;
+        }        
     }
 
     private void OnMouseUp()
@@ -30,6 +33,7 @@ public class Draggable : MonoBehaviour
         if(Vector3.Distance(transform.position, slot.transform.position) < 8)
         {
             transform.position = slot.transform.position;
+            inSlot = true;
         }
         else
         {

@@ -16,9 +16,16 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public int ThievesCount = 0;
 
     public bool IsNicolasRecruted = false;
+    public bool IsChoirGotten = false;
     public bool IsCrocoHere = false;
     public bool HornStolen = false;
     public bool HornRetrieved = false;
+
+    public bool IsChoirPlaced = false;
+    public bool IsOrganPlaced = false;
+    public bool IsHornPlaced = false;
+    public bool IsCrocoPlaced = false;
+
 
     public bool objectiveOpen = false;
 
