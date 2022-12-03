@@ -112,6 +112,7 @@ public class ObjectiveList : MonoBehaviour
             {
                 objFour.fontStyle = TMPro.FontStyles.Strikethrough;
                 MainManager.Instance.GoldCount -= 20; //paye l'objet une fois
+                PopUp_Manager.InstanceFact.PopUpOrgueChoeur();
             }
             objFourRempli = true;
 
