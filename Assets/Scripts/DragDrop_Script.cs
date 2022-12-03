@@ -96,21 +96,27 @@ public class DragDrop_Script : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (choirDrag.inSlot)
+        if (choirDrag.inSlot && MainManager.Instance.IsChoirPlaced == false)
         {
             MainManager.Instance.IsChoirPlaced = true;
+            PopUp_Manager.InstanceFact.PopUpChoeur();
         }
-        if (organDrag.inSlot)
+        if (organDrag.inSlot && MainManager.Instance.IsOrganPlaced == false)
         {
             MainManager.Instance.IsOrganPlaced = true;
+            PopUp_Manager.InstanceFact.PopUpOrgue();
+
         }
-        if (hornDrag.inSlot)
+        if (hornDrag.inSlot && MainManager.Instance.IsHornPlaced == false)
         {
             MainManager.Instance.IsHornPlaced = true;
+            PopUp_Manager.InstanceFact.PopUpLicorneTwo();
+
         }
-        if (crocoDrag.inSlot)
+        if (crocoDrag.inSlot && MainManager.Instance.IsCrocoPlaced == false)
         {
             MainManager.Instance.IsCrocoPlaced = true;
+            PopUp_Manager.InstanceFact.PopUpCrocoTwo();
         }
     }
 }
