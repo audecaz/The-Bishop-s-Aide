@@ -63,7 +63,7 @@ public class PopUp_Manager : MonoBehaviour
         Open();
     }
 
-    public void PopUpNicolas(GameObject chosenChara)
+    public void PopUpNicolas()
     {
         //CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
@@ -71,6 +71,7 @@ public class PopUp_Manager : MonoBehaviour
         FactContent.SetText("Architecte et ingénieur,\r\n" +
             "Nicolas Bachelier (1487-1556) est considéré comme l’un des plus grands architectes toulousains de la Renaissance. \r\n\r\n" +
             "Il a notamment participé à la construction de l’hôtel d’Assézat, du Pont-Neuf ou encore du portail du Capitole de Toulouse.");
+        MainManager.Instance.IsNicolasRecruted = true;
         Open();
     }
 }

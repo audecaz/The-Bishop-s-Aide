@@ -31,20 +31,27 @@ public class DetectTouchTest : MonoBehaviour
                     {
                         Debug.Log(hit.collider.gameObject.name);
 
-                        chosenChara = hit.collider.gameObject;
-                        if(chosenChara.GetComponent<CharacterInfos>().job == 2)
+                        chosenChara = hit.collider.gameObject;//récupère le personnage sélectionné
+
+
+                        if(chosenChara.GetComponent<CharacterInfos>().job == 2) // perso est voleur
                         {
                             //Debug.Log(popUp_Manager);
                             PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
                         }
-                        else if(chosenChara.GetComponent<CharacterInfos>().job == 3) {
+                        else if(chosenChara.GetComponent<CharacterInfos>().job == 3)// perso est pelerin spécial
+                        { 
                             PopUp_Manager.InstanceFact.PopUpObjetSpe(chosenChara);
+                        }
+                        else if (chosenChara.GetComponent<CharacterInfos>().job == 4) // perso est nicolas bachelier
+                        {
+                            PopUp_Manager.InstanceFact.PopUpNicolas();
                         }
                         CharacterInfos.AddInfosToGlobal(chosenChara);
                             
                         RandomCharacter.GenerateNewCharacter();       
                     }
-                    if (hit.collider.gameObject.name == "Opacity") //Si le menu des objectifs est ouvert
+                    if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen == true) //Si le menu des objectifs est ouvert
                     {
                         slider.ShowHideObjective();
                     }

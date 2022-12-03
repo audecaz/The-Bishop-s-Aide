@@ -16,7 +16,8 @@ public class RandomCharacter : MonoBehaviour
 
     public static GameObject[] characters;
 
-    
+    public static int diceNumber = 10;
+    public static bool nicolasPresent = false;
 
     void Start()
     {
@@ -99,38 +100,71 @@ public class RandomCharacter : MonoBehaviour
             character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
 
         }
+        if(nicolasPresent == true)
+        {
+            diceNumber = 10;
+            nicolasPresent = false;
+        }
+        else
+        {
+            diceNumber++;
+            //Debug.Log("Next : dé de " + diceNumber);
+        }
         
     }
 
     public static void GenerateJob()
     {
-        float randomNumber = Random.Range(0, 10);
 
-        if(randomNumber < 7) 
+        int diceTotal = GenerateNicolas(diceNumber);
+        //Debug.Log(test);
+        if (diceTotal > 150 && nicolasPresent != true && MainManager.Instance.IsNicolasRecruted != true)
         {
-            randomNumber = Random.Range(0, 10);
-            if(randomNumber < 1)
-            {
-                job = 2;
-            }
-            else if(randomNumber < 2)
-            {
-                job = 3;
-            }
-            else
-            {
-                job = 0;
-            }
+            job = 4;
+            nicolasPresent = true;
         }
         else
         {
-            job = 1;
+            float randomNumber = Random.Range(0, 10);
+
+            if (randomNumber < 7)
+            {
+                randomNumber = Random.Range(0, 10);
+                if (randomNumber < 1)
+                {
+                    job = 2;
+                }
+                else if (randomNumber < 1.5)
+                {
+                    job = 3;
+                }
+                else
+                {
+                    job = 0;
+                }
+            }
+            else
+            {
+                job = 1;
+            }
         }
+        
     }
 
     public static int GenerateRessourceValue()
     {
         int randomNumber = Random.Range(5, 10);
         return randomNumber;
+    }
+
+    public static int GenerateNicolas(int diceNum)
+    {
+        int result = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            int randomNumber = Random.Range(1, diceNum);
+            result += randomNumber;
+        }
+        return result;
     }
 }
