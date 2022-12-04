@@ -14,6 +14,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public int ArtisanCount = 0;
 
     public int ThievesCount = 0;
+    public int PilgrinsCount = 0;
 
     public bool IsNicolasRecruted = false;
     public bool IsChoirGotten = false;
@@ -28,6 +29,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
 
 
     public bool objectiveOpen = false;
+    public bool popupOpen = false;
 
     private void Awake()
     {

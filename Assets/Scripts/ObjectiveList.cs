@@ -118,7 +118,6 @@ public class ObjectiveList : MonoBehaviour
             IfComplete(objFourOne, objFourOneRempli);
             objFourOneRempli = true;
 
-
         }
 
         //Objective FOUR TWO

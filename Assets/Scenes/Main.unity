@@ -405,6 +405,7 @@ MonoBehaviour:
   SkillCount: 200
   ArtisanCount: 0
   ThievesCount: 0
+  PilgrinsCount: 0
   IsNicolasRecruted: 0
   IsChoirGotten: 0
   IsCrocoHere: 0
@@ -1315,7 +1316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46, y: 205}
+  m_AnchoredPosition: {x: -46, y: 277.00006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &369685354
@@ -1636,7 +1637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46.00006, y: 364.4126}
+  m_AnchoredPosition: {x: -46.00006, y: 436.41266}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402284046
@@ -2905,8 +2906,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000056
-  m_Size: 0.7542516
+  m_Value: 1.0000006
+  m_Size: 0.6796404
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3708,7 +3709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46.00006, y: 45.618652}
+  m_AnchoredPosition: {x: -46.00006, y: 117.61871}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649857666
@@ -4385,7 +4386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46.00006, y: 537.10254}
+  m_AnchoredPosition: {x: -46.00006, y: 609.1026}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &732757534
@@ -8537,8 +8538,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -165.16194}
-  m_SizeDelta: {x: 1053.203, y: 1290.99}
+  m_AnchoredPosition: {x: -91.49921, y: -194.27332}
+  m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
 MonoBehaviour:
@@ -8559,6 +8560,7 @@ MonoBehaviour:
   objFourOneRempli: 0
   objFourTwoRempli: 0
   objFourThreeRempli: 0
+  objFiveRempli: 0
 --- !u!1 &1612190183
 GameObject:
   m_ObjectHideFlags: 0
@@ -8952,6 +8954,7 @@ MonoBehaviour:
   objFourOneRempli: 0
   objFourTwoRempli: 0
   objFourThreeRempli: 0
+  objFiveRempli: 0
 --- !u!1 &1714069775
 GameObject:
   m_ObjectHideFlags: 0
@@ -9701,7 +9704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46, y: -567}
+  m_AnchoredPosition: {x: -46, y: -495}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875667478

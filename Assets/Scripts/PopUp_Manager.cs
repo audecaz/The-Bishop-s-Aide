@@ -45,6 +45,7 @@ public class PopUp_Manager : MonoBehaviour
         Bg.SetActive(true);
         popUp.SetActive(true);
         IsActive = true;
+        MainManager.Instance.popupOpen = true;
     }
 
     public void Close(GameObject popUp)
@@ -52,8 +53,12 @@ public class PopUp_Manager : MonoBehaviour
         Bg.SetActive(false);
         popUp.SetActive(false);
         IsActive = false;
+        MainManager.Instance.popupOpen = false;
     }
 
+    //POPUPS FACTS HISTORIQUES
+
+    //POPUPS EVENEMENTS ALEATOIRES
     public void PopUpVoleur(GameObject chosenChara)
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
@@ -99,20 +104,36 @@ public class PopUp_Manager : MonoBehaviour
         FactContent.SetText("Architecte et ingénieur,\r\n" +
             "Nicolas Bachelier (1487-1556) est considéré comme l’un des plus grands architectes toulousains de la Renaissance. \r\n\r\n" +
             "Il a notamment participé à la construction de l’hôtel d’Assézat, du Pont-Neuf ou encore du portail du Capitole de Toulouse.");
-        MainManager.Instance.IsNicolasRecruted = true;
         Open(FactEvent);
     }
 
     //POP UP OBTENTION OBJETS SPECIAUX
     public void PopUpOrgueChoeur()
     {
+        Debug.Log("test");
 
         ObjectTitle.SetText("Félicitations !");
         ObjectUnderTitle.SetText("Vous avez obtenu le choeur et l'orgue !");
         ObjectContent.SetText("Commandé par l'évêque Jean de Mauléon vers entre 1525 et 1550, \r\n" +
         "le chœur en bois sculpté trône au centre de la cathédrale Notre Dame de Saint Bertrand de Comminges.\r\n" +
         "La construction de l’orgue, également par Nicolas Bachelier, lui est postérieure.");
-        Open(ObtentionObject);
+
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            Debug.Log("popup déjà ouverte !");
+            StartCoroutine(Test(ObtentionObject));
+        }
+        else
+        {
+            Open(ObtentionObject);
+        }
+
+        
+    }
+    public IEnumerator Test(GameObject popupToOpen)
+    {
+        yield return new WaitUntil(() => !MainManager.Instance.popupOpen);
+        Open(popupToOpen);
     }
 
     public void PopUpChoeur()
