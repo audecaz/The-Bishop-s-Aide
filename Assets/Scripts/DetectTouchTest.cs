@@ -38,7 +38,7 @@ public class DetectTouchTest : MonoBehaviour
                         if(chosenChara.GetComponent<CharacterInfos>().job == 2) // perso est voleur
                         {
                             MainManager.Instance.ThievesCount++;
-                            if(MainManager.Instance.ThievesCount == 2)
+                            if(MainManager.Instance.ThievesCount == 2) //voleur de corne
                             {
                                 PopUp_Manager.InstanceFact.PopUpSpeVoleur(chosenChara);
                                 MainManager.Instance.HornStolen = true;
@@ -59,11 +59,19 @@ public class DetectTouchTest : MonoBehaviour
                             PopUp_Manager.InstanceFact.PopUpLicorneoOne();
                             MainManager.Instance.HornRetrieved = true;
                         }
+                        else if(chosenChara.GetComponent<CharacterInfos>().job == 6) //pelerin special avec croco
+                        {
+                            PopUp_Manager.InstanceFact.PopUpCrocoOne();
+                            MainManager.Instance.IsCrocoHere = true;
+                        }
                         else if (chosenChara.GetComponent<CharacterInfos>().job == 4) // perso est nicolas bachelier
                         {
                             PopUp_Manager.InstanceFact.PopUpNicolas();
                         }
+
                         CharacterInfos.AddInfosToGlobal(chosenChara);
+
+                        MainManager.Instance.PilgrinsCount++;
                             
                         RandomCharacter.GenerateNewCharacter();       
                     }

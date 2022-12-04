@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class RandomCharacter : MonoBehaviour
 {
-    public static int job; // 0 = pelerin, 1 = artisan, 2 = voleur, 3 = pelerin special, 4 = Nicolas Bachelier, 5 = pèlerin avec corne
+    public static int job; // 0 = pelerin, 1 = artisan, 2 = voleur, 3 = pelerin special, 4 = Nicolas Bachelier, 5 = pèlerin avec corne, 6 = pèlerin avec croco
     public static int ressourceOne; 
     public static int ressourceTwo;
 
@@ -18,9 +18,12 @@ public class RandomCharacter : MonoBehaviour
 
     public static int nicoDiceNumber = 10;
     public static int hornDiceNumber = 10;
+    public static int crocoDiceNumber = 10;
+
 
     public static bool nicolasPresent = false;
     public static bool hornPresent = false;
+    public static bool crocoPresent = false;
 
 
     void Start()
@@ -104,6 +107,18 @@ public class RandomCharacter : MonoBehaviour
                 ressourceTwo = 0;
                 character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
             }
+            else if (job == 6)
+            {
+                jobText.SetText("Pèlerin Spé");
+                character.GetComponent<CharacterInfos>().job = 6;
+
+                ROneText.SetText("FOI : +" + ressourceOne);
+                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
+
+                RTwoText.SetText("Crocodile empaillé");
+                ressourceTwo = 0;
+                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+            }
             else // Artisan
             {
                 jobText.SetText("Artisan");
@@ -125,7 +140,6 @@ public class RandomCharacter : MonoBehaviour
         else
         {
             nicoDiceNumber++;
-            //Debug.Log("Next : dé de " + diceNumber);
         }
 
         if (hornPresent == true)
@@ -136,7 +150,16 @@ public class RandomCharacter : MonoBehaviour
         else
         {
             hornDiceNumber++;
-            //Debug.Log("Next : dé de " + diceNumber);
+        }
+
+        if (crocoPresent == true)
+        {
+            crocoDiceNumber = 10;
+            crocoPresent = false;
+        }
+        else
+        {
+            crocoDiceNumber++;
         }
 
     }
@@ -145,15 +168,12 @@ public class RandomCharacter : MonoBehaviour
     {
 
         int diceTotalNicolas = GenerateRolls(nicoDiceNumber);
-        /*int diceTotalHorn
-        if (MainManager.Instance.ThievesCount >= 2)
-        {*/
-            int diceTotalHorn = GenerateRolls(hornDiceNumber);
-            Debug.Log(diceTotalHorn);
-        //}
+        int diceTotalHorn = GenerateRolls(hornDiceNumber);
+        int diceTotalCroco = GenerateRolls(crocoDiceNumber);
 
+        Debug.Log(diceTotalCroco);
 
-        if (diceTotalNicolas > 150 && !nicolasPresent && MainManager.Instance.IsNicolasRecruted != true)
+        if (diceTotalNicolas > 150 && !nicolasPresent && !MainManager.Instance.IsNicolasRecruted)
         {
             job = 4; // Nicolas Bachelier
             nicolasPresent = true;
@@ -162,6 +182,11 @@ public class RandomCharacter : MonoBehaviour
         {
             job = 5; //pèlerin spécial avec Corne
             hornPresent = true;
+        }
+        else if (diceTotalCroco > 130 && !crocoPresent && !MainManager.Instance.IsCrocoHere)
+        {
+            job = 6; //pèlerin spécial avec croco
+            crocoPresent = true;
         }
         else
         {
@@ -174,7 +199,7 @@ public class RandomCharacter : MonoBehaviour
                 {
                     job = 2;
                 }
-                else if (randomNumber < 1.5) //pèlerin spécial
+                else if (randomNumber < 1.2) //pèlerin spécial
                 {
                     job = 3;
                 }
