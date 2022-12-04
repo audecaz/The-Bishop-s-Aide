@@ -11,7 +11,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using static UnityEditor.ShaderData;
 using static UnityEngine.Rendering.DebugUI.Table;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
 using Image = UnityEngine.UI.Image;
