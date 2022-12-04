@@ -24,7 +24,7 @@ public class CharacterInfos : MonoBehaviour
             //popUp_Manager.PopUpVoleur();
             MainManager.Instance.GoldCount -= chara.ressourceOne;
             MainManager.Instance.FaithCount -= chara.ressourceTwo;
-        }else if (chara.job == 3) //pelerin special
+        }else if (chara.job == 3 || chara.job == 5) //pelerin special
         {
             MainManager.Instance.FaithCount += chara.ressourceOne;
             MainManager.Instance.GoldCount += chara.ressourceTwo;

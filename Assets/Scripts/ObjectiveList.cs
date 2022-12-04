@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class ObjectiveList : MonoBehaviour
 {
@@ -13,6 +16,7 @@ public class ObjectiveList : MonoBehaviour
     public static TextMeshProUGUI objFourOne;
     public static TextMeshProUGUI objFourTwo;
     public static TextMeshProUGUI objFourThree;
+    public static TextMeshProUGUI objFive;
 
     public bool objOneRempli = false;
     public bool objTwoRempli = false;
@@ -22,6 +26,8 @@ public class ObjectiveList : MonoBehaviour
     public bool objFourOneRempli = false;
     public bool objFourTwoRempli = false;
     public bool objFourThreeRempli = false;
+
+    public bool objFiveRempli = false;
 
     void Start()
     {
@@ -33,6 +39,10 @@ public class ObjectiveList : MonoBehaviour
         objFourOne = gameObject.transform.GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>();
         objFourTwo = gameObject.transform.GetChild(3).GetChild(2).GetComponent<TextMeshProUGUI>();
         objFourThree = gameObject.transform.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>();
+        objFive = gameObject.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+
+        objFive.enabled = false; //invisible au début car corne pas encore volée
+        objFive.transform.GetChild(0).GetComponent<Image>().enabled = false; //correspond au point à côté invisible aussi
 
         /*
         objOne.SetText("Obtenir 100 d'OR");
@@ -46,23 +56,18 @@ public class ObjectiveList : MonoBehaviour
     void Update()
     {
         //Objective ONE
-        if(MainManager.Instance.GoldCount >= 700)
+        if (MainManager.Instance.GoldCount >= 700)
         {
             IfComplete(objOne, objOneRempli);
             objOneRempli = true;
 
-            /*
-            if(objOneRempli == false)
-            {
-                objOne.fontStyle = TMPro.FontStyles.Strikethrough;
-            }
-            */
+
         }
         else
         {
             objOneRempli = false;
             objOne.fontStyle = TMPro.FontStyles.Normal;
- 
+
         }
 
         //Objective TWO
@@ -71,18 +76,12 @@ public class ObjectiveList : MonoBehaviour
             IfComplete(objTwo, objTwoRempli);
             objTwoRempli = true;
 
-            /*
-            if (objTwoRempli == false)
-            {
-                objTwo.fontStyle = TMPro.FontStyles.Strikethrough;
-            }
-            */
         }
         else
         {
             objTwoRempli = false;
             objTwo.fontStyle = TMPro.FontStyles.Normal;
-            
+
         }
 
         //Objective THREE
@@ -90,19 +89,12 @@ public class ObjectiveList : MonoBehaviour
         {
             IfComplete(objThree, objThreeRempli);
             objThreeRempli = true;
-
-            /*
-            if (objThreeRempli == false)
-            {
-                objThree.fontStyle = TMPro.FontStyles.Strikethrough;
-            }
-            */
         }
         else
         {
             objThreeRempli = false;
             objThree.fontStyle = TMPro.FontStyles.Normal;
-            
+
         }
 
         //Objective FOUR
@@ -126,13 +118,6 @@ public class ObjectiveList : MonoBehaviour
             IfComplete(objFourOne, objFourOneRempli);
             objFourOneRempli = true;
 
-            /*
-            if (objFourOneRempli == false)
-            {
-                objFourOne.fontStyle = TMPro.FontStyles.Strikethrough;
-            }
-            */
-
 
         }
 
@@ -142,31 +127,32 @@ public class ObjectiveList : MonoBehaviour
             IfComplete(objFourTwo, objFourTwoRempli);
             objFourTwoRempli = true;
 
-            /*
-            if (objFourTwoRempli == false)
-            {
-                objFourTwo.fontStyle = TMPro.FontStyles.Strikethrough;
-            }*/
-
         }
 
         //Objective FOUR THREE
-        if (MainManager.Instance.GoldCount >= 20)
+        if (MainManager.Instance.GoldCount >= 520)
         {
             IfComplete(objFourThree, objFourThreeRempli);
             objFourThreeRempli = true;
-
-            /*
-            if (objFourThreeRempli == false)
-            {
-                objFourThree.fontStyle = TMPro.FontStyles.Strikethrough;
-            }
-            */
         }
         else
         {
             objFourThreeRempli = false;
             objFourThree.fontStyle = TMPro.FontStyles.Normal;
+        }
+
+        //OBJECTIVE FIVE
+        if (MainManager.Instance.HornRetrieved && !objFiveRempli) //si première update où la corne est là
+        {
+            objFive.fontStyle = TMPro.FontStyles.Strikethrough;
+            objFiveRempli = true;
+        }
+
+
+        if (MainManager.Instance.HornStolen)
+        {
+            objFive.enabled = true;
+            objFive.transform.GetChild(0).GetComponent<Image>().enabled = true;
         }
     }
 

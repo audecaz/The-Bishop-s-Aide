@@ -38,11 +38,26 @@ public class DetectTouchTest : MonoBehaviour
                         if(chosenChara.GetComponent<CharacterInfos>().job == 2) // perso est voleur
                         {
                             MainManager.Instance.ThievesCount++;
-                            PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
+                            if(MainManager.Instance.ThievesCount == 2)
+                            {
+                                PopUp_Manager.InstanceFact.PopUpSpeVoleur(chosenChara);
+                                MainManager.Instance.HornStolen = true;
+                                MainManager.Instance.IsHornPlaced = false;
+                                //Apparition de la mission liée dans le Update() de ObjectiveList.cs
+                                RandomCharacter.hornDiceNumber = 10; //réinitialise le compteur de dés
+                            }
+                            else
+                            {
+                                PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
+                            }
                         }
                         else if(chosenChara.GetComponent<CharacterInfos>().job == 3)// perso est pelerin spécial
                         { 
                             PopUp_Manager.InstanceFact.PopUpObjetSpe(chosenChara);
+                        }else if(chosenChara.GetComponent<CharacterInfos>().job == 5) //pelerin special avec corne
+                        {
+                            PopUp_Manager.InstanceFact.PopUpLicorneoOne();
+                            MainManager.Instance.HornRetrieved = true;
                         }
                         else if (chosenChara.GetComponent<CharacterInfos>().job == 4) // perso est nicolas bachelier
                         {

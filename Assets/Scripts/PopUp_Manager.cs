@@ -67,19 +67,18 @@ public class PopUp_Manager : MonoBehaviour
         Open(FactEvent);
     }
 
-    /*
+    
     public void PopUpSpeVoleur(GameObject chosenChara)
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
         FactTitle.SetText("Voleur");
-        FactContent.SetText("Malheur ! " +
-            "\r\nLe pèlerin que vous venez de recruter était en réalité un voleur déguisé." +
-            "\r\nVenant " +
-            "\r\n \r\nVous perdez " + chara.ressourceOne + " d'OR" +
-            "\r\nVous perdez " + chara.ressourceTwo + "  de FOI");
+        FactContent.SetText("Malheur ! Ayant entendu parler de la fameuse corne de licorne et la convoitant, un voleur se fait passer pour un pèlerin et vous dérobe la corne !  \r\n \r\n"+
+            "Vous perdez " + chara.ressourceOne + " d’OR  \r\n"+
+            "Vous perdez la Corne de Licorne de Saint Bertrand. \r\n" +
+            "Vous devez désormais récupérer la corne avant de terminer l’Age ");
         Open(FactEvent);
-    }*/
+    }
 
     public void PopUpObjetSpe(GameObject chosenChara)
     {
@@ -152,7 +151,7 @@ public class PopUp_Manager : MonoBehaviour
     }
 
 
-    public void PopUpCrocooOne()
+    public void PopUpCrocoOne()
     {
         ObjectTitle.SetText("Félicitations !");
         ObjectUnderTitle.SetText("Vous avez obtenu le crocodile de St Bertrand !");
