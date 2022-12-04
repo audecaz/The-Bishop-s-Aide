@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class RandomCharacter : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class RandomCharacter : MonoBehaviour
     public static int hornDiceNumber = 10;
     public static int crocoDiceNumber = 10;
 
-
     public static bool nicolasPresent = false;
     public static bool hornPresent = false;
     public static bool crocoPresent = false;
@@ -29,9 +29,82 @@ public class RandomCharacter : MonoBehaviour
     void Start()
     {
         characters = GameObject.FindGameObjectsWithTag("Character");
+        Transform pelOne = MainManager.Instance.pelerinInfos.transform.GetChild(0);
 
-        GenerateNewCharacter();
-       
+        if (pelOne.GetComponent<CharacterInfos>().ressourceOne == 0) //Signifie que premier lancement du jeu, les persos ne sont pas encore générés
+        {
+            GenerateNewCharacter();
+        }
+        else
+        {
+             //Récupère les infos existantes dans le GameObject du MainManager
+            for (int i = 0; i < 4; i++)
+            {
+                Transform test = MainManager.Instance.pelerinInfos.transform.GetChild(i);
+                characters[i].GetComponent<CharacterInfos>().job = test.GetComponent<CharacterInfos>().job;
+                characters[i].GetComponent<CharacterInfos>().ressourceOne = test.GetComponent<CharacterInfos>().ressourceOne;
+                characters[i].GetComponent<CharacterInfos>().ressourceTwo = test.GetComponent<CharacterInfos>().ressourceTwo;
+
+                int jobLocal = characters[i].GetComponent<CharacterInfos>().job;
+                int ressourceOneLocal = characters[i].GetComponent<CharacterInfos>().ressourceOne;
+                int ressourceTwoLocal = characters[i].GetComponent<CharacterInfos>().ressourceTwo;
+
+                TextMeshProUGUI jobTextLocal = characters[i].gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI ROneTextLocal = characters[i].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI RTwoTextLocal = characters[i].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+
+                if (jobLocal == 0 || jobLocal == 2) //si pelerin
+                {
+                    if (jobLocal == 2)
+                    {
+                        jobTextLocal.SetText("Voleur");
+                    }
+                    else
+                    {
+                        jobTextLocal.SetText("Pèlerin");
+                    }
+                    ROneTextLocal.SetText("OR : +" + ressourceOneLocal);
+                    RTwoTextLocal.SetText("FOI : +" + ressourceTwoLocal);
+                }
+                else if (jobLocal == 3)
+                {
+                    jobTextLocal.SetText("Pèlerin Spé");
+                    ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
+                    if (ressourceTwoLocal == 12)
+                    {
+                        RTwoTextLocal.SetText("Calice en or : +12 d'OR");
+                    }
+                    else
+                    {
+                        RTwoTextLocal.SetText("Coffre précieux : +15 d'OR");
+                    }
+                }
+                else if (jobLocal == 4)
+                {
+                    jobTextLocal.SetText("Nicolas Bachelier");
+                    ROneTextLocal.SetText("Architecte");
+                    RTwoTextLocal.SetText("");
+                }
+                else if (jobLocal == 5)
+                {
+                    jobTextLocal.SetText("Pèlerin Spé");
+                    ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
+                    RTwoTextLocal.SetText("Corne de licorne");
+                }
+                else if (jobLocal == 6)
+                {
+                    jobTextLocal.SetText("Pèlerin Spé");
+                    ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
+                    RTwoTextLocal.SetText("Crocodile empaillé");
+                }
+                else // Artisan
+                {
+                    jobTextLocal.SetText("Artisan");
+                    ROneTextLocal.SetText("SAVOIR FAIRE: +" + ressourceOneLocal);
+                    RTwoTextLocal.SetText("OR : -" + ressourceTwoLocal);
+                }
+            }
+        }
     }
 
     public static void GenerateNewCharacter()
@@ -160,6 +233,16 @@ public class RandomCharacter : MonoBehaviour
         else
         {
             crocoDiceNumber++;
+        }
+
+
+        //A chaque nouvelle génération de personnages, stocke les nouvelles infos dans le GameObject du MainManager
+        for (int i = 0; i < 4; i++)
+        {
+            Transform test = MainManager.Instance.pelerinInfos.transform.GetChild(i);
+            test.GetComponent<CharacterInfos>().job = characters[i].GetComponent<CharacterInfos>().job;
+            test.GetComponent<CharacterInfos>().ressourceOne = characters[i].GetComponent<CharacterInfos>().ressourceOne;
+            test.GetComponent<CharacterInfos>().ressourceTwo = characters[i].GetComponent<CharacterInfos>().ressourceTwo;
         }
 
     }

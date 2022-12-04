@@ -22,7 +22,7 @@ public class Draggable : MonoBehaviour
     }
     private void OnMouseDown() //fonctionne pour le touch
     {
-        if(inSlot == false)
+        if(inSlot == false && !MainManager.Instance.popupOpen)
         {
             drag = true;
         }        

@@ -9,10 +9,12 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEditor.ShaderData;
 using static UnityEngine.Rendering.DebugUI.Table;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
+using Image = UnityEngine.UI.Image;
 
 public class PopUp_Manager : MonoBehaviour
 {
@@ -24,6 +26,8 @@ public class PopUp_Manager : MonoBehaviour
 
     private TextMeshProUGUI FactTitle;
     private TextMeshProUGUI FactContent;
+    private Image FactPicto;
+
     private TextMeshProUGUI ObjectTitle;
     private TextMeshProUGUI ObjectUnderTitle;
     private TextMeshProUGUI ObjectContent;
@@ -37,6 +41,7 @@ public class PopUp_Manager : MonoBehaviour
 
         FactTitle = gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
         FactContent = gameObject.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        FactPicto = gameObject.transform.GetChild(1).GetChild(3).GetComponent<Image>();
 
         ObjectTitle = gameObject.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
         ObjectUnderTitle = gameObject.transform.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
@@ -56,6 +61,8 @@ public class PopUp_Manager : MonoBehaviour
         popUp.SetActive(false);
         IsActive = false;
         MainManager.Instance.popupOpen = false;
+        FactPicto.enabled = false;
+
     }
 
     //POPUPS FACTS HISTORIQUES
@@ -73,7 +80,8 @@ public class PopUp_Manager : MonoBehaviour
             FactContent.SetText("Bertrand de l'Isle fut évêque de la cité de 1073 à sa mort et participa grandement à l'élévation de la ville de Lugdunum Convenarum.\r\n" +
             "Il fait construire la cathédrale romane et érige le cloître.\r\n" +
             "Il y reste évêque jusqu'à sa mort en 1123 et est canonisé en 1222. La ville prend alors son nom. \r\n \r\n" +
-            "Saint Bertrand est connu pour sa bienveillance et sa volonté de faire régner la paix."); 
+            "Saint Bertrand est connu pour sa bienveillance et sa volonté de faire régner la paix.");
+            FactPicto.enabled = true;
 
             Open(FactEvent);
         }
@@ -93,6 +101,7 @@ public class PopUp_Manager : MonoBehaviour
             FactContent.SetText("Évêque de Comminges de 1294 à 1299, Bertrand de Goth participe à l'essor de la ville en élevant les reliques de Saint Bertrand" +
             "et soutenant l'afflux de pèlerins des chemins de St Jacques.Pour cela, il lance l'agrandissement de la cathédrale romane déjà existante en y ajoutant un style gothique. \r\n \r\n" +
             "Saint Bertrand est connu pour sa bienveillance et sa volonté de faire régner la paix.");
+            FactPicto.enabled = true;
 
             Open(FactEvent);
         }
@@ -111,6 +120,7 @@ public class PopUp_Manager : MonoBehaviour
             FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
             "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
             "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+            FactPicto.enabled = true;
 
             Open(FactEvent);
         }
@@ -128,6 +138,7 @@ public class PopUp_Manager : MonoBehaviour
             FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
             "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
             "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+            FactPicto.enabled = true;
 
             Open(FactEvent);
         }
