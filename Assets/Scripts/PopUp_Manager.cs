@@ -8,6 +8,8 @@ using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 using static UnityEditor.ShaderData;
 using static UnityEngine.Rendering.DebugUI.Table;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
@@ -58,17 +60,108 @@ public class PopUp_Manager : MonoBehaviour
 
     //POPUPS FACTS HISTORIQUES
 
+    public void PopUpStBertrand()
+    {
+        
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpStBertrand));
+        }
+        else
+        {
+            FactTitle.SetText("Le saviez vous : Saint Bertrand");
+            FactContent.SetText("Bertrand de l'Isle fut évêque de la cité de 1073 à sa mort et participa grandement à l'élévation de la ville de Lugdunum Convenarum.\r\n" +
+            "Il fait construire la cathédrale romane et érige le cloître.\r\n" +
+            "Il y reste évêque jusqu'à sa mort en 1123 et est canonisé en 1222. La ville prend alors son nom. \r\n \r\n" +
+            "Saint Bertrand est connu pour sa bienveillance et sa volonté de faire régner la paix."); 
+
+            Open(FactEvent);
+        }
+
+    }
+
+    public void PopUpBertrandGoth()
+    {
+        
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpBertrandGoth));
+        }
+        else
+        {
+            FactTitle.SetText("Bertrand de Goth");
+            FactContent.SetText("Évêque de Comminges de 1294 à 1299, Bertrand de Goth participe à l'essor de la ville en élevant les reliques de Saint Bertrand" +
+            "et soutenant l'afflux de pèlerins des chemins de St Jacques.Pour cela, il lance l'agrandissement de la cathédrale romane déjà existante en y ajoutant un style gothique. \r\n \r\n" +
+            "Saint Bertrand est connu pour sa bienveillance et sa volonté de faire régner la paix.");
+
+            Open(FactEvent);
+        }
+    }
+
+    public void PopUpCathedrale()
+    {
+        
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpCathedrale));
+        }
+        else
+        {
+            FactTitle.SetText("La cathédrale Notre Dame");
+            FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+            "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+
+            Open(FactEvent);
+        }
+    }
+
+    public void PopUpCloitre()
+    {
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpCloitre));
+        }
+        else
+        {
+            FactTitle.SetText("Le cloître de la cathédrale");
+            FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+            "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+
+            Open(FactEvent);
+        }
+    }
+
+
     //POPUPS EVENEMENTS ALEATOIRES
     public void PopUpVoleur(GameObject chosenChara)
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
+        /*
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte, empêche de se faire écraser
+        {
+            StartCoroutine(PopUpWait(PopUpVoleur));
+        }
+        else
+        {
+            FactTitle.SetText("Voleur");
+            FactContent.SetText("Malheur ! " +
+                "\r\nLe pèlerin que vous venez de recruter était en réalité un voleur déguisé." +
+                "\r\nLa rumeur se répand et les gens sont plus méfiants." +
+                "\r\n \r\nVous perdez " + chara.ressourceOne + " d'OR" +
+                "\r\nVous perdez " + chara.ressourceTwo + "  de FOI");
+
+            Open(FactEvent);
+        }*/
         FactTitle.SetText("Voleur");
         FactContent.SetText("Malheur ! " +
             "\r\nLe pèlerin que vous venez de recruter était en réalité un voleur déguisé." +
             "\r\nLa rumeur se répand et les gens sont plus méfiants." +
             "\r\n \r\nVous perdez " + chara.ressourceOne + " d'OR" +
             "\r\nVous perdez " + chara.ressourceTwo + "  de FOI");
+
         Open(FactEvent);
     }
 
@@ -77,11 +170,27 @@ public class PopUp_Manager : MonoBehaviour
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
+        /*
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpSpeVoleur(chosenChara));
+        }
+        else
+        {
+            FactTitle.SetText("Voleur");
+            FactContent.SetText("Malheur ! Ayant entendu parler de la fameuse corne de licorne et la convoitant, un voleur se fait passer pour un pèlerin et vous dérobe la corne !  \r\n \r\n" +
+                "Vous perdez " + chara.ressourceOne + " d’OR  \r\n" +
+                "Vous perdez la Corne de Licorne de Saint Bertrand. \r\n" +
+                "Vous devez désormais récupérer la corne avant de terminer l’Age ");
+
+            Open(FactEvent);
+        }*/
         FactTitle.SetText("Voleur");
-        FactContent.SetText("Malheur ! Ayant entendu parler de la fameuse corne de licorne et la convoitant, un voleur se fait passer pour un pèlerin et vous dérobe la corne !  \r\n \r\n"+
-            "Vous perdez " + chara.ressourceOne + " d’OR  \r\n"+
+        FactContent.SetText("Malheur ! Ayant entendu parler de la fameuse corne de licorne et la convoitant, un voleur se fait passer pour un pèlerin et vous dérobe la corne !  \r\n \r\n" +
+            "Vous perdez " + chara.ressourceOne + " d’OR  \r\n" +
             "Vous perdez la Corne de Licorne de Saint Bertrand. \r\n" +
             "Vous devez désormais récupérer la corne avant de terminer l’Age ");
+
         Open(FactEvent);
     }
 
@@ -89,51 +198,73 @@ public class PopUp_Manager : MonoBehaviour
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
+        /*
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait("PopUpObjetSpe"));
+        }
+        else
+        {
+            FactTitle.SetText("Titre Objet");
+            FactContent.SetText("Quelle chance !" +
+                "\r\nLe pèlerin que vous venez de recruter vous offre un objet précieux" +
+                "\r\n \r\nVous obtenez " + chara.ressourceTwo + " d'OR");
+
+            Open(FactEvent);
+        }
+        */
         FactTitle.SetText("Titre Objet");
         FactContent.SetText("Quelle chance !" +
             "\r\nLe pèlerin que vous venez de recruter vous offre un objet précieux" +
             "\r\n \r\nVous obtenez " + chara.ressourceTwo + " d'OR");
+
         Open(FactEvent);
+
     }
 
     public void PopUpNicolas()
     {
-        //CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
+        /*
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait("PopUpNicolas"));
+        }
+        else
+        {
+            FactTitle.SetText("Nicolas Bachelier");
+            FactContent.SetText("Architecte et ingénieur,\r\n" +
+                "Nicolas Bachelier (1487-1556) est considéré comme l’un des plus grands architectes toulousains de la Renaissance. \r\n\r\n" +
+                "Il a notamment participé à la construction de l’hôtel d’Assézat, du Pont-Neuf ou encore du portail du Capitole de Toulouse.");
 
+            Open(FactEvent);
+        }*/
         FactTitle.SetText("Nicolas Bachelier");
         FactContent.SetText("Architecte et ingénieur,\r\n" +
             "Nicolas Bachelier (1487-1556) est considéré comme l’un des plus grands architectes toulousains de la Renaissance. \r\n\r\n" +
             "Il a notamment participé à la construction de l’hôtel d’Assézat, du Pont-Neuf ou encore du portail du Capitole de Toulouse.");
+
         Open(FactEvent);
     }
 
-    //POP UP OBTENTION OBJETS SPECIAUX
+
+    //----------------------------- POP UPS OBTENTION OBJETS SPECIAUX --------------------------------------
     public void PopUpOrgueChoeur()
     {
-        Debug.Log("test");
-
-        ObjectTitle.SetText("Félicitations !");
-        ObjectUnderTitle.SetText("Vous avez obtenu le choeur et l'orgue !");
-        ObjectContent.SetText("Commandé par l'évêque Jean de Mauléon vers entre 1525 et 1550, \r\n" +
-        "le chœur en bois sculpté trône au centre de la cathédrale Notre Dame de Saint Bertrand de Comminges.\r\n" +
-        "La construction de l’orgue, également par Nicolas Bachelier, lui est postérieure.");
-
         if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
         {
-            Debug.Log("popup déjà ouverte !");
-            StartCoroutine(Test(ObtentionObject));
+            //Debug.Log("popup déjà ouverte !");
+            StartCoroutine(PopUpWait(PopUpOrgueChoeur));
         }
         else
         {
+            ObjectTitle.SetText("Félicitations !");
+            ObjectUnderTitle.SetText("Vous avez obtenu le choeur et l'orgue !");
+            ObjectContent.SetText("Commandé par l'évêque Jean de Mauléon vers entre 1525 et 1550, \r\n" +
+            "le chœur en bois sculpté trône au centre de la cathédrale Notre Dame de Saint Bertrand de Comminges.\r\n" +
+            "La construction de l’orgue, également par Nicolas Bachelier, lui est postérieure.");
+
             Open(ObtentionObject);
         }
-
-        
-    }
-    public IEnumerator Test(GameObject popupToOpen)
-    {
-        yield return new WaitUntil(() => !MainManager.Instance.popupOpen);
-        Open(popupToOpen);
     }
 
     public void PopUpChoeur()
@@ -160,6 +291,8 @@ public class PopUp_Manager : MonoBehaviour
         ObjectContent.SetText("On dit que le bâton pastoral de Saint Bertrand aurait été directement sculpté dans une corne de licorne. \r\n \r\n" +
         "Il s'agit en réalité d'une corne de narval taillée.");
         Open(ObtentionObject);
+
+
     }
 
     public void PopUpLicorneTwo()
@@ -187,5 +320,12 @@ public class PopUp_Manager : MonoBehaviour
         FactContent.SetText("On sait en réalité très peu de choses sur ce crocodile empaillé datant du XIVème siècle. \r\n  \r\n" +
         "Il s’agit probablement d’un trophée rapporté de Terre Sainte par un chevalier pour remercier Saint Bertrand de l’avoir protégé.");
         Open(FactEvent);
+    }
+
+    //Permet de ne pas superposer les popups
+    public IEnumerator PopUpWait(Action functionName)
+    {
+        yield return new WaitUntil(() => !MainManager.Instance.popupOpen);
+        functionName();
     }
 }

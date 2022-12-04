@@ -56,7 +56,7 @@ public class ObjectiveList : MonoBehaviour
     void Update()
     {
         //Objective ONE
-        if (MainManager.Instance.GoldCount >= 700)
+        if (MainManager.Instance.GoldCount >= 650)
         {
             IfComplete(objOne, objOneRempli);
             objOneRempli = true;
@@ -100,14 +100,15 @@ public class ObjectiveList : MonoBehaviour
         //Objective FOUR
         if (objFourOneRempli == true && objFourTwoRempli == true && objFourThreeRempli == true) //les 3 sous objectifs sont remplis
         {
-            if (objFourRempli == false)
+            if (objFourRempli == false && !MainManager.Instance.IsChoirGotten)
             {
                 objFour.fontStyle = TMPro.FontStyles.Strikethrough;
                 MainManager.Instance.GoldCount -= 20; //paye l'objet une fois
                 MainManager.Instance.IsChoirGotten = true;
-                PopUp_Manager.InstanceFact.PopUpOrgueChoeur();
+                PopUp_Manager.InstanceFact.PopUpOrgueChoeur();            
+                objFourRempli = true;
+            
             }
-            objFourRempli = true;
 
         }
 

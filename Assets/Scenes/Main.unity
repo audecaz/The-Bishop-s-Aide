@@ -416,6 +416,7 @@ MonoBehaviour:
   IsHornPlaced: 1
   IsCrocoPlaced: 0
   objectiveOpen: 0
+  popupOpen: 0
 --- !u!4 &45651657
 Transform:
   m_ObjectHideFlags: 0
@@ -2906,8 +2907,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000006
-  m_Size: 0.6796404
+  m_Value: 0.9999997
+  m_Size: 0.67962486
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4409,7 +4410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Obtenir 700 d'OR
+  m_text: Obtenir 650 d'OR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8538,7 +8539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -194.27332}
+  m_AnchoredPosition: {x: -91.49921, y: -194.27324}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773

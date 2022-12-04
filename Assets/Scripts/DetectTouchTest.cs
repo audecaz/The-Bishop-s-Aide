@@ -76,6 +76,26 @@ public class DetectTouchTest : MonoBehaviour
 
                         MainManager.Instance.PilgrinsCount++;
 
+                        if (MainManager.Instance.PilgrinsCount >= 10)
+                        {
+                            if(MainManager.Instance.PilgrinsCount == 10)
+                            {
+                                PopUp_Manager.InstanceFact.PopUpStBertrand();
+                            }
+                            else if(MainManager.Instance.PilgrinsCount == 18)
+                            {
+                                PopUp_Manager.InstanceFact.PopUpBertrandGoth();
+                            }
+                            else if(MainManager.Instance.PilgrinsCount == 28)
+                            {
+                                PopUp_Manager.InstanceFact.PopUpCathedrale();
+                            }
+                            else if(MainManager.Instance.PilgrinsCount == 37){
+                                PopUp_Manager.InstanceFact.PopUpCloitre();
+                            }
+                        }
+
+                        //StopAllCoroutines();
                         RandomCharacter.GenerateNewCharacter();
                     }
                     else if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen == true) //Si le menu des objectifs est ouvert
