@@ -254,7 +254,7 @@ public class RandomCharacter : MonoBehaviour
         int diceTotalHorn = GenerateRolls(hornDiceNumber);
         int diceTotalCroco = GenerateRolls(crocoDiceNumber);
 
-        Debug.Log(diceTotalCroco);
+        //Debug.Log(diceTotalCroco);
 
         if (diceTotalNicolas > 150 && !nicolasPresent && !MainManager.Instance.IsNicolasRecruted)
         {

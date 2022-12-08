@@ -8,12 +8,14 @@ using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI.Table;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
 using Image = UnityEngine.UI.Image;
+using Random = UnityEngine.Random;
 
 public class PopUp_Manager : MonoBehaviour
 {
@@ -97,7 +99,7 @@ public class PopUp_Manager : MonoBehaviour
         else
         {
             FactTitle.SetText("Bertrand de Goth");
-            FactContent.SetText("Évêque de Comminges de 1294 à 1299, Bertrand de Goth participe à l'essor de la ville en élevant les reliques de Saint Bertrand" +
+            FactContent.SetText("Évêque de Comminges de 1294 à 1299, Bertrand de Goth participe à l'essor de la ville en élevant les reliques de Saint Bertrand " +
             "et soutenant l'afflux de pèlerins des chemins de St Jacques.Pour cela, il lance l'agrandissement de la cathédrale romane déjà existante en y ajoutant un style gothique. \r\n \r\n" +
             "Saint Bertrand est connu pour sa bienveillance et sa volonté de faire régner la paix.");
             FactPicto.enabled = true;
@@ -144,7 +146,136 @@ public class PopUp_Manager : MonoBehaviour
     }
 
 
-    //POPUPS EVENEMENTS ALEATOIRES
+    // ----------------- POPUPS EVENEMENTS ALEATOIRES ---------------------------
+
+    public void PopUpRecolte()
+    {
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpRecolte));
+        }
+        else
+        {
+            int randomGold = Random.Range(18, 23);
+            FactTitle.SetText("Bonne récolte");
+            FactContent.SetText("Le climat a été très favorable cette année et la récolte est particulièrement bonne.\r\n"+
+            "Toute la cité profite de cette heureuse nouvelle ! \r\n \r\n" +
+            "Vous obtenez " + randomGold + " d’OR");
+
+            Open(FactEvent);
+            MainManager.Instance.GoldCount += randomGold;
+        }
+        Debug.Log("Recolte !");
+    }
+
+    public void PopUpMiracle()
+    {
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpMiracle));
+        }
+        else
+        {
+            int randomFaith = Random.Range(18, 23);
+            FactTitle.SetText("Miracle");
+            FactContent.SetText("Quelqu’un a miraculeusement guéri dès son entrée dans la cathédrale !\r\n" +
+            "La renommée de la cité sur les chemins de Compostelle augmente grandement. \r\n \r\n" +
+            "Vous obtenez " + randomFaith + " de FOI");
+
+            Open(FactEvent);
+            MainManager.Instance.FaithCount += randomFaith;
+        }
+        Debug.Log("Miracle !");
+    }
+
+    public void PopUpArtisanat()
+    {
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpArtisanat));
+        }
+        else
+        {
+            int randomSkills = Random.Range(13, 17);
+            FactTitle.SetText("Artisanat florissant");
+            FactContent.SetText("Les artisans se plaisent dans la ville et un nouvel atelier a vu le jour.\r\n" +
+            "Le maître a pris 2 nouveaux apprentis ! \r\n \r\n" +
+            "Vous obtenez " + randomSkills + " de FOI \r\n" +
+            "Vous accueillez +2 artisans");
+
+            Open(FactEvent);
+            MainManager.Instance.SkillCount += randomSkills;
+            MainManager.Instance.ArtisanCount += 2;
+        }
+
+        Debug.Log("Artisanat !");
+    }
+
+    public void PopUpIncendie()
+    {
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpIncendie));
+        }
+        else
+        {
+            int randomGold = Random.Range(10, 15);
+            FactTitle.SetText("Incendie");
+            FactContent.SetText("Un feu a pris au cœur de la cité et s’est propagé sur plusieurs maisons alentour.\r\n" +
+            "La reconstruction a un coût. \r\n \r\n" +
+            "Vous perdez " + randomGold + " d’OR \r\n"+
+            "Vous avez besoin de +2 artisans pour reconstruire.");
+
+            Open(FactEvent);
+            MainManager.Instance.GoldCount -= randomGold;
+        }
+        Debug.Log("Incendie !");
+    }
+
+    public void PopUpFamine()
+    {
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpFamine));
+        }
+        else
+        {
+            int randomGold = Random.Range(18, 23);
+            FactTitle.SetText("Famine");
+            FactContent.SetText("Les conditions de cette année ont été particulièrement mauvaises et la récolte ne suffira pas pour nourrir la population.\r\n" +
+            "Vous devez vous fournir ailleurs. \r\n \r\n" +
+            "Vous perdez " + randomGold + " d’OR");
+
+            Open(FactEvent);
+            MainManager.Instance.GoldCount -= randomGold;
+        }
+        Debug.Log("Famine !");
+    }
+
+    public void PopUpEpidemie()
+    {
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            StartCoroutine(PopUpWait(PopUpEpidemie));
+        }
+        else
+        {
+            int randomFaith = Random.Range(18, 23);
+            int randomSkill = Random.Range(13, 17);
+
+            FactTitle.SetText("Epidemie");
+            FactContent.SetText("Une soudaine maladie s’abat sur la ville. \r\n\r\n" +
+            "Plusieurs personnes meurent et d’autres décident de quitter la cité… \r\n \r\n" +
+            "Vous perdez " + randomFaith + " de FOI`\r\n"+
+            "Vous perdez " + randomSkill + " de SAVOIR FAIRE");
+
+            Open(FactEvent);
+            MainManager.Instance.FaithCount -= randomFaith;
+            MainManager.Instance.SkillCount -= randomSkill;
+        }
+        Debug.Log("Epidemie !");
+    }
+
     public void PopUpVoleur(GameObject chosenChara)
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
@@ -337,5 +468,47 @@ public class PopUp_Manager : MonoBehaviour
     {
         yield return new WaitUntil(() => !MainManager.Instance.popupOpen);
         functionName();
+    }
+
+    public void EventAleatoire()
+    {
+        int randomNumber = Random.Range(1, 20); //valeur max exclue
+        Debug.Log(randomNumber);
+
+        if(randomNumber == 19)
+        {
+            int randomEvent = Random.Range(1, 7); //valeur max exclue
+            if (randomEvent <= 3) //event positif
+            {
+                if (randomEvent == 1)
+                {
+                    PopUpRecolte();
+                }
+                else if (randomEvent == 2)
+                {
+                    PopUpMiracle();
+                }
+                else
+                {
+                    PopUpArtisanat();
+                }
+            }
+            else //event negatif
+            {
+                if (randomEvent == 4)
+                {
+                    PopUpFamine();
+                }
+                else if (randomEvent == 5)
+                {
+                    PopUpIncendie();
+                }
+                else
+                {
+                    PopUpEpidemie();
+                }
+            }
+            
+        }
     }
 }

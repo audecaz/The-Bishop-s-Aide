@@ -75,7 +75,8 @@ public class DetectTouchTest : MonoBehaviour
 
                         MainManager.Instance.PilgrinsCount++;
 
-                        if (MainManager.Instance.PilgrinsCount >= 10)
+                        //Apparition des popups historiques
+                        if (MainManager.Instance.PilgrinsCount >= 10) 
                         {
                             if(MainManager.Instance.PilgrinsCount == 10)
                             {
@@ -94,14 +95,20 @@ public class DetectTouchTest : MonoBehaviour
                             }
                         }
 
-                        //StopAllCoroutines();
+                        //Apparition des events aléatoires, positifs & négatifs
+                        if (MainManager.Instance.PilgrinsCount > 5) //Empêche de générer un event aléatoire dans les premiers pèlerins
+                        {
+                            PopUp_Manager.InstanceFact.EventAleatoire();
+                        }
+
+                        //Regenere de nouveaux persos
                         RandomCharacter.GenerateNewCharacter();
                     }
-                    else if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen == true) //Si le menu des objectifs est ouvert
+                    else if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen == true) //Si le menu des objectifs est ouvert, le cache
                     {
                         slider.ShowHideObjective();
                     }
-                    else if (hit.collider.gameObject.name == "City")
+                    else if (hit.collider.gameObject.name == "City") 
                     {
                         SceneManager.LoadScene(1);
                     }
