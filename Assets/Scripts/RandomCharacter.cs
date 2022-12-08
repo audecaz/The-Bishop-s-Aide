@@ -49,9 +49,9 @@ public class RandomCharacter : MonoBehaviour
                 int ressourceOneLocal = characters[i].GetComponent<CharacterInfos>().ressourceOne;
                 int ressourceTwoLocal = characters[i].GetComponent<CharacterInfos>().ressourceTwo;
 
-                TextMeshProUGUI jobTextLocal = characters[i].gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-                TextMeshProUGUI ROneTextLocal = characters[i].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-                TextMeshProUGUI RTwoTextLocal = characters[i].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI jobTextLocal = characters[i].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI ROneTextLocal = characters[i].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI RTwoTextLocal = characters[i].gameObject.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
 
                 if (jobLocal == 0 || jobLocal == 2) //si pelerin
                 {
@@ -118,9 +118,9 @@ public class RandomCharacter : MonoBehaviour
             ressourceTwo = GenerateRessourceValue();
 
             //Debug.Log(character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>());
-            jobText = character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-            ROneText = character.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-            RTwoText = character.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            jobText = character.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            ROneText = character.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            RTwoText = character.gameObject.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
 
 
             //Debug.Log(jobText);
