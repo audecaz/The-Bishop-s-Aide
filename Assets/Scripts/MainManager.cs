@@ -27,6 +27,8 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public bool IsHornPlaced = false;
     public bool IsCrocoPlaced = false;
 
+    public bool Incendie = false;
+
 
     public bool objectiveOpen = false;
     public bool popupOpen = false;
