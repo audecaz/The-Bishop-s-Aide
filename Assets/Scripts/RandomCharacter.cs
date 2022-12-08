@@ -282,7 +282,7 @@ public class RandomCharacter : MonoBehaviour
                 {
                     job = 2;
                 }
-                else if (randomNumber < 1.2) //pèlerin spécial
+                else if (randomNumber < 1) //pèlerin spécial
                 {
                     job = 3;
                 }
