@@ -9,6 +9,9 @@ using Image = UnityEngine.UI.Image;
 
 public class ObjectiveList : MonoBehaviour
 {
+
+    public static ObjectiveList InstanceObjectives;
+
     public static TextMeshProUGUI objOne;
     public static TextMeshProUGUI objTwo;
     public static TextMeshProUGUI objThree;
@@ -17,6 +20,9 @@ public class ObjectiveList : MonoBehaviour
     public static TextMeshProUGUI objFourTwo;
     public static TextMeshProUGUI objFourThree;
     public static TextMeshProUGUI objFive;
+    public static TextMeshProUGUI objSix;
+
+    public int objectiveSix;
 
     public bool objOneRempli = false;
     public bool objTwoRempli = false;
@@ -28,10 +34,13 @@ public class ObjectiveList : MonoBehaviour
     public bool objFourThreeRempli = false;
 
     public bool objFiveRempli = false;
+    public bool objSixRempli = false;
+
+    int test = -1;
+
 
     void Start()
     {
-  
         objOne = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         objTwo = gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         objThree = gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -40,9 +49,14 @@ public class ObjectiveList : MonoBehaviour
         objFourTwo = gameObject.transform.GetChild(3).GetChild(2).GetComponent<TextMeshProUGUI>();
         objFourThree = gameObject.transform.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>();
         objFive = gameObject.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+        objSix = gameObject.transform.GetChild(5).GetComponent<TextMeshProUGUI>();
+
 
         objFive.enabled = false; //invisible au début car corne pas encore volée
         objFive.transform.GetChild(0).GetComponent<Image>().enabled = false; //correspond au point à côté invisible aussi
+
+        objSix.enabled = false; //invisible au début car corne pas encore volée
+        objSix.transform.GetChild(0).GetComponent<Image>().enabled = false; //correspond au point à côté invisible aussi
 
         /*
         objOne.SetText("Obtenir 100 d'OR");
@@ -153,6 +167,39 @@ public class ObjectiveList : MonoBehaviour
         {
             objFive.enabled = true;
             objFive.transform.GetChild(0).GetComponent<Image>().enabled = true;
+        }
+
+        //Objective SIX
+        if (MainManager.Instance.Incendie) // affiche l'objectif
+        {
+            objSix.enabled = true;
+            objSix.transform.GetChild(0).GetComponent<Image>().enabled = true;
+
+            if (test == -1) // premiere fois que Incendie passe en true et donc dans le if 
+            {
+                test = MainManager.Instance.ArtisanCount; //récupère la valeur actuelle de ArtisanCount
+
+                if (MainManager.Instance.IsChoirGotten)
+                {
+                    objectiveSix = test + 2;
+                }
+                else
+                {
+                    objectiveSix = 7;
+                }
+            }
+        }
+        
+        if (MainManager.Instance.ArtisanCount >= objectiveSix)
+        {
+            objSix.fontStyle = TMPro.FontStyles.Strikethrough;
+            objSixRempli = true;
+        }
+        else
+        {
+            objSix.fontStyle = TMPro.FontStyles.Normal;
+            objSixRempli = false;
+
         }
     }
 

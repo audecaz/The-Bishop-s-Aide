@@ -226,6 +226,15 @@ public class PopUp_Manager : MonoBehaviour
             "Vous perdez " + randomGold + " d’OR \r\n"+
             "Vous avez besoin de +2 artisans pour reconstruire.");
 
+            MainManager.Instance.Incendie = true;
+            
+            if (!MainManager.Instance.HornStolen) // Si la corne n'a pas encore été volée et donc l'objectif pas apparu
+            {
+                //inverse les position des deux objectifs 
+                GameObject.Find("ObjectiveSix").transform.localPosition = new Vector3(480, 380, 0);
+                GameObject.Find("ObjectiveFive").transform.localPosition = new Vector3(480, 180, 0);
+            }
+
             Open(FactEvent);
             MainManager.Instance.GoldCount -= randomGold;
         }
@@ -472,11 +481,12 @@ public class PopUp_Manager : MonoBehaviour
 
     public void EventAleatoire()
     {
-        int randomNumber = Random.Range(1, 20); //valeur max exclue
+        int randomNumber = Random.Range(1, 16); //valeur max exclue
         Debug.Log(randomNumber);
 
-        if(randomNumber == 19)
-        {
+        if(randomNumber == 15)
+        //if (randomNumber < 19)
+            {
             int randomEvent = Random.Range(1, 7); //valeur max exclue
             if (randomEvent <= 3) //event positif
             {
@@ -496,16 +506,20 @@ public class PopUp_Manager : MonoBehaviour
             else //event negatif
             {
                 if (randomEvent == 4)
+                //if (randomEvent < 2)
                 {
                     PopUpFamine();
                 }
                 else if (randomEvent == 5)
+                //else if (randomEvent <2)
                 {
-                    PopUpIncendie();
+                    PopUpEpidemie();
+
                 }
                 else
                 {
-                    PopUpEpidemie();
+                    PopUpIncendie();
+
                 }
             }
             
