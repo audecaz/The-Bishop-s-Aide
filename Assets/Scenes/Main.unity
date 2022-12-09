@@ -1125,7 +1125,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6ba7825459f03fe4ab1ba98d2674c947,
         type: 3}
       propertyPath: m_Name
-      value: villeAttached_meshcollider
+      value: City
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ba7825459f03fe4ab1ba98d2674c947, type: 3}
@@ -3172,8 +3172,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000004
-  m_Size: 0.71199304
+  m_Value: 1.0000007
+  m_Size: 0.7120035
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9488,7 +9488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51028}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51035}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
