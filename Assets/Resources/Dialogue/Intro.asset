@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19847e44849d772418132b1bd97500f2, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  lines:
+  - text: "Bonjour et bienvenue sur [NomJeu] !\r"
+    questionTuto: 0
+  - text: "Je suis Bertrand de Goth, \xE9v\xEAque de Comminges de 1294 \xE0 1299.\r\nComme
+      on pourrait peut-\xEAtre le croire, je ne suis pas Saint Bertrand. Il s\u2019agit
+      en fait d\u2019un de mes pr\xE9d\xE9cesseurs : Bertrand de l\u2019Isle qui
+      fut \xE9v\xEAque ici de 1073 \xE0 1123.\r\n"
+    questionTuto: 0
+  - text: "J\u2019ai fait une de mes missions d'\xE9lever la cit\xE9 de Saint Bertrand
+      de Comminges au rang de cit\xE9 p\xE8lerine avec un fort rayonnement aux alentours.\r\nEt
+      pour cela j\u2019ai besoin de votre aide !\r\n"
+    questionTuto: 0
+  - text: "Remplissez les objectifs de l\u2019Age en recrutant des personnages aux
+      profils int\xE9ressants pour la cit\xE9 \xE0 travers du flux continuel de p\xE8lerins.\r\nD\xE9couvrez
+      l\u2019histoire de Saint Bertrand de Comminges du XIII\xE8me au XVI\xE8me si\xE8cle
+      !\r\n"
+    questionTuto: 0
+  - text: 'Voulez vous jouer au tutoriel ?
+
+'
+    questionTuto: 1

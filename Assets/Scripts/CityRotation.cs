@@ -5,7 +5,7 @@ using UnityEngine;
 public class CityRotation : MonoBehaviour
 {
     public Touch touch;
-    private float rotationSpeedModifier = 0.2f;
+    private float rotationSpeedModifier = 0.1f;
 
     public GameObject cameraGame;
 

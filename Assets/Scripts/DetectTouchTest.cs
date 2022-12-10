@@ -15,6 +15,7 @@ public class DetectTouchTest : MonoBehaviour
     //public PopUp_Manager popUp_Manager;
 
     Animator anim;
+    public GameObject tutorial;
 
     public void Start()
     {
@@ -34,9 +35,9 @@ public class DetectTouchTest : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log(hit.collider.gameObject.name);
 
-                    if (hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false)
+                    if (hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false && (!tutorial.activeSelf || !MainManager.Instance.tutoActive))
                     {
                         //Debug.Log(hit.collider.gameObject.name);
 
@@ -126,7 +127,7 @@ public class DetectTouchTest : MonoBehaviour
                             anim.SetBool("Forward", !forward);
                         }
                     }
-                    else if(hit.collider.gameObject.name == "Cathedrale" && anim.GetBool("Forward"))
+                    else if(hit.collider.gameObject.name == "Cathedrale" && anim.GetBool("Forward") /*&& !MainManager.Instance.tutoActive*/)
                     {
                         SceneManager.LoadScene(1);
 
