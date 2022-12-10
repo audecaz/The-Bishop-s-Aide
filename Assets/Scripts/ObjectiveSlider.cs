@@ -26,7 +26,7 @@ public class ObjectiveSlider : MonoBehaviour
 
     public void ShowHideObjective()
     {
-        if(timerSlider <= 0 && !PopUp_Manager.InstanceFact.IsActive)
+        if(timerSlider <= 0 && !PopUp_Manager.InstanceFact.IsActive && (MainManager.Instance.tutoActive == 0 || MainManager.Instance.tutoActive == 4))
         {
             timerSlider = 1f; //initialise le cooldown du slider 
             if (ObjectivePanel != null)

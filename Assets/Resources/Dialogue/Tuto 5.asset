@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19847e44849d772418132b1bd97500f2, type: 3}
+  m_Name: Tuto 5
+  m_EditorClassIdentifier: 
+  lines:
+  - text: "Pour revenir sur la cit\xE9, il vous suffira de la toucher.\r\n\n"
+    questionTuto: 0
+  - text: "Passons maintenant \xE0 la s\xE9lection des p\xE8lerins.\r"
+    questionTuto: 0
+  - text: "Devant vous se pr\xE9sente un choix de personnages. \r\nTous entreront
+      dans la cit\xE9 mais il ne tient qu\u2019\xE0 vous de les recruter pour vous
+      aider \xE0 d\xE9velopper la ville.\r"
+    questionTuto: 0
+  - text: "Chaque personnage a des statistiques diff\xE9rentes. \nCertains apportent
+      de l\u2019OR, d\u2019autres augmentent la FOI ou encore le SAVOIR-FAIRE.\r\n"
+    questionTuto: 0
+  - text: "Celui-ci me semble le plus int\xE9ressant, recrutons le !\r\n"
+    questionTuto: 0

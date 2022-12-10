@@ -19,12 +19,12 @@ public class CameraBackward : MonoBehaviour
 
     public void Update()
     {
-        if (anim.GetBool("Forward") && !MainManager.Instance.tutoActive)
+        if (anim.GetBool("Forward") && MainManager.Instance.tutoActive == 0)
         {
             cathedrale.enabled = true;
             panelCity.enabled = true;
         }
-        else if(MainManager.Instance.tutoActive)
+        else if(MainManager.Instance.tutoActive != 0)
         {
             panelCity.enabled = false;
         }

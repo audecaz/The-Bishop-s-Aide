@@ -37,87 +37,98 @@ public class DetectTouchTest : MonoBehaviour
                 {
                     //Debug.Log(hit.collider.gameObject.name);
 
-                    if (hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false && (!tutorial.activeSelf || !MainManager.Instance.tutoActive))
-                    {
+                    if (hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false && (!tutorial.activeSelf || MainManager.Instance.tutoActive <= 0))
+                    {   
                         //Debug.Log(hit.collider.gameObject.name);
-
                         chosenChara = hit.collider.gameObject;//récupère le personnage sélectionné
 
-                        //Test si personnage spécial
-                        if (chosenChara.GetComponent<CharacterInfos>().job == 2) // perso est voleur
+                        if(MainManager.Instance.tutoActive < 0) //cas du choix forcé de pelerin pendant le tuto
                         {
-                            MainManager.Instance.ThievesCount++;
-                            if (MainManager.Instance.ThievesCount == 2) //voleur de corne
+                            if(chosenChara.name == "Pel 2")
                             {
-                                PopUp_Manager.InstanceFact.PopUpSpeVoleur(chosenChara);
-                                MainManager.Instance.HornStolen = true;
-                                MainManager.Instance.IsHornPlaced = false;
-                                //Apparition de la mission liée dans le Update() de ObjectiveList.cs
-                                RandomCharacter.hornDiceNumber = 10; //réinitialise le compteur de dés
-                            }
-                            else
-                            {
-                                PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
+                                MainManager.Instance.tutoActive = 3;
                             }
                         }
-                        else if (chosenChara.GetComponent<CharacterInfos>().job == 3)// perso est pelerin spécial
+                        else
                         {
-                            PopUp_Manager.InstanceFact.PopUpObjetSpe(chosenChara);
-                        }
-                        else if (chosenChara.GetComponent<CharacterInfos>().job == 5) //pelerin special avec corne
-                        {
-                            PopUp_Manager.InstanceFact.PopUpLicorneoOne();
-                            MainManager.Instance.HornRetrieved = true;
-                        }
-                        else if (chosenChara.GetComponent<CharacterInfos>().job == 6) //pelerin special avec croco
-                        {
-                            PopUp_Manager.InstanceFact.PopUpCrocoOne();
-                            MainManager.Instance.IsCrocoHere = true;
-                        }
-                        else if (chosenChara.GetComponent<CharacterInfos>().job == 4) // perso est nicolas bachelier
-                        {
-                            PopUp_Manager.InstanceFact.PopUpNicolas();
-                            MainManager.Instance.IsNicolasRecruted = true;
+                            //Test si personnage spécial
+                            if (chosenChara.GetComponent<CharacterInfos>().job == 2) // perso est voleur
+                            {
+                                MainManager.Instance.ThievesCount++;
+                                if (MainManager.Instance.ThievesCount == 2) //voleur de corne
+                                {
+                                    PopUp_Manager.InstanceFact.PopUpSpeVoleur(chosenChara);
+                                    MainManager.Instance.HornStolen = true;
+                                    MainManager.Instance.IsHornPlaced = false;
+                                    //Apparition de la mission liée dans le Update() de ObjectiveList.cs
+                                    RandomCharacter.hornDiceNumber = 10; //réinitialise le compteur de dés
+                                }
+                                else
+                                {
+                                    PopUp_Manager.InstanceFact.PopUpVoleur(chosenChara);
+                                }
+                            }
+                            else if (chosenChara.GetComponent<CharacterInfos>().job == 3)// perso est pelerin spécial
+                            {
+                                PopUp_Manager.InstanceFact.PopUpObjetSpe(chosenChara);
+                            }
+                            else if (chosenChara.GetComponent<CharacterInfos>().job == 5) //pelerin special avec corne
+                            {
+                                PopUp_Manager.InstanceFact.PopUpLicorneoOne();
+                                MainManager.Instance.HornRetrieved = true;
+                            }
+                            else if (chosenChara.GetComponent<CharacterInfos>().job == 6) //pelerin special avec croco
+                            {
+                                PopUp_Manager.InstanceFact.PopUpCrocoOne();
+                                MainManager.Instance.IsCrocoHere = true;
+                            }
+                            else if (chosenChara.GetComponent<CharacterInfos>().job == 4) // perso est nicolas bachelier
+                            {
+                                PopUp_Manager.InstanceFact.PopUpNicolas();
+                                MainManager.Instance.IsNicolasRecruted = true;
+                            }
+
+                            CharacterInfos.AddInfosToGlobal(chosenChara);
+
+                            MainManager.Instance.PilgrinsCount++;
+
+                            //Apparition des popups historiques
+                            if (MainManager.Instance.PilgrinsCount >= 10)
+                            {
+                                if (MainManager.Instance.PilgrinsCount == 10)
+                                {
+                                    PopUp_Manager.InstanceFact.PopUpStBertrand();
+                                }
+                                else if (MainManager.Instance.PilgrinsCount == 18)
+                                {
+                                    PopUp_Manager.InstanceFact.PopUpBertrandGoth();
+                                }
+                                else if (MainManager.Instance.PilgrinsCount == 28)
+                                {
+                                    PopUp_Manager.InstanceFact.PopUpCathedrale();
+                                }
+                                else if (MainManager.Instance.PilgrinsCount == 37)
+                                {
+                                    PopUp_Manager.InstanceFact.PopUpCloitre();
+                                }
+                            }
+
+                            //Apparition des events aléatoires, positifs & négatifs
+                            if (MainManager.Instance.PilgrinsCount > 5) //Empêche de générer un event aléatoire dans les premiers pèlerins
+                            {
+                                PopUp_Manager.InstanceFact.EventAleatoire();
+                            }
+
+                            //Regenere de nouveaux persos
+                            RandomCharacter.GenerateNewCharacter();
                         }
 
-                        CharacterInfos.AddInfosToGlobal(chosenChara);
-
-                        MainManager.Instance.PilgrinsCount++;
-
-                        //Apparition des popups historiques
-                        if (MainManager.Instance.PilgrinsCount >= 10) 
-                        {
-                            if(MainManager.Instance.PilgrinsCount == 10)
-                            {
-                                PopUp_Manager.InstanceFact.PopUpStBertrand();
-                            }
-                            else if(MainManager.Instance.PilgrinsCount == 18)
-                            {
-                                PopUp_Manager.InstanceFact.PopUpBertrandGoth();
-                            }
-                            else if(MainManager.Instance.PilgrinsCount == 28)
-                            {
-                                PopUp_Manager.InstanceFact.PopUpCathedrale();
-                            }
-                            else if(MainManager.Instance.PilgrinsCount == 37){
-                                PopUp_Manager.InstanceFact.PopUpCloitre();
-                            }
-                        }
-
-                        //Apparition des events aléatoires, positifs & négatifs
-                        if (MainManager.Instance.PilgrinsCount > 5) //Empêche de générer un event aléatoire dans les premiers pèlerins
-                        {
-                            PopUp_Manager.InstanceFact.EventAleatoire();
-                        }
-
-                        //Regenere de nouveaux persos
-                        RandomCharacter.GenerateNewCharacter();
                     }
-                    else if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen == true) //Si le menu des objectifs est ouvert, le cache
+                    else if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen && MainManager.Instance.tutoActive != 4) //Si le menu des objectifs est ouvert, le cache
                     {
                         slider.ShowHideObjective();
                     }
-                    else if (hit.collider.gameObject.name == "City" && !anim.GetBool("Forward")) 
+                    else if (hit.collider.gameObject.name == "City" && !anim.GetBool("Forward") && /*(MainManager.Instance.tutoActive == 1 || */MainManager.Instance.tutoActive == 0) 
                     {
                         //SceneManager.LoadScene(1);
                         //CameraForward.InstanceAnim.ForBackwardCam();

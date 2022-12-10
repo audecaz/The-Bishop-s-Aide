@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19847e44849d772418132b1bd97500f2, type: 3}
-  m_Name: Tuto 3
+  m_Name: Tuto 4
   m_EditorClassIdentifier: 
   lines:
-  - text: "Vous voil\xE0 dans la cath\xE9drale Notre Dame de Saint Bertrand de Comminges.\r\nIci
-      vous pouvez glisser-d\xE9poser les objets sp\xE9ciaux que vous acqu\xE9rez
-      ou construisez tout au long de l\u2019Age !\r\n"
+  - text: "Revenez ici d\xE8s que vous obtiendrez un nouvel objet !\n"
+    questionTuto: 0
+  - text: "Maintenant retournons \xE0 l'ext\xE9rieur de la cit\xE9."
     questionTuto: 0
