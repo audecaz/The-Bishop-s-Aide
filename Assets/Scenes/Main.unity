@@ -1228,7 +1228,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6ba7825459f03fe4ab1ba98d2674c947,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ba7825459f03fe4ab1ba98d2674c947,
         type: 3}
@@ -1243,17 +1243,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6ba7825459f03fe4ab1ba98d2674c947,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -308.56158
+      value: -5.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ba7825459f03fe4ab1ba98d2674c947,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -92.29584
+      value: -92
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ba7825459f03fe4ab1ba98d2674c947,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 143.71082
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ba7825459f03fe4ab1ba98d2674c947,
         type: 3}
@@ -3626,7 +3626,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
   m_Value: 1.0000007
-  m_Size: 0.7120035
+  m_Size: 0.7120117
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9420,7 +9420,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2124578783}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1309943771
 MeshRenderer:
@@ -10172,7 +10172,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e83462f55190f8047aea1cf37cf13f1b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e83462f55190f8047aea1cf37cf13f1b,
         type: 3}
@@ -10314,7 +10314,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6702d2a98f44c5848a2d6cc1a3c0e791,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6702d2a98f44c5848a2d6cc1a3c0e791,
         type: 3}
@@ -10379,7 +10379,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6702d2a98f44c5848a2d6cc1a3c0e791,
         type: 3}
       propertyPath: m_Name
-      value: City_whole
+      value: City_whole (old)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6702d2a98f44c5848a2d6cc1a3c0e791,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6702d2a98f44c5848a2d6cc1a3c0e791, type: 3}
@@ -11147,7 +11152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51035}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51031}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -14260,7 +14265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2044395810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14759,10 +14764,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 206415633}
   - {fileID: 1459565481}
   - {fileID: 1309943770}
   - {fileID: 1434894633}
-  - {fileID: 206415633}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

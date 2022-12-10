@@ -117,7 +117,7 @@ public class DetectTouchTest : MonoBehaviour
                     {
                         slider.ShowHideObjective();
                     }
-                    else if (hit.collider.gameObject.name == "City_whole" && !anim.GetBool("Forward")) 
+                    else if (hit.collider.gameObject.name == "City" && !anim.GetBool("Forward")) 
                     {
                         //SceneManager.LoadScene(1);
                         //CameraForward.InstanceAnim.ForBackwardCam();
