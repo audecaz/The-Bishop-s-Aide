@@ -33,7 +33,8 @@ public class RandomCharacter : MonoBehaviour
 
         if (pelOne.GetComponent<CharacterInfos>().ressourceOne == 0) //Signifie que premier lancement du jeu, les persos ne sont pas encore générés
         {
-            GenerateNewCharacter();
+
+            //GenerateNewCharacter();
         }
         else
         {

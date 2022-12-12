@@ -46,7 +46,10 @@ public class DetectTouchTest : MonoBehaviour
                         {
                             if(chosenChara.name == "Pel 2")
                             {
+                                CharacterInfos.AddInfosToGlobal(chosenChara);
                                 MainManager.Instance.tutoActive = 3;
+
+                                RandomCharacter.GenerateNewCharacter();
                             }
                         }
                         else
