@@ -231,8 +231,8 @@ public class PopUp_Manager : MonoBehaviour
             if (!MainManager.Instance.HornStolen) // Si la corne n'a pas encore été volée et donc l'objectif pas apparu
             {
                 //inverse les position des deux objectifs 
-                GameObject.Find("ObjectiveSix").transform.localPosition = new Vector3(480, 380, 0);
-                GameObject.Find("ObjectiveFive").transform.localPosition = new Vector3(480, 180, 0);
+                GameObject.Find("ObjectiveSix").transform.localPosition = new Vector3(480, 220, 0);
+                GameObject.Find("ObjectiveFive").transform.localPosition = new Vector3(480, 20, 0);
             }
 
             Open(FactEvent);
@@ -374,10 +374,9 @@ public class PopUp_Manager : MonoBehaviour
 
     public void PopUpNicolas()
     {
-        /*
         if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
         {
-            StartCoroutine(PopUpWait("PopUpNicolas"));
+            StartCoroutine(PopUpWait(PopUpNicolas));
         }
         else
         {
@@ -387,13 +386,8 @@ public class PopUp_Manager : MonoBehaviour
                 "Il a notamment participé à la construction de l’hôtel d’Assézat, du Pont-Neuf ou encore du portail du Capitole de Toulouse.");
 
             Open(FactEvent);
-        }*/
-        FactTitle.SetText("Nicolas Bachelier");
-        FactContent.SetText("Architecte et ingénieur,\r\n" +
-            "Nicolas Bachelier (1487-1556) est considéré comme l’un des plus grands architectes toulousains de la Renaissance. \r\n\r\n" +
-            "Il a notamment participé à la construction de l’hôtel d’Assézat, du Pont-Neuf ou encore du portail du Capitole de Toulouse.");
-
-        Open(FactEvent);
+        }
+        
     }
 
 

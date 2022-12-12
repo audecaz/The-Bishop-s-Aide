@@ -114,13 +114,14 @@ public class ObjectiveList : MonoBehaviour
         //Objective FOUR
         if (objFourOneRempli == true && objFourTwoRempli == true && objFourThreeRempli == true) //les 3 sous objectifs sont remplis
         {
+            objFour.fontStyle = TMPro.FontStyles.Strikethrough;
+
             if (objFourRempli == false && !MainManager.Instance.IsChoirGotten)
             {
-                objFour.fontStyle = TMPro.FontStyles.Strikethrough;
-                MainManager.Instance.GoldCount -= 20; //paye l'objet une fois
-                MainManager.Instance.IsChoirGotten = true;
-                PopUp_Manager.InstanceFact.PopUpOrgueChoeur();            
                 objFourRempli = true;
+                MainManager.Instance.IsChoirGotten = true;
+                MainManager.Instance.GoldCount -= 20; //paye l'objet une fois
+                PopUp_Manager.InstanceFact.PopUpOrgueChoeur();            
             
             }
 
@@ -177,16 +178,15 @@ public class ObjectiveList : MonoBehaviour
 
             if (test == -1) // premiere fois que Incendie passe en true et donc dans le if 
             {
-                test = MainManager.Instance.ArtisanCount; //récupère la valeur actuelle de ArtisanCount
-
-                if (MainManager.Instance.IsChoirGotten)
+                if (MainManager.Instance.ArtisanCount >= 5)
                 {
-                    objectiveSix = test + 2;
+                    objectiveSix = MainManager.Instance.ArtisanCount + 2;
                 }
                 else
                 {
                     objectiveSix = 7;
                 }
+                test = 0;
             }
         }
         

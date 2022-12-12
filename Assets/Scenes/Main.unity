@@ -418,7 +418,7 @@ MonoBehaviour:
   Incendie: 0
   objectiveOpen: 0
   popupOpen: 0
-  tutoActive: 2
+  tutoActive: 0
   pelerinInfos: {fileID: 185247013}
 --- !u!4 &45651657
 Transform:
@@ -3965,8 +3965,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.000018
-  m_Size: 0.6904318
+  m_Value: 1.0002211
+  m_Size: 0.7116223
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11758,7 +11758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51176}
+  m_AnchoredPosition: {x: -91.49921, y: -189.52896}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
