@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class RandomCharacter : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class RandomCharacter : MonoBehaviour
     public static int ressourceOne; 
     public static int ressourceTwo;
 
+    public static Image skin;
     public static TextMeshProUGUI jobText;
     public static TextMeshProUGUI ROneText;
     public static TextMeshProUGUI RTwoText;
@@ -26,10 +30,32 @@ public class RandomCharacter : MonoBehaviour
     public static bool crocoPresent = false;
 
 
+    // différentes images
+    //pelerin
+    public static Sprite pel1;
+    public static Sprite pel2;
+
+    //artisan
+    public static Sprite artisan1;
+
+    //spécial
+    public static Sprite nicolas;
+
     void Start()
     {
         characters = GameObject.FindGameObjectsWithTag("Character");
         Transform pelOne = MainManager.Instance.pelerinInfos.transform.GetChild(0);
+
+        //récupération des images
+        pel1 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin1");
+        pel2 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin2");
+
+        artisan1 = Resources.Load<Sprite>("Pelerins/Artisans/artisan1");
+
+        nicolas = Resources.Load<Sprite>("Pelerins/Nicolas Bachelier/nicolasBachelier");
+
+        //Debug.Log(pel1);
+
 
         if (pelOne.GetComponent<CharacterInfos>().ressourceOne == 0) //Signifie que premier lancement du jeu, les persos ne sont pas encore générés
         {
@@ -119,92 +145,127 @@ public class RandomCharacter : MonoBehaviour
             ressourceTwo = GenerateRessourceValue();
 
             //Debug.Log(character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>());
+            skin = character.gameObject.transform.GetChild(0).GetComponent<Image>();
             jobText = character.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
             ROneText = character.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
             RTwoText = character.gameObject.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
 
-
+            //Debug.Log(skin);
             //Debug.Log(jobText);
-            if (job == 0 || job == 2) //si pelerin
+                     
+            
+            if(job == 4) //Nicolas
             {
-                if(job == 2) {
-                    jobText.SetText("Voleur");
-                    character.GetComponent<CharacterInfos>().job = 2;
-                }
-                else
-                {
-                    jobText.SetText("Pèlerin");
-                    character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
-                }
-                
-                ROneText.SetText("OR : +" + ressourceOne);
-                RTwoText.SetText("FOI : +" + ressourceTwo);
-            }
-            else if (job == 3)
-            {
-                jobText.SetText("Pèlerin Spé");
-                character.GetComponent<CharacterInfos>().job = 3;
+                skin.sprite = nicolas;
 
-                ROneText.SetText("FOI : +" + ressourceOne);
-                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
-
-                int randomObject = Random.Range(0, 2);
-                if(randomObject == 0)
-                {
-                    RTwoText.SetText("Calice en or : +12 d'OR");
-                    ressourceTwo = 12;
-                    character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
-                }
-                else
-                {
-                    RTwoText.SetText("Coffre précieux : +15 d'OR");
-                    ressourceTwo = 15;
-                    character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
-                }
-            }else if(job == 4)
-            {
                 jobText.SetText("Nicolas Bachelier");
                 character.GetComponent<CharacterInfos>().job = 4;
 
                 ROneText.SetText("Architecte");
                 RTwoText.SetText("");
             }
-            else if (job == 5)
+            else if(job == 1) // Artisan
             {
-                jobText.SetText("Pèlerin Spé");
-                character.GetComponent<CharacterInfos>().job = 5;
-
-                ROneText.SetText("FOI : +" + ressourceOne);
-                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
-
-                RTwoText.SetText("Corne de licorne");
-                ressourceTwo = 0;
-                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
-            }
-            else if (job == 6)
-            {
-                jobText.SetText("Pèlerin Spé");
-                character.GetComponent<CharacterInfos>().job = 6;
-
-                ROneText.SetText("FOI : +" + ressourceOne);
-                character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
-
-                RTwoText.SetText("Crocodile empaillé");
-                ressourceTwo = 0;
-                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
-            }
-            else // Artisan
-            {
+                skin.sprite = artisan1;
                 jobText.SetText("Artisan");
                 character.GetComponent<CharacterInfos>().job = 1;
                 ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
                 RTwoText.SetText("OR : -" + ressourceTwo);
-            }                
+            }
+            else { //pelerin
+
+                int randomSprite = Random.Range(1, 3); //3 exclu
+
+                //Sprite
+                if (randomSprite == 1)
+                {
+                    skin.sprite = pel1;
+                }
+                else
+                {
+                    skin.sprite = pel2;
+                }
+
+
+                if (job == 0 || job == 2) // pelerin "classique"
+                {
+                    
+                    if (job == 2)
+                    {
+                        jobText.SetText("Voleur");
+                        character.GetComponent<CharacterInfos>().job = 2;
+                    }
+                    else
+                    {
+                        jobText.SetText("Pèlerin");
+                        character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
+                    }
+
+                    ROneText.SetText("OR : +" + ressourceOne);
+                    RTwoText.SetText("FOI : +" + ressourceTwo);
+                }
+                else //pèlerins spéciaux
+                {
+                    if (job == 5) // Corne de licorne
+                    {
+                        jobText.SetText("Pèlerin Spé");
+                        character.GetComponent<CharacterInfos>().job = 5;
+
+                        ROneText.SetText("FOI : +" + ressourceOne);
+                        character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
+
+                        RTwoText.SetText("Corne de licorne");
+                        ressourceTwo = 0;
+                        character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                    }
+                    else if (job == 6) // crocodile
+                    {
+                        jobText.SetText("Pèlerin Spé");
+                        character.GetComponent<CharacterInfos>().job = 6;
+
+                        ROneText.SetText("FOI : +" + ressourceOne);
+                        character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
+
+                        RTwoText.SetText("Crocodile empaillé");
+                        ressourceTwo = 0;
+                        character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                    }
+
+                    else if (job == 3) //objet autre
+                    {
+                        jobText.SetText("Pèlerin Spé");
+                        character.GetComponent<CharacterInfos>().job = 3;
+
+                        ROneText.SetText("FOI : +" + ressourceOne);
+                        character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
+
+                        int randomObject = Random.Range(0, 2);
+                        if (randomObject == 0)
+                        {
+                            RTwoText.SetText("Calice en or : +12 d'OR");
+                            ressourceTwo = 12;
+                            character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                        }
+                        else
+                        {
+                            RTwoText.SetText("Coffre précieux : +15 d'OR");
+                            ressourceTwo = 15;
+                            character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                        }
+                    }
+                }
+               
+            }
+           
+                        
             
             character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
             character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
 
         }
+
+        //SKIN
+        
 
         if(nicolasPresent == true)
         {
