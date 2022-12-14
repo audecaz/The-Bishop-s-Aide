@@ -34,9 +34,12 @@ public class RandomCharacter : MonoBehaviour
     //pelerin
     public static Sprite pel1;
     public static Sprite pel2;
+    public static Sprite pel3;
 
     //artisan
     public static Sprite artisan1;
+    public static Sprite artisan2;
+    public static Sprite artisan3;
 
     //spécial
     public static Sprite nicolas;
@@ -49,8 +52,12 @@ public class RandomCharacter : MonoBehaviour
         //récupération des images
         pel1 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin1");
         pel2 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin2");
+        pel3 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin3");
 
         artisan1 = Resources.Load<Sprite>("Pelerins/Artisans/artisan1");
+        artisan2 = Resources.Load<Sprite>("Pelerins/Artisans/artisan2");
+        artisan3 = Resources.Load<Sprite>("Pelerins/Artisans/artisan3");
+
 
         nicolas = Resources.Load<Sprite>("Pelerins/Nicolas Bachelier/nicolasBachelier");
 
@@ -166,7 +173,22 @@ public class RandomCharacter : MonoBehaviour
             }
             else if(job == 1) // Artisan
             {
-                skin.sprite = artisan1;
+                int randomSprite = Random.Range(1, 4); //4 exclu
+
+                //Sprite
+                if (randomSprite == 1)
+                {
+                    skin.sprite = artisan1;
+                }
+                else if (randomSprite == 2)
+                {
+                    skin.sprite = artisan2;
+                }
+                else
+                {
+                    skin.sprite = artisan3;
+                }
+
                 jobText.SetText("Artisan");
                 character.GetComponent<CharacterInfos>().job = 1;
                 ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
@@ -174,16 +196,20 @@ public class RandomCharacter : MonoBehaviour
             }
             else { //pelerin
 
-                int randomSprite = Random.Range(1, 3); //3 exclu
+                int randomSprite = Random.Range(1, 4); //4 exclu
 
                 //Sprite
                 if (randomSprite == 1)
                 {
                     skin.sprite = pel1;
                 }
-                else
+                else if (randomSprite == 2)
                 {
                     skin.sprite = pel2;
+                }
+                else
+                {
+                    skin.sprite = pel3;
                 }
 
 
