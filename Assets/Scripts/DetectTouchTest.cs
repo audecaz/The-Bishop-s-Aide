@@ -98,19 +98,19 @@ public class DetectTouchTest : MonoBehaviour
                             //Apparition des popups historiques
                             if (MainManager.Instance.PilgrinsCount >= 10)
                             {
-                                if (MainManager.Instance.PilgrinsCount == 10)
+                                if (MainManager.Instance.PilgrinsCount == 12)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpStBertrand();
                                 }
-                                else if (MainManager.Instance.PilgrinsCount == 18)
+                                else if (MainManager.Instance.PilgrinsCount == 24)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpBertrandGoth();
                                 }
-                                else if (MainManager.Instance.PilgrinsCount == 28)
+                                else if (MainManager.Instance.PilgrinsCount == 35)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpCathedrale();
                                 }
-                                else if (MainManager.Instance.PilgrinsCount == 37)
+                                else if (MainManager.Instance.PilgrinsCount == 46)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpCloitre();
                                 }
@@ -143,7 +143,7 @@ public class DetectTouchTest : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Cathedrale" && anim.GetBool("Forward") /*&& !MainManager.Instance.tutoActive*/)
                     {
-                        SceneManager.LoadScene(1);
+                        SceneManager.LoadScene(2);
 
                     }
 
