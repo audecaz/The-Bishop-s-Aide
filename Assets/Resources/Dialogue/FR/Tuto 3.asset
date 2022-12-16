@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: "Vous voil\xE0 dans la cath\xE9drale Notre Dame de Saint Bertrand de Comminges.\r\nIci
-      vous pouvez glisser-d\xE9poser les objets sp\xE9ciaux que vous acqu\xE9rez
+      vous pouvez <b>glisser-d\xE9poser les objets sp\xE9ciaux </b>que vous acqu\xE9rez
       ou construisez tout au long de l\u2019Age !\r\n"
     questionTuto: 0

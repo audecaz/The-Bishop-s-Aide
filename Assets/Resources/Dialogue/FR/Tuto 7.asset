@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Tuto 7
   m_EditorClassIdentifier: 
   lines:
-  - text: "Voici tous les objectifs que vous devez remplir pour terminer l\u2019Age
-      !\r\nN\u2019h\xE9sitez pas \xE0 les consulter r\xE9guli\xE8rement.\r\n"
+  - text: "Voici tous les <b>objectifs</b> que vous devez remplir pour terminer l\u2019Age
+      !\r\n<b>N\u2019h\xE9sitez pas \xE0 les consulter r\xE9guli\xE8rement.\r</b>\n"
     questionTuto: 0
-  - text: "Attention, certains \xE9v\xE9nements al\xE9atoires pourraient ralentir
+  - text: "Attention, certains <b>\xE9v\xE9nements al\xE9atoires </b>pourraient ralentir
       votre progression comme ils pourraient vous aider\u2026\r\n"
     questionTuto: 0
-  - text: Bonne chance !
+  - text: <b>Bonne chance !</b>
     questionTuto: 0

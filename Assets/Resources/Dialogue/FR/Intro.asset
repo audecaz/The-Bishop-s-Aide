@@ -15,20 +15,20 @@ MonoBehaviour:
   lines:
   - text: "Bonjour et bienvenue sur [NomJeu] !\r"
     questionTuto: 0
-  - text: "Je suis Bertrand de Goth, \xE9v\xEAque de Comminges de 1294 \xE0 1299.\r\nComme
-      on pourrait peut-\xEAtre le croire, je ne suis pas Saint Bertrand. Il s\u2019agit
-      en fait d\u2019un de mes pr\xE9d\xE9cesseurs : Bertrand de l\u2019Isle qui
-      fut \xE9v\xEAque ici de 1073 \xE0 1123.\r\n"
+  - text: "<b>Je suis Bertrand de Goth</b>, \xE9v\xEAque de Comminges de 1294 \xE0
+      1299.\r\nComme on pourrait peut-\xEAtre le croire, je ne suis pas Saint Bertrand.
+      Il s\u2019agit en fait d\u2019un de mes pr\xE9d\xE9cesseurs : Bertrand de l\u2019Isle
+      qui fut \xE9v\xEAque ici de 1073 \xE0 1123.\r\n"
     questionTuto: 0
   - text: "J\u2019ai fait une de mes missions d'\xE9lever la cit\xE9 de Saint Bertrand
-      de Comminges au rang de cit\xE9 p\xE8lerine avec un fort rayonnement aux alentours.\r\nEt
-      pour cela j\u2019ai besoin de votre aide !\r\n"
+      de Comminges au rang de <b>cit\xE9 p\xE8lerine</b> avec un fort rayonnement
+      aux alentours.\r\n<b>Et pour cela j\u2019ai besoin de votre aide !\r</b>\n"
     questionTuto: 0
-  - text: "Remplissez les objectifs de l\u2019Age en recrutant des personnages aux
-      profils int\xE9ressants pour la cit\xE9 \xE0 travers du flux continuel de p\xE8lerins.\r\nD\xE9couvrez
-      l\u2019histoire de Saint Bertrand de Comminges du XIII\xE8me au XVI\xE8me si\xE8cle
-      !\r\n"
+  - text: "<b>Remplissez les objectifs de l\u2019Age en recrutant des personnages
+      </b>aux profils int\xE9ressants pour la cit\xE9 \xE0 travers du flux continuel
+      de p\xE8lerins.\r\n<b>D\xE9couvrez l\u2019histoire de Saint Bertrand de Comminges
+      du XIII\xE8me au XVI\xE8me si\xE8cle !\r</b>\n"
     questionTuto: 0
-  - text: "Voulez vous jouer au tutoriel ?\n(Le suivi du tutoriel est fortement conseill\xE9e
-      pour une premi\xE8re partie)\r\n"
+  - text: "<b>Voulez vous jouer au tutoriel ?</b>\n<i>(Le suivi du tutoriel est fortement
+      conseill\xE9e pour une premi\xE8re partie)\r</i>\n"
     questionTuto: 1

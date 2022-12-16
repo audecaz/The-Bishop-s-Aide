@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NoTuto
   m_EditorClassIdentifier: 
   lines:
-  - text: Bonne chance !
+  - text: <b>Bonne chance ! </b>
     questionTuto: 0

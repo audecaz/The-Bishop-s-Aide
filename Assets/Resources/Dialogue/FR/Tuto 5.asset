@@ -15,14 +15,15 @@ MonoBehaviour:
   lines:
   - text: "Pour revenir sur la cit\xE9, il vous suffira de la toucher.\r\n\n"
     questionTuto: 0
-  - text: "Passons maintenant \xE0 la s\xE9lection des p\xE8lerins.\r"
+  - text: "<b>Passons maintenant \xE0 la s\xE9lection des p\xE8lerins.\r</b>"
     questionTuto: 0
-  - text: "Devant vous se pr\xE9sente un choix de personnages. \r\nTous entreront
-      dans la cit\xE9 mais il ne tient qu\u2019\xE0 vous de les recruter pour vous
-      aider \xE0 d\xE9velopper la ville.\r"
+  - text: "<b>Devant vous se pr\xE9sente un choix de personnages. \r</b>\nTous entreront
+      dans la cit\xE9 mais il ne tient qu\u2019\xE0 vous de les <b>recruter</b> pour
+      vous aider \xE0 d\xE9velopper la ville.\r"
     questionTuto: 0
-  - text: "Chaque personnage a des statistiques diff\xE9rentes. \nCertains apportent
-      de l\u2019OR, d\u2019autres augmentent la FOI ou encore le SAVOIR-FAIRE.\r\n"
+  - text: "<b>Chaque personnage a des statistiques diff\xE9rentes. </b>\nCertains
+      apportent de <b>l\u2019OR</b>, d\u2019autres augmentent la <b>FOI</b> ou encore
+      le <b>SAVOIR-FAIRE.\r</b>\n"
     questionTuto: 0
-  - text: "Celui-ci me semble le plus int\xE9ressant, recrutons le !\r\n"
+  - text: "<b>Celui-ci me semble le plus int\xE9ressant, recrutons le !\r</b>\n"
     questionTuto: 0

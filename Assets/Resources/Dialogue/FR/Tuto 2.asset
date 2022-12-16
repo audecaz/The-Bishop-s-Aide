@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tuto 2
   m_EditorClassIdentifier: 
   lines:
-  - text: "Tr\xE8s bien, maintenant appuyez sur la cath\xE9drale."
+  - text: "Tr\xE8s bien, maintenant <b>touchez la cath\xE9drale.</b>"
     questionTuto: 0
