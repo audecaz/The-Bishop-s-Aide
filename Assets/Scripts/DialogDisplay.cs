@@ -29,8 +29,22 @@ public class DialogDisplay : MonoBehaviour
 
     private int activeLineIndex = 0;
 
+    public string language;
+
     private void Start()
-    {   
+    {
+        if(MainManager.Instance.Language == 1)// FR
+        {
+            language = "FR/";
+        }
+        else if(MainManager.Instance.Language == 2) //ENG
+        {
+            language = "EN/";
+        }
+
+        dialog = Resources.Load<Dialog>("Dialogue/"+ language + "Intro");
+        Debug.Log(language + "Dialogue/Intro");
+
         if (MainManager.Instance.tutoActive !=0)
         {
             //récupère les backgrounds du tuto
@@ -49,16 +63,14 @@ public class DialogDisplay : MonoBehaviour
             objectiveBG.SetActive(false);
 
 
-            if (MainManager.Instance.tutoActive != 0)
-            {
-                bertrandTwo = GameObject.Find("BertrandDialog 2");
-                bertrandTwo.SetActive(false);
-                if (MainManager.Instance.tutoActive == 2) //retour de la cathédrale
-                {  
-                    dialog = Resources.Load<Dialog>("Dialogue/Tuto 5");
-                }
-                AdvanceMonologue();    
+            bertrandTwo = GameObject.Find("BertrandDialog 2");
+            bertrandTwo.SetActive(false);
+            if (MainManager.Instance.tutoActive == 2) //retour de la cathédrale
+            {  
+                dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 5");
             }
+            AdvanceMonologue();    
+
             //buttonTutorial = GameObject.Find("Question Button");
             buttonTutorial.SetActive(false);
             if(GameObject.Find("Cathedrale") != null)
@@ -205,7 +217,7 @@ public class DialogDisplay : MonoBehaviour
     //Première question Tuto yes no
     public void LaunchTuto()
     {
-        dialog = Resources.Load<Dialog>("Dialogue/Tuto");
+        dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto");
         //Debug.Log(Resources.Load<Dialog>("Dialogue/Tuto"));
         activeLineIndex = 0;
 
@@ -213,7 +225,7 @@ public class DialogDisplay : MonoBehaviour
 
     public void NoLaunchTuto()
     {
-        dialog = Resources.Load<Dialog>("Dialogue/NoTuto");
+        dialog = Resources.Load<Dialog>("Dialogue/" + language + "NoTuto");
         activeLineIndex = 0;
     }
 
@@ -253,7 +265,7 @@ public class DialogDisplay : MonoBehaviour
         AdvanceMonologue();
 
         activeLineIndex = 0;
-        dialog = Resources.Load<Dialog>("Dialogue/Tuto 4");
+        dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 4");
 
         bertrand.SetActive(true);
         fullBG.SetActive(true);
@@ -264,7 +276,7 @@ public class DialogDisplay : MonoBehaviour
         AdvanceMonologue();
         activeLineIndex = 0;
 
-        dialog = Resources.Load<Dialog>("Dialogue/Tuto 6");
+        dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 6");
         bertrandTwo.SetActive(false);
         pelerinBG.SetActive(false);
 
@@ -279,7 +291,7 @@ public class DialogDisplay : MonoBehaviour
         AdvanceMonologue();
         activeLineIndex = 0;
 
-        dialog = Resources.Load<Dialog>("Dialogue/Tuto 7");
+        dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 7");
         AdvanceMonologue();
 
         objectiveBG.SetActive(false);
@@ -293,7 +305,7 @@ public class DialogDisplay : MonoBehaviour
 
         bertrand.SetActive(true);
 
-        dialog = Resources.Load<Dialog>("Dialogue/Tuto 2");
+        dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 2");
         //Debug.Log(Resources.Load<Dialog>("Dialogue/Tuto"));
         activeLineIndex = 0;
 

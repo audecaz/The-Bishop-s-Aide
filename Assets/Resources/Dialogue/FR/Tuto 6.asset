@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19847e44849d772418132b1bd97500f2, type: 3}
+  m_Name: Tuto 6
+  m_EditorClassIdentifier: 
+  lines:
+  - text: "Regardez ! L\u2019OR et la FOI de la cit\xE9 ont augment\xE9 !\n"
+    questionTuto: 0
+  - text: "Les deux autres \xE9l\xE9ments sont le SAVOIR-FAIRE et le nombre d\u2019artisans
+      de la ville.\r\n\nChaque choix de personnage va avoir une influence sur ces
+      param\xE8tres, choisissez en cons\xE9quence.\r"
+    questionTuto: 0
+  - text: "Il existe diff\xE9rents types de personnages recrutables : \r\nLes p\xE8lerins,
+      comme nous venons de le voir.\r"
+    questionTuto: 0
+  - text: "Les p\xE8lerins sp\xE9ciaux. Ils apportent les m\xEAmes ressources que
+      les p\xE8lerins mais \xE9galement des objets sp\xE9ciaux, restez attentif !\r\nLes
+      artisans, qui apportent du SAVOIR-FAIRE mais co\xFBtent de l\u2019OR \xE0 recruter.\r\n"
+    questionTuto: 0
+  - text: "Enfin, les voleurs ! \nIls se d\xE9guisent en p\xE8lerins et une fois
+      recrut\xE9s, vous volent de l\u2019OR. \n"
+    questionTuto: 0
+  - text: "Les autres p\xE8lerins de la cit\xE9 ne se sentent pas en s\xE9curit\xE9
+      et s'arr\xEAtent moins \xE0 Saint Bertrand. Cela baisse donc aussi la FOI de
+      la cit\xE9. \nFaites attention !\r"
+    questionTuto: 0
+  - text: "Ce choix de personnages va servir \xE0 atteindre les objectifs de l\u2019Age
+      dans lequel vous \xE9voluez.\r"
+    questionTuto: 0
+  - text: Touchez l'onglet objectifs !
+    questionTuto: 0
