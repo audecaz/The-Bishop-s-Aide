@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class DialogDisplay : MonoBehaviour
 {
@@ -33,49 +34,45 @@ public class DialogDisplay : MonoBehaviour
 
     private void Start()
     {
-        if(MainManager.Instance.Language == 1)// FR
+
+        //Récupération de la langue de jeu sélectionnée
+        if(MainManager.Instance.Language == "fr")// FR
         {
             language = "FR/";
         }
-        else if(MainManager.Instance.Language == 2) //ENG
+        else if(MainManager.Instance.Language == "eng") //ENG
         {
             language = "EN/";
         }
 
-        dialog = Resources.Load<Dialog>("Dialogue/"+ language + "Intro");
-        Debug.Log(language + "Dialogue/Intro");
+        
 
         if (MainManager.Instance.tutoActive !=0)
         {
+
             //récupère les backgrounds du tuto
-            fullBG = opacity.transform.GetChild(0).gameObject;
-            if(MainManager.Instance.tutoActive == 1)
+            fullBG = opacity.transform.GetChild(0).gameObject; 
+
+            if (SceneManager.GetActiveScene().name != "Cathedrale") //Seulement si dans ma
             {
-                fullBG.SetActive(true);
-            }
-            pelerinBG = opacity.transform.GetChild(1).gameObject;
-            pelerinBG.SetActive(false);
-            coinsBG = opacity.transform.GetChild(2).gameObject;
-            coinsBG.SetActive(false);
-            ressourceBG = opacity.transform.GetChild(3).gameObject;
-            ressourceBG.SetActive(false);
-            objectiveBG = opacity.transform.GetChild(4).gameObject;
-            objectiveBG.SetActive(false);
+                if(MainManager.Instance.tutoActive == 1) //Premier lancement du tuto, arrive dans Main
+                {
+                    dialog = Resources.Load<Dialog>("Dialogue/" + language + "Intro");
+                }
 
+                pelerinBG = opacity.transform.GetChild(1).gameObject;
+                pelerinBG.SetActive(false);
+                coinsBG = opacity.transform.GetChild(2).gameObject;
+                coinsBG.SetActive(false);
+                ressourceBG = opacity.transform.GetChild(3).gameObject;
+                ressourceBG.SetActive(false);
+                objectiveBG = opacity.transform.GetChild(4).gameObject;
+                objectiveBG.SetActive(false);
 
-            bertrandTwo = GameObject.Find("BertrandDialog 2");
-            bertrandTwo.SetActive(false);
-            if (MainManager.Instance.tutoActive == 2) //retour de la cathédrale
-            {  
-                dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 5");
-            }
-            AdvanceMonologue();    
+                bertrandTwo = GameObject.Find("BertrandDialog 2");
+                bertrandTwo.SetActive(false);
 
-            //buttonTutorial = GameObject.Find("Question Button");
-            buttonTutorial.SetActive(false);
-            if(GameObject.Find("Cathedrale") != null)
-            {
-                
+                AdvanceMonologue();
 
                 //autre
                 anim = GameObject.Find("Main Camera").GetComponent<Animator>();
@@ -83,6 +80,25 @@ public class DialogDisplay : MonoBehaviour
                 nextButton = GameObject.Find("NextButton");
                 nextButton.SetActive(false);
             }
+            else if(MainManager.Instance.tutoActive == 1) { //dans la cathédrale
+                dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 3");
+            }
+
+            if (MainManager.Instance.tutoActive == 1)
+            {
+                fullBG.SetActive(true);
+            }
+            else if (MainManager.Instance.tutoActive == 2) //retour de la cathédrale
+            {  
+                dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 5");
+                AdvanceMonologue();
+
+            }
+
+
+            //buttonTutorial = GameObject.Find("Question Button");
+            buttonTutorial.SetActive(false);
+            
             
         }
         else

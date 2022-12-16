@@ -23,7 +23,7 @@ MonoBehaviour:
       comme nous venons de le voir.\r"
     questionTuto: 0
   - text: "Les p\xE8lerins sp\xE9ciaux. Ils apportent les m\xEAmes ressources que
-      les p\xE8lerins mais \xE9galement des objets sp\xE9ciaux, restez attentif !\r\nLes
+      les p\xE8lerins mais \xE9galement des objets sp\xE9ciaux, restez attentif !\n\r\nLes
       artisans, qui apportent du SAVOIR-FAIRE mais co\xFBtent de l\u2019OR \xE0 recruter.\r\n"
     questionTuto: 0
   - text: "Enfin, les voleurs ! \nIls se d\xE9guisent en p\xE8lerins et une fois

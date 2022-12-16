@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: Tuto 6
   m_EditorClassIdentifier: 
   lines:
-  - text: "Regardez ! L\u2019OR et la FOI de la cit\xE9 ont augment\xE9 !\n"
+  - text: "Look ! GOLD and FAITH of the city increased. \r\n"
     questionTuto: 0
-  - text: "Les deux autres \xE9l\xE9ments sont le SAVOIR-FAIRE et le nombre d\u2019artisans
-      de la ville.\r\n\nChaque choix de personnage va avoir une influence sur ces
-      param\xE8tres, choisissez en cons\xE9quence.\r"
+  - text: "The other two elements are SKILLS and the number of craftsmen present
+      in the city. \r\n\nEach choice will have an influence on these parameters.
+      Choose wisely.\r\n"
     questionTuto: 0
-  - text: "Il existe diff\xE9rents types de personnages recrutables : \r\nLes p\xE8lerins,
-      comme nous venons de le voir.\r"
+  - text: "There are different types of recruitable characters: \r\nPilgrims, as
+      we just saw. "
     questionTuto: 0
-  - text: "Les p\xE8lerins sp\xE9ciaux. Ils apportent les m\xEAmes ressources que
-      les p\xE8lerins mais \xE9galement des objets sp\xE9ciaux, restez attentif !\r\nLes
-      artisans, qui apportent du SAVOIR-FAIRE mais co\xFBtent de l\u2019OR \xE0 recruter.\r\n"
+  - text: "Special pilgrims: they bring the same resources as regular pilgrims but
+      they also bring particular objects. Stay alert ! \r\n\nCraftsman: they bring
+      SKILLS but cost GOLD to recruit. \n"
     questionTuto: 0
-  - text: "Enfin, les voleurs ! \nIls se d\xE9guisent en p\xE8lerins et une fois
-      recrut\xE9s, vous volent de l\u2019OR. \n"
+  - text: 'Finally, thieves ! They are disguised as regular pilgrims and once recruited
+      they steal GOLD. '
     questionTuto: 0
-  - text: "Les autres p\xE8lerins de la cit\xE9 ne se sentent pas en s\xE9curit\xE9
-      et s'arr\xEAtent moins \xE0 Saint Bertrand. Cela baisse donc aussi la FOI de
-      la cit\xE9. \nFaites attention !\r"
+  - text: "Other pilgrims of the city don\u2019t feel safe and will stop less in
+      Saint Bertrand. Thus, decreasing FAITH of the city as well. \nBe careful ! 
+      \r"
     questionTuto: 0
-  - text: "Ce choix de personnages va servir \xE0 atteindre les objectifs de l\u2019Age
-      dans lequel vous \xE9voluez.\r"
+  - text: "The choices will help you complete the objectives of the era you are playing.
+      \r\n"
     questionTuto: 0
-  - text: Touchez l'onglet objectifs !
+  - text: "Click on the objectives panel! \r\n"
     questionTuto: 0

@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Tuto
   m_EditorClassIdentifier: 
   lines:
-  - text: "Bienvenue sur le tutoriel !\r"
+  - text: 'Welcome to the tutorial !
+
+'
     questionTuto: 0
-  - text: "Vous voyez la ville derri\xE8re moi ? C\u2019est la cit\xE9 de Saint Bertrand
-      de Comminges !\r"
+  - text: "You see the city behind me? It is the city of Saint Bertrand de Comminges!
+      \r"
     questionTuto: 0
-  - text: "Les diff\xE9rents lieux importants et accessibles appara\xEEtront en couleur
-      ici.\n\r\nEssayez de la faire tourner !\r\n"
+  - text: "You will find places that are important and accessible here in colours.
+      \r\nTouch the city and try to make it turn around! \r\n"
     questionTuto: 0

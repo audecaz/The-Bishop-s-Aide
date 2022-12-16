@@ -27,19 +27,19 @@ public class MenuManager : MonoBehaviour
 
         if (buttonTouched == "ButtonFrench")
         {
-            MainManager.Instance.Language = 1;
+            MainManager.Instance.Language = "fr";
             Debug.Log("Français !");
         }
         else
         {
-            MainManager.Instance.Language = 2;
+            MainManager.Instance.Language = "eng";
             Debug.Log("Anglais !");
         }
     }
 
     public void startGame()
     {
-        if(MainManager.Instance.Language != 0)
+        if(MainManager.Instance.Language != null)
         {
             SceneManager.LoadScene(1);
         }

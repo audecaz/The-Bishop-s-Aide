@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: Tuto 7
   m_EditorClassIdentifier: 
   lines:
-  - text: "Voici tous les objectifs que vous devez remplir pour terminer l\u2019Age
-      !\r\nN\u2019h\xE9sitez pas \xE0 les consulter r\xE9guli\xE8rement.\r\n"
+  - text: 'Here you will find all the objectives you need to fulfill to finish the
+      era!
+
+      Consult them regularly.
+
+'
     questionTuto: 0
-  - text: "Attention, certains \xE9v\xE9nements al\xE9atoires pourraient ralentir
-      votre progression comme ils pourraient vous aider\u2026\r\n"
+  - text: "One last thing, some random events can slow down your progression as well
+      as help you\u2026\r\n"
     questionTuto: 0
-  - text: Bonne chance !
+  - text: "Good luck ! \r\n"
     questionTuto: 0

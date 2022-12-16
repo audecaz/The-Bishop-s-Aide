@@ -29,7 +29,6 @@ MonoBehaviour:
       l\u2019histoire de Saint Bertrand de Comminges du XIII\xE8me au XVI\xE8me si\xE8cle
       !\r\n"
     questionTuto: 0
-  - text: 'Voulez vous jouer au tutoriel ?
-
-'
+  - text: "Voulez vous jouer au tutoriel ?\n(Le suivi du tutoriel est fortement conseill\xE9e
+      pour une premi\xE8re partie)\r\n"
     questionTuto: 1

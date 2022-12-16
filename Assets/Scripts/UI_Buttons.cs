@@ -11,7 +11,7 @@ public class UI_Buttons : MonoBehaviour
     {
         if (!MainManager.Instance.popupOpen)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }

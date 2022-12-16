@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tuto 4
   m_EditorClassIdentifier: 
   lines:
-  - text: "Revenez ici d\xE8s que vous obtiendrez un nouvel objet !\n"
+  - text: Come back here whenever you obtain a new object !
     questionTuto: 0
-  - text: "Maintenant retournons \xE0 l'ext\xE9rieur de la cit\xE9."
+  - text: Let's go back outside now.
     questionTuto: 0

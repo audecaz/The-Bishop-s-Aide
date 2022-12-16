@@ -435,7 +435,7 @@ Transform:
   m_Children:
   - {fileID: 185247014}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &56119298
 GameObject:
@@ -803,7 +803,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -32.38, z: 0}
 --- !u!1 &83099837
 GameObject:
@@ -1359,6 +1359,7 @@ MonoBehaviour:
   cathedrale: {fileID: 0}
   bertrand: {fileID: 1675826764}
   opacity: {fileID: 153072138}
+  language: 
 --- !u!1001 &206415632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2014,7 +2015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1218, y: 1028}
+  m_AnchoredPosition: {x: 1218, y: 978}
   m_SizeDelta: {x: 12.830078, y: 2.4056396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &369685352
@@ -2802,7 +2803,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -3967,7 +3968,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
   m_Value: 1.0000014
-  m_Size: 0.7116151
+  m_Size: 0.7120117
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4334,6 +4335,57 @@ MonoBehaviour:
   job: 0
   ressourceOne: 5
   ressourceTwo: 4
+--- !u!1 &535051466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535051467}
+  - component: {fileID: 535051468}
+  m_Layer: 0
+  m_Name: Question
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535051467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535051466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 750619361}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535051468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535051466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a1666ed13446644941db69a06ffc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - text: {fileID: 1173572734}
+    fr: Oui
+    eng: Yes
+  - text: {fileID: 1853666207}
+    fr: Non
+    eng: No
 --- !u!1 &536641911
 GameObject:
   m_ObjectHideFlags: 0
@@ -5898,6 +5950,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732757532}
   m_CullTransparentMesh: 1
+--- !u!1 &750619359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 750619361}
+  m_Layer: 0
+  m_Name: LanguageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &750619361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750619359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -639.55304, y: -20.854965, z: 2454.2712}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1704544124}
+  - {fileID: 535051467}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &750981787
 GameObject:
   m_ObjectHideFlags: 0
@@ -6680,7 +6765,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889289109
 GameObject:
@@ -7915,7 +8000,7 @@ RectTransform:
   m_Children:
   - {fileID: 1597220254}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8290,7 +8375,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095404051
 GameObject:
@@ -10127,7 +10212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OBJECTIFS
+  m_text: OBJECTIFS //
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10527,7 +10612,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424961495
 GameObject:
@@ -11043,7 +11128,7 @@ RectTransform:
   - {fileID: 529253103}
   - {fileID: 708946709}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11759,7 +11844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51035}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51038}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -12094,7 +12179,7 @@ RectTransform:
   - {fileID: 1384961418}
   - {fileID: 28419258}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12305,6 +12390,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679883894}
   m_CullTransparentMesh: 1
+--- !u!1 &1704544123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704544124}
+  - component: {fileID: 1704544125}
+  m_Layer: 0
+  m_Name: Objectifs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704544124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704544123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 750619361}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704544125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704544123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a1666ed13446644941db69a06ffc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - text: {fileID: 1353859200}
+    fr: OBJECTIFS
+    eng: OBJECTIVES
+  - text: {fileID: 732757534}
+    fr: Obtenir 650 d'OR
+    eng: Gain 650 of GOLD
+  - text: {fileID: 402284046}
+    fr: Obtenir 550 de FOI
+    eng: Gain 550 of FAITH
+  - text: {fileID: 369685354}
+    fr: Atteindre 275 de SAVOIR FAIRE
+    eng: Reach 275 of SKILL
+  - text: {fileID: 649857666}
+    fr: "Construire le choeur et l'orgue de la cath\xE9drale"
+    eng: Build the choir and organ of the cathedral
+  - text: {fileID: 1714069777}
+    fr: Accueillir Nicolas Bachelier
+    eng: Enlist Nicolas Bachelier
+  - text: {fileID: 57790379}
+    fr: Recruter 5 artisans
+    eng: Recrut 5 craftmen
+  - text: {fileID: 1585626327}
+    fr: Payer 20 d'OR
+    eng: Pay 20 of GOLD
+  - text: {fileID: 1875667478}
+    fr: "R\xE9cup\xE9rer la corne de licorne"
+    eng: Get the licorn horn back
+  - text: {fileID: 940659474}
+    fr: "Recruter 2 artisans pour les r\xE9parations"
+    eng: Recrut 2 craftmen for the repairs
 --- !u!1 &1704900753
 GameObject:
   m_ObjectHideFlags: 0
@@ -14089,7 +14249,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1968129499
 GameObject:
@@ -14982,7 +15142,7 @@ RectTransform:
   - {fileID: 207648077}
   - {fileID: 195611574}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15409,7 +15569,7 @@ Transform:
   - {fileID: 1309943770}
   - {fileID: 1434894633}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2124578784
 MonoBehaviour:
@@ -15521,7 +15681,7 @@ RectTransform:
   - {fileID: 986272649}
   - {fileID: 889289110}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

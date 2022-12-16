@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tuto 3
   m_EditorClassIdentifier: 
   lines:
-  - text: "Vous voil\xE0 dans la cath\xE9drale Notre Dame de Saint Bertrand de Comminges.\r\nIci
-      vous pouvez glisser-d\xE9poser les objets sp\xE9ciaux que vous acqu\xE9rez
-      ou construisez tout au long de l\u2019Age !\r\n"
+  - text: "You are now in the cathedral Notre Dame de Saint Bertrand de Comminges.
+      \r\nHere, you can drag and drop the objects you acquire or build during the
+      era! \r\n"
     questionTuto: 0

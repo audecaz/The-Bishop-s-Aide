@@ -27,5 +27,6 @@ MonoBehaviour:
       profiles benefitting the city in the crowd of pilgrims entering it. \r\nDiscover
       Saint Bertrand de Comminges\u2019 history from the 13th to the 15th centuries. "
     questionTuto: 0
-  - text: "Do you want to play the tutorial? \n"
+  - text: "Do you want to play the tutorial? \r\n(Playing the tutorial is highly
+      recommended for a first try)\r"
     questionTuto: 1

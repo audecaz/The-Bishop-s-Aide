@@ -8,7 +8,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
 
     public static MainManager Instance;
 
-    public int Language = -1;
+    public string Language;
 
 
     public int GoldCount = 500;

@@ -13,16 +13,21 @@ MonoBehaviour:
   m_Name: Tuto 5
   m_EditorClassIdentifier: 
   lines:
-  - text: "Pour revenir sur la cit\xE9, il vous suffira de la toucher.\r\n\n"
+  - text: 'To come back to the city''s view, a simple touch on it will bring you
+      back there.
+
+'
     questionTuto: 0
-  - text: "Passons maintenant \xE0 la s\xE9lection des p\xE8lerins.\r"
+  - text: "Now, let\u2019s move on to the pilgrims' selection. \r"
     questionTuto: 0
-  - text: "Devant vous se pr\xE9sente un choix de personnages. \r\nTous entreront
-      dans la cit\xE9 mais il ne tient qu\u2019\xE0 vous de les recruter pour vous
-      aider \xE0 d\xE9velopper la ville.\r"
+  - text: "You are presented with a choice between different characters.\r\nEach
+      one will enter the city but it is up to you to recruit them to help you develop
+      the city. \r\n"
     questionTuto: 0
-  - text: "Chaque personnage a des statistiques diff\xE9rentes. \nCertains apportent
-      de l\u2019OR, d\u2019autres augmentent la FOI ou encore le SAVOIR-FAIRE.\r\n"
+  - text: 'Each character has different statistics. Some bring GOLD, some increase
+      FAITH and lastly some increase SKILLS.
+
+'
     questionTuto: 0
-  - text: "Celui-ci me semble le plus int\xE9ressant, recrutons le !\r\n"
+  - text: "This one looks the most interesting, let\u2019s recruit him! \r"
     questionTuto: 0
