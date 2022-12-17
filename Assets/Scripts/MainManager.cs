@@ -32,6 +32,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
 
     public bool objectiveOpen = false;
     public bool popupOpen = false;
+    public bool tutoActive = true;
 
     public GameObject pelerinInfos; //Instance des informations sur les pelerins
 

@@ -28,7 +28,7 @@ public class ObjectiveSlider : MonoBehaviour
     {
         if(timerSlider <= 0 && !PopUp_Manager.InstanceFact.IsActive)
         {
-            timerSlider = 1f; //initialise le cooldown du saut 
+            timerSlider = 1f; //initialise le cooldown du slider 
             if (ObjectivePanel != null)
             {
 
