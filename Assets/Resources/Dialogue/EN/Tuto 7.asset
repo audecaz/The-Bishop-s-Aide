@@ -16,12 +16,12 @@ MonoBehaviour:
   - text: 'Here you will find all the objectives you need to fulfill to finish the
       era!
 
-      Consult them regularly.
+      <b>Consult them regularly.</b>
 
 '
     questionTuto: 0
   - text: "One last thing, some random events can slow down your progression as well
       as help you\u2026\r\n"
     questionTuto: 0
-  - text: "Good luck ! \r\n"
+  - text: "<b>Good luck ! \r</b>\n"
     questionTuto: 0

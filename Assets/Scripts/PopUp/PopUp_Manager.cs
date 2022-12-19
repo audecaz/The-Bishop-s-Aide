@@ -570,7 +570,7 @@ public class PopUp_Manager : MonoBehaviour
         {
             FactTitle.SetText("Le choeur de la cathédrale");
             FactContent.SetText("Il visait à <b>séparer les chanoines du peuple et des pèlerins</b> lors des célébrations en créant une zone fermée au sein même de la cathédrale. \r\n \r\n" +
-            "Ce jubé est composé de <b>66 stalles sculptées</b> particulièrement riches en détails.");
+            "Ce jubé est composé de <b>66 stalles sculptées </b> particulièrement riches en détails.");
         }
         else
         {

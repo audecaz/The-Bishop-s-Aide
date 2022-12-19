@@ -15,18 +15,19 @@ MonoBehaviour:
   lines:
   - text: "Hello and welcome on [GameName]! \r"
     questionTuto: 0
-  - text: "My name is Bertrand de Goth, bishop of Comminges from 1294 to 1299.\r\nContrary
-      to what you may think, I am not Saint Bertrand. He is one of my predecessors:
-      Bertrand de l\u2019Isle who was bishop here from 1073 to 1123."
+  - text: "My name is <b>Bertrand de Goth</b>, bishop of Comminges from 1294 to 1299.\r\nContrary
+      to what you may think, <b>I am not Saint Bertrand</b>. He is one of my predecessors:
+      <b>Bertrand de l\u2019Isle</b> who was bishop here from 1073 to 1123."
     questionTuto: 0
   - text: "One of my missions is to elevate the city of Saint Bertrand de Comminges
-      to the rank of pilgrim city with a strong influence around. \r\nAnd to this
-      end, I need your help! \r"
+      to the rank of <b>pilgrim city </b>with a strong influence around. \r\n<b>And
+      to this end, I need your help! \r</b>"
     questionTuto: 0
-  - text: "Complete the Era\u2019s objectives by recruiting characters with interesting
-      profiles benefitting the city in the crowd of pilgrims entering it. \r\nDiscover
-      Saint Bertrand de Comminges\u2019 history from the 13th to the 15th centuries. "
+  - text: "Complete the Era\u2019s <b>objectives by recruiting characters </b>with
+      interesting profiles benefitting the city in the crowd of pilgrims entering
+      it. \r\nDiscover <b>Saint Bertrand de Comminges\u2019 history </b>from the
+      13th to the 15th centuries. "
     questionTuto: 0
-  - text: "Do you want to play the tutorial? \r\n(Playing the tutorial is highly
-      recommended for a first try)\r"
+  - text: "Do you want to play the tutorial? \r\n<i>(Playing the tutorial is highly
+      recommended for a first try)\r</i>"
     questionTuto: 1

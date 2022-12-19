@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tuto 2
   m_EditorClassIdentifier: 
   lines:
-  - text: Very well, now touch the cathedral
+  - text: Very well, now<b> touch the cathedral </b>
     questionTuto: 0

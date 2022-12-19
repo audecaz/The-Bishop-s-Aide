@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tuto 4
   m_EditorClassIdentifier: 
   lines:
-  - text: Come back here whenever you obtain a new object !
+  - text: Come back here <b>whenever you obtain a new object</b> !
     questionTuto: 0
   - text: Let's go back outside now.
     questionTuto: 0

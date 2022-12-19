@@ -16,25 +16,25 @@ MonoBehaviour:
   - text: "Look ! GOLD and FAITH of the city increased. \r\n"
     questionTuto: 0
   - text: "The other two elements are SKILLS and the number of craftsmen present
-      in the city. \r\n\nEach choice will have an influence on these parameters.
-      Choose wisely.\r\n"
+      in the city. \r\n\nEach choice will have an influence on these parameters<b>.
+      Choose wisely.\r</b>\n"
     questionTuto: 0
-  - text: "There are different types of recruitable characters: \r\nPilgrims, as
-      we just saw. "
+  - text: "There are different types of recruitable characters: \r\n\n<b>Pilgrims</b>,
+      as we just saw. "
     questionTuto: 0
-  - text: "Special pilgrims: they bring the same resources as regular pilgrims but
-      they also bring particular objects. Stay alert ! \r\n\nCraftsman: they bring
-      SKILLS but cost GOLD to recruit. \n"
+  - text: "<b>Special pilgrims </b>: they bring the same resources as regular pilgrims
+      but they also bring particular objects. Stay alert ! \r\n\n<b>Craftsman:</b>
+      they bring SKILLS but cost GOLD to recruit. \n"
     questionTuto: 0
-  - text: 'Finally, thieves ! They are disguised as regular pilgrims and once recruited
-      they steal GOLD. '
+  - text: 'Finally, <b>thieves </b>! They are disguised as regular pilgrims and once
+      recruited they steal GOLD. '
     questionTuto: 0
   - text: "Other pilgrims of the city don\u2019t feel safe and will stop less in
-      Saint Bertrand. Thus, decreasing FAITH of the city as well. \nBe careful ! 
-      \r"
+      Saint Bertrand. Thus, decreasing FAITH of the city as well. \n\n<b>Be careful
+      !  \r</b>"
     questionTuto: 0
   - text: "The choices will help you complete the objectives of the era you are playing.
       \r\n"
     questionTuto: 0
-  - text: "Click on the objectives panel! \r\n"
+  - text: "<b>Click on the objectives panel ! </b> \r\n"
     questionTuto: 0
