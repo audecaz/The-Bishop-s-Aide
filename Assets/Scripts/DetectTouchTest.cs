@@ -35,9 +35,9 @@ public class DetectTouchTest : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    //Debug.Log(hit.collider.gameObject.name);
+                    Debug.Log(hit.collider.gameObject.name);
                     
-                    if (hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false && (!tutorial.activeSelf || MainManager.Instance.tutoActive <= 0))
+                    if (hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false && (!tutorial.activeSelf || MainManager.Instance.tutoActive <= 0) && !MainManager.Instance.finished)
                     {   
                         //Debug.Log(hit.collider.gameObject.name);
                         chosenChara = hit.collider.gameObject;//récupère le personnage sélectionné
@@ -151,14 +151,18 @@ public class DetectTouchTest : MonoBehaviour
             }
 
             //Test du touch des ressources de l'UI
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.CompareTag("Ressource")) //si le touch touche un objet et tag ressource
+            if(MainManager.Instance.tutoActive == 0)
             {
-                UI_Buttons.TouchRessource(hit.collider.gameObject);
+                if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.CompareTag("Ressource")) //si le touch touche un objet et tag ressource
+                {
+                    UI_Buttons.TouchRessource(hit.collider.gameObject);
+                }
+                else //si touche juste l'écran ailleurs
+                {
+                    UI_Buttons.CloseRessource();
+                }
             }
-            else //si touche juste l'écran ailleurs
-            {
-                UI_Buttons.CloseRessource();
-            }
+            
         }
     }
 }

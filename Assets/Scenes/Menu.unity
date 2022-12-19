@@ -2294,9 +2294,11 @@ MonoBehaviour:
   IsHornPlaced: 1
   IsCrocoPlaced: 0
   Incendie: 0
+  RessourceUI: 0
   objectiveOpen: 0
   popupOpen: 0
-  tutoActive: 0
+  tutoActive: 1
+  allObjectives: 0
   pelerinInfos: {fileID: 2104769861}
 --- !u!4 &2103858215
 Transform:

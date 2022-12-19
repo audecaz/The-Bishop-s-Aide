@@ -64,6 +64,10 @@ public class PopUp_Manager : MonoBehaviour
         MainManager.Instance.popupOpen = false;
         FactPicto.enabled = false;
 
+        if (MainManager.Instance.allObjectives)
+        {
+            Debug.Log("fin du jeu");
+        }
     }
 
     //POPUPS FACTS HISTORIQUES
@@ -679,6 +683,35 @@ public class PopUp_Manager : MonoBehaviour
         Open(FactEvent);
     }
 
+    public void PopUpAllObjetives()
+    {
+        MainManager.Instance.allObjectives = true;
+
+        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+        {
+            //Debug.Log("popup déjà ouverte !");
+            StartCoroutine(PopUpWait(PopUpAllObjetives));
+        }
+        else
+        {
+            if (MainManager.Instance.Language == "fr")
+            {
+                FactTitle.SetText("Félicitations !");
+                FactContent.SetText("Tous les objectifs ont été remplis et vous avez obtenu tous les objets liés à cet Age ! \r\n  \r\n" +
+                "Rendez vous dans la cathédrale, <b>placez les éléments à leur place et revenez ici pour compléter l'Age. \r\n</b>");
+            }
+            else
+            {
+                FactTitle.SetText("Congratulations !");
+                FactContent.SetText("All the objectives have been completed and you’ve obtained all the important objects of this Age. \r\n  \r\n" +
+                "Now go to the cathedral, <b>put every object into place and come back here to complete the Age.</b>");
+            }
+
+            Open(FactEvent);
+
+        }
+    }
+
     //Permet de ne pas superposer les popups
     public IEnumerator PopUpWait(Action functionName)
     {
@@ -723,7 +756,7 @@ public class PopUp_Manager : MonoBehaviour
                     PopUpEpidemie();
 
                 }
-                else
+                else if(!MainManager.Instance.Incendie)
                 {
                     PopUpIncendie();
 

@@ -30,6 +30,9 @@ public class DialogDisplay : MonoBehaviour
 
     private int activeLineIndex = 0;
 
+    //END
+    public GameObject endButtonMenu;
+
     public string language;
 
     private void Start()
@@ -119,6 +122,12 @@ public class DialogDisplay : MonoBehaviour
                 AdvanceMonologue();
             }
         }
+        if(MainManager.Instance.tutoActive == 10)
+        {
+            dialog = Resources.Load<Dialog>("Dialogue/" + language + "End");
+            AdvanceMonologue();
+            MainManager.Instance.tutoActive = 11;
+        }
         //Debug.Log(bertrand.activeSelf);
 
     }
@@ -190,6 +199,10 @@ public class DialogDisplay : MonoBehaviour
             else if(dialog.name == "Tuto 6")
             {
                 StartCoroutine(WaitTouchObjectives());
+            }else if(dialog.name == "End")
+            {
+                tutorial.SetActive(false);
+                endButtonMenu.SetActive(true);
             }
             else //sort du tuto
             {

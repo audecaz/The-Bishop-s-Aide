@@ -39,7 +39,7 @@ public class MenuManager : MonoBehaviour
 
     public void startGame()
     {
-        if(MainManager.Instance.Language != null)
+        if(MainManager.Instance.Language != "0")
         {
             SceneManager.LoadScene(1);
         }

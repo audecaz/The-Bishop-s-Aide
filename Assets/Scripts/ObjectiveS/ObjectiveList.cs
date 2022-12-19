@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -118,12 +119,13 @@ public class ObjectiveList : MonoBehaviour
 
             if (objFourRempli == false && !MainManager.Instance.IsChoirGotten)
             {
-                objFourRempli = true;
                 MainManager.Instance.IsChoirGotten = true;
                 MainManager.Instance.GoldCount -= 20; //paye l'objet une fois
                 PopUp_Manager.InstanceFact.PopUpOrgueChoeur();            
             
             }
+            objFourRempli = true;
+
 
         }
 
@@ -201,6 +203,110 @@ public class ObjectiveList : MonoBehaviour
             objSixRempli = false;
 
         }
+
+        //CONDITIONS DE FIN
+        if (MainManager.Instance.allObjectives == false && !MainManager.Instance.allPlaced && !MainManager.Instance.finished)
+        {
+            if (MainManager.Instance.Incendie && MainManager.Instance.HornStolen) //les 2 objectifs facultatifs ont été débloqués
+            {
+                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli && objFiveRempli && objSixRempli)
+                {
+                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced && MainManager.Instance.IsCrocoPlaced) //Tous les objets sont placés
+                    {
+                        Debug.Log("affiche fin !");
+                        EndManager.openEnd();
+                    }
+                    else //Il faut les placer
+                    {
+                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                        MainManager.Instance.allPlaced = false;
+                    }
+                }
+
+            }
+            else if (MainManager.Instance.Incendie)
+            {
+                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli && objSixRempli)
+                {
+                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced) //Tous les objets sont placés
+                    {
+                        Debug.Log("affiche fin !");
+
+                        EndManager.openEnd();
+
+                        //Animation de fin
+                    }
+                    else //Il faut les placer
+                    {
+                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                        MainManager.Instance.allPlaced = false;
+                    }
+                }
+
+            }
+            else if (MainManager.Instance.HornStolen)
+            {
+                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli && objFiveRempli)
+                {
+                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced) //Tous les objets sont placés
+                    {
+                        Debug.Log("affiche fin !");
+
+                        EndManager.openEnd();
+
+                        //Animation de fin
+                    }
+                    else //Il faut les placer
+                    {
+                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                        MainManager.Instance.allPlaced = false;
+                    }
+                }
+            }
+            else  // aucun des 2 objectifs facultatifs
+            {
+                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli)
+                {
+                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced) //Tous les objets sont placés
+                    {
+                        Debug.Log("affiche fin !");
+
+                        EndManager.openEnd();
+
+                        //Animation de fin
+                    }
+                    else //Il faut les placer
+                    {
+                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                        MainManager.Instance.allPlaced = false;
+                    }
+                }
+            }
+
+            
+        }
+
+        if (MainManager.Instance.allPlaced == false)
+        {
+            if (MainManager.Instance.IsCrocoHere)
+            {
+                if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced && MainManager.Instance.IsCrocoPlaced)
+                {
+                    MainManager.Instance.allPlaced = true;
+                }
+            }
+            else if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced)
+            {
+                MainManager.Instance.allPlaced = true;
+            }
+        }
+
+
+        if (MainManager.Instance.allObjectives && MainManager.Instance.allPlaced && SceneManager.GetActiveScene().name == "Main" && !MainManager.Instance.finished)
+        {
+            EndManager.openEnd();
+        }
+
     }
 
     void IfComplete(TextMeshProUGUI objective, bool isComplete)

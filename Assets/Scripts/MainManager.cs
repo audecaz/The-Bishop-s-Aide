@@ -36,7 +36,11 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
 
     public bool objectiveOpen = false;
     public bool popupOpen = false;
-    public int tutoActive = 1; // 0 désactivé, 1 activé première partie, 2 activé retour dans Main, -1 sélection forcée de pèlerin, 3 après selection du pelerin, 4 au moment de toucher les objectifs
+    public int tutoActive = 1; // 0 désactivé, 1 activé première partie, 2 activé retour dans Main, -1 sélection forcée de pèlerin, 3 après selection du pelerin, 4 au moment de toucher les objectifs, 10 end
+
+    public bool allObjectives = false;
+    public bool finished = false;
+    public bool allPlaced;
 
     public GameObject pelerinInfos; //Instance des informations sur les pelerins
 
