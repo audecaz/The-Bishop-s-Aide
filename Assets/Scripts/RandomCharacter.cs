@@ -89,54 +89,133 @@ public class RandomCharacter : MonoBehaviour
 
                 if (jobLocal == 0 || jobLocal == 2) //si pelerin
                 {
-                    if (jobLocal == 2)
+                    if (MainManager.Instance.Language == "fr")
                     {
-                        jobTextLocal.SetText("Voleur");
+                        if (jobLocal == 2)
+                        {
+                            jobTextLocal.SetText("Voleur");
+                        }
+                        else
+                        {
+                            jobTextLocal.SetText("Pèlerin");
+                        }
+                        ROneTextLocal.SetText("OR : +" + ressourceOneLocal);
+                        RTwoTextLocal.SetText("FOI : +" + ressourceTwoLocal);
                     }
-                    else
+                    else //eng
                     {
-                        jobTextLocal.SetText("Pèlerin");
+                        if (jobLocal == 2)
+                        {
+                            jobTextLocal.SetText("Thief");
+                        }
+                        else
+                        {
+                            jobTextLocal.SetText("Pilgrim");
+                        }
+                        ROneTextLocal.SetText("GOLD : +" + ressourceOneLocal);
+                        RTwoTextLocal.SetText("FAITH : +" + ressourceTwoLocal);
                     }
-                    ROneTextLocal.SetText("OR : +" + ressourceOneLocal);
-                    RTwoTextLocal.SetText("FOI : +" + ressourceTwoLocal);
+                        
                 }
-                else if (jobLocal == 3)
-                {
-                    jobTextLocal.SetText("Pèlerin Spé");
-                    ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
-                    if (ressourceTwoLocal == 12)
-                    {
-                        RTwoTextLocal.SetText("Calice en or : +12 d'OR");
-                    }
-                    else
-                    {
-                        RTwoTextLocal.SetText("Coffre précieux : +15 d'OR");
-                    }
-                }
-                else if (jobLocal == 4)
+                else if (jobLocal == 4) //Nicolas Bachelier 
                 {
                     jobTextLocal.SetText("Nicolas Bachelier");
-                    ROneTextLocal.SetText("Architecte");
-                    RTwoTextLocal.SetText("");
+
+                    if (MainManager.Instance.Language == "fr")
+                    {
+                        RTwoTextLocal.SetText("Architecte");
+                    }
+                    else
+                    {
+                        RTwoTextLocal.SetText("Architect");
+                    }
+                    ROneTextLocal.SetText("");
+
                 }
-                else if (jobLocal == 5)
+                else if(jobLocal == 1)// Artisan
                 {
-                    jobTextLocal.SetText("Pèlerin Spé");
-                    ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
-                    RTwoTextLocal.SetText("Corne de licorne");
+                    if (MainManager.Instance.Language == "fr")
+                    {
+                        jobTextLocal.SetText("Artisan");
+                        ROneTextLocal.SetText("SAVOIR FAIRE: +" + ressourceOneLocal);
+                        RTwoTextLocal.SetText("OR : -" + ressourceTwoLocal);
+                    }
+                    else
+                    {
+                        jobTextLocal.SetText("Craftman");
+                        ROneTextLocal.SetText("SKILLS: +" + ressourceOneLocal);
+                        RTwoTextLocal.SetText("GOLD : -" + ressourceTwoLocal);
+                    }
+                        
                 }
-                else if (jobLocal == 6)
+                else //pelerin spécial
                 {
-                    jobTextLocal.SetText("Pèlerin Spé");
-                    ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
-                    RTwoTextLocal.SetText("Crocodile empaillé");
+                    //nom pèlerin selon langue
+                    if(MainManager.Instance.Language == "fr")
+                    {
+                        jobTextLocal.SetText("Pèlerin Spé");
+                    }
+                    else
+                    {
+                        jobTextLocal.SetText("Special Pilgrim");
+                    }
+
+                    if (jobLocal == 3) //pèlerin avec objet classique
+                    {
+                        if (MainManager.Instance.Language == "fr")
+                        {
+                            ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
+                            if (ressourceTwoLocal == 12)
+                            {
+                                RTwoTextLocal.SetText("Calice en or : +12 d'OR");
+                            }
+                            else
+                            {
+                                RTwoTextLocal.SetText("Coffre précieux : +15 d'OR");
+                            }
+                        }
+                        else //eng
+                        {
+                            ROneTextLocal.SetText("FAITH : +" + ressourceOneLocal);
+                            if (ressourceTwoLocal == 12)
+                            {
+                                RTwoTextLocal.SetText("Golden Calice : +12 GOLD");
+                            }
+                            else
+                            {
+                                RTwoTextLocal.SetText("Precious Chest : +15 GOLD");
+                            }
+                        }  
+                    }
+                    else if (jobLocal == 5) //pelerin licorne
+                    {
+                        if (MainManager.Instance.Language == "fr")
+                        {
+                            ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
+                            RTwoTextLocal.SetText("Corne de licorne");
+                        }
+                        else //eng
+                        {
+                            ROneTextLocal.SetText("FAITH : +" + ressourceOneLocal);
+                            RTwoTextLocal.SetText("Unicorn Horn");
+                        }
+                    }
+                    else if (jobLocal == 6)
+                    {
+                        if (MainManager.Instance.Language == "fr")
+                        {
+                            ROneTextLocal.SetText("FOI : +" + ressourceOneLocal);
+                            RTwoTextLocal.SetText("Crocodile empaillé");
+                        }
+                        else // eng
+                        {
+                            ROneTextLocal.SetText("FAITH : +" + ressourceOneLocal);
+                            RTwoTextLocal.SetText("Stuffed Crocodile");
+                        }
+                            
+                    }
                 }
-                else // Artisan
-                {
-                    jobTextLocal.SetText("Artisan");
-                    ROneTextLocal.SetText("SAVOIR FAIRE: +" + ressourceOneLocal);
-                    RTwoTextLocal.SetText("OR : -" + ressourceTwoLocal);
-                }
+  
             }
         }
     }
@@ -168,8 +247,15 @@ public class RandomCharacter : MonoBehaviour
                 jobText.SetText("Nicolas Bachelier");
                 character.GetComponent<CharacterInfos>().job = 4;
 
-                ROneText.SetText("Architecte");
-                RTwoText.SetText("");
+                if (MainManager.Instance.Language == "fr")
+                {
+                    RTwoText.SetText("Architecte");
+                }
+                else
+                {
+                    RTwoText.SetText("Architect");
+                }
+                ROneText.SetText("");
             }
             else if(job == 1) // Artisan
             {
@@ -189,10 +275,21 @@ public class RandomCharacter : MonoBehaviour
                     skin.sprite = artisan3;
                 }
 
-                jobText.SetText("Artisan");
                 character.GetComponent<CharacterInfos>().job = 1;
-                ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
-                RTwoText.SetText("OR : -" + ressourceTwo);
+
+                if (MainManager.Instance.Language == "fr")
+                {
+                    jobText.SetText("Artisan");
+                    ROneText.SetText("SAVOIR FAIRE: +" + ressourceOne);
+                    RTwoText.SetText("OR : -" + ressourceTwo);
+                }
+                else
+                {
+                    jobText.SetText("Craftman");
+                    ROneText.SetText("SKILLS: +" + ressourceOne);
+                    RTwoText.SetText("GOLD : -" + ressourceTwo);
+                }
+                    
             }
             else { //pelerin
 
@@ -215,69 +312,135 @@ public class RandomCharacter : MonoBehaviour
 
                 if (job == 0 || job == 2) // pelerin "classique"
                 {
-                    
-                    if (job == 2)
+                    if (MainManager.Instance.Language == "fr")
                     {
-                        jobText.SetText("Voleur");
-                        character.GetComponent<CharacterInfos>().job = 2;
+                        if (job == 2)
+                        {
+                            jobText.SetText("Voleur");
+                            character.GetComponent<CharacterInfos>().job = 2;
+                        }
+                        else
+                        {
+                            jobText.SetText("Pèlerin");
+                            character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
+                        }
+
+                        ROneText.SetText("OR : +" + ressourceOne);
+                        RTwoText.SetText("FOI : +" + ressourceTwo);
                     }
                     else
                     {
-                        jobText.SetText("Pèlerin");
-                        character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
-                    }
+                        if (job == 2)
+                        {
+                            jobText.SetText("Thief");
+                            character.GetComponent<CharacterInfos>().job = 2;
+                        }
+                        else
+                        {
+                            jobText.SetText("Pilgrim");
+                            character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
+                        }
 
-                    ROneText.SetText("OR : +" + ressourceOne);
-                    RTwoText.SetText("FOI : +" + ressourceTwo);
+                        ROneText.SetText("GOLD : +" + ressourceOne);
+                        RTwoText.SetText("FAITH : +" + ressourceTwo);
+                    }
+                        
                 }
                 else //pèlerins spéciaux
                 {
-                    if (job == 5) // Corne de licorne
+                    if (MainManager.Instance.Language == "fr")
                     {
                         jobText.SetText("Pèlerin Spé");
+                    }
+                    else
+                    {
+                        jobText.SetText("Special Pilgrim");
+                    }
+
+                    if (job == 5) // Corne de licorne
+                    {
                         character.GetComponent<CharacterInfos>().job = 5;
 
-                        ROneText.SetText("FOI : +" + ressourceOne);
                         character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
 
-                        RTwoText.SetText("Corne de licorne");
                         ressourceTwo = 0;
                         character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+
+                        if (MainManager.Instance.Language == "fr")
+                        {
+                            ROneText.SetText("FOI : +" + ressourceOne);
+                            RTwoText.SetText("Corne de licorne");
+                        }
+                        else {
+                            ROneText.SetText("FAITH : +" + ressourceOne);
+                            RTwoText.SetText("Unicorn Horn");
+                        }
                     }
                     else if (job == 6) // crocodile
                     {
-                        jobText.SetText("Pèlerin Spé");
                         character.GetComponent<CharacterInfos>().job = 6;
 
-                        ROneText.SetText("FOI : +" + ressourceOne);
                         character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
 
-                        RTwoText.SetText("Crocodile empaillé");
                         ressourceTwo = 0;
                         character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+
+                        if (MainManager.Instance.Language == "fr")
+                        {
+                            ROneText.SetText("FOI : +" + ressourceOne);
+                            RTwoText.SetText("Crocodile empaillé");
+                        }
+                        else
+                        {
+                            ROneText.SetText("FAITH : +" + ressourceOne);
+                            RTwoText.SetText("Stuffed Crocodile");
+                        }
+
                     }
 
                     else if (job == 3) //objet autre
                     {
-                        jobText.SetText("Pèlerin Spé");
                         character.GetComponent<CharacterInfos>().job = 3;
 
-                        ROneText.SetText("FOI : +" + ressourceOne);
                         character.GetComponent<CharacterInfos>().ressourceOne = ressourceOne;
 
-                        int randomObject = Random.Range(0, 2);
-                        if (randomObject == 0)
+                        if (MainManager.Instance.Language == "fr")
                         {
-                            RTwoText.SetText("Calice en or : +12 d'OR");
-                            ressourceTwo = 12;
-                            character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                            ROneText.SetText("FOI : +" + ressourceOne);
+
+                            int randomObject = Random.Range(0, 2);
+                            if (randomObject == 0)
+                            {
+                                RTwoText.SetText("Calice en or : +12 d'OR");
+                                ressourceTwo = 12;
+                                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                            }
+                            else
+                            {
+                                RTwoText.SetText("Coffre précieux : +15 d'OR");
+                                ressourceTwo = 15;
+                                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                            }
                         }
                         else
                         {
-                            RTwoText.SetText("Coffre précieux : +15 d'OR");
-                            ressourceTwo = 15;
-                            character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                            ROneText.SetText("FAITH : +" + ressourceOne);
+
+                            int randomObject = Random.Range(0, 2);
+                            if (randomObject == 0)
+                            {
+                                RTwoText.SetText("Golden Calice : +12 GOLD");
+                                ressourceTwo = 12;
+                                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                            }
+                            else
+                            {
+                                RTwoText.SetText("Precious Chest : +15 GOLD");
+                                ressourceTwo = 15;
+                                character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
+                            }
                         }
+                            
                     }
                 }
                
