@@ -32,6 +32,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
 
     public bool Incendie = false;
 
+    public bool RessourceUI = false;  //false rien d'ouvert, true une ressource affichée
 
     public bool objectiveOpen = false;
     public bool popupOpen = false;
