@@ -320,12 +320,13 @@ public class PopUp_Manager : MonoBehaviour
 
             MainManager.Instance.Incendie = true;
             
+            /*
             if (!MainManager.Instance.HornStolen) // Si la corne n'a pas encore été volée et donc l'objectif pas apparu
             {
                 //inverse les position des deux objectifs 
                 GameObject.Find("ObjectiveSix").transform.localPosition = new Vector3(480, 220, 0);
                 GameObject.Find("ObjectiveFive").transform.localPosition = new Vector3(480, 20, 0);
-            }
+            }*/
 
             Open(FactEvent);
             MainManager.Instance.GoldCount -= randomGold;

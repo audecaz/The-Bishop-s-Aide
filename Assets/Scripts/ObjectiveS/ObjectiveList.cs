@@ -20,8 +20,8 @@ public class ObjectiveList : MonoBehaviour
     public static TextMeshProUGUI objFourOne;
     public static TextMeshProUGUI objFourTwo;
     public static TextMeshProUGUI objFourThree;
-    public static TextMeshProUGUI objFive;
-    public static TextMeshProUGUI objSix;
+    public GameObject objFive;
+    public GameObject objSix;
 
     public int objectiveSix;
 
@@ -37,7 +37,6 @@ public class ObjectiveList : MonoBehaviour
     public bool objFiveRempli = false;
     public bool objSixRempli = false;
 
-    int test = -1;
 
 
     void Start()
@@ -49,15 +48,14 @@ public class ObjectiveList : MonoBehaviour
         objFourOne = gameObject.transform.GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>();
         objFourTwo = gameObject.transform.GetChild(3).GetChild(2).GetComponent<TextMeshProUGUI>();
         objFourThree = gameObject.transform.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>();
-        objFive = gameObject.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
-        objSix = gameObject.transform.GetChild(5).GetComponent<TextMeshProUGUI>();
 
+        if(MainManager.Instance.tutoActive == 0)
+        {
 
-        objFive.enabled = false; //invisible au début car corne pas encore volée
-        objFive.transform.GetChild(0).GetComponent<Image>().enabled = false; //correspond au point à côté invisible aussi
+        }
+        //objFive.SetActive(false);
 
-        objSix.enabled = false; //invisible au début car corne pas encore volée
-        objSix.transform.GetChild(0).GetComponent<Image>().enabled = false; //correspond au point à côté invisible aussi
+        //objSix.SetActive(false); //invisible au début car corne pas encore volée
 
         /*
         objOne.SetText("Obtenir 100 d'OR");
@@ -161,25 +159,54 @@ public class ObjectiveList : MonoBehaviour
         //OBJECTIVE FIVE
         if (MainManager.Instance.HornRetrieved && !objFiveRempli) //si première update où la corne est là
         {
-            objFive.fontStyle = TMPro.FontStyles.Strikethrough;
+            objFive.GetComponent<TextMeshProUGUI>().fontStyle = TMPro.FontStyles.Strikethrough;
+            //objFive.fontStyle = TMPro.FontStyles.Strikethrough;
             objFiveRempli = true;
         }
 
-
-        if (MainManager.Instance.HornStolen)
+        if (!objFive.activeSelf) //premier update depuis que la corne est volée
         {
-            objFive.enabled = true;
-            objFive.transform.GetChild(0).GetComponent<Image>().enabled = true;
+
+            if (MainManager.Instance.HornStolen)
+            {
+                if (!MainManager.Instance.Incendie)
+                {
+                    objFive.transform.localPosition = new Vector3(480, 220, 0);
+                    objSix.transform.localPosition = new Vector3(480, 90, 0);
+                }
+
+                objFive.SetActive(true);
+
+                if (!MainManager.Instance.notifHorn)
+                {
+                    GameObject.Find("Objectives").transform.GetChild(4).gameObject.SetActive(true);//active la notification des objectifs
+
+                    MainManager.Instance.notifHorn = true;
+                }
+                else
+                {
+                    objFive.transform.GetChild(1).gameObject.SetActive(false);
+                }
+                
+            }
         }
 
-        //Objective SIX
-        if (MainManager.Instance.Incendie) // affiche l'objectif
-        {
-            objSix.enabled = true;
-            objSix.transform.GetChild(0).GetComponent<Image>().enabled = true;
 
-            if (test == -1) // premiere fois que Incendie passe en true et donc dans le if 
+        //Objective SIX
+        if (!objSix.activeSelf) // premier update depuis l'incendie
+        {
+            
+            if (MainManager.Instance.Incendie) // affiche l'objectif
             {
+                if (!MainManager.Instance.HornStolen) // Si la corne n'a pas encore été volée et donc l'objectif pas apparu
+                {
+                    //inverse les position des deux objectifs 
+                    objSix.transform.localPosition = new Vector3(480, 220, 0);
+                    objFive.transform.localPosition = new Vector3(480, 20, 0);
+                }
+
+                objSix.SetActive(true);
+
                 if (MainManager.Instance.ArtisanCount >= 5)
                 {
                     objectiveSix = MainManager.Instance.ArtisanCount + 2;
@@ -188,18 +215,31 @@ public class ObjectiveList : MonoBehaviour
                 {
                     objectiveSix = 7;
                 }
-                test = 0;
+
+
+                if (!MainManager.Instance.notifIncendie)
+                {
+                    GameObject.Find("Objectives").transform.GetChild(4).gameObject.SetActive(true);//active la notification des objectifs
+
+                    MainManager.Instance.notifIncendie = true;
+                }
+                else
+                {
+                    objSix.transform.GetChild(1).gameObject.SetActive(false);
+                }
+
             }
         }
         
         if (MainManager.Instance.ArtisanCount >= objectiveSix)
         {
-            objSix.fontStyle = TMPro.FontStyles.Strikethrough;
+            objSix.GetComponent<TextMeshProUGUI>().fontStyle = TMPro.FontStyles.Strikethrough;
+            //objSix.fontStyle = TMPro.FontStyles.Strikethrough;
             objSixRempli = true;
         }
         else
         {
-            objSix.fontStyle = TMPro.FontStyles.Normal;
+            objSix.GetComponent<TextMeshProUGUI>().fontStyle = TMPro.FontStyles.Normal;
             objSixRempli = false;
 
         }

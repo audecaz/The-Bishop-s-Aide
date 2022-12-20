@@ -42,6 +42,9 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public bool finished = false;
     public bool allPlaced;
 
+    public bool notifIncendie = false;
+    public bool notifHorn = false;
+
     public GameObject pelerinInfos; //Instance des informations sur les pelerins
 
     private void Awake()

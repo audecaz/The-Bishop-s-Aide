@@ -42,10 +42,24 @@ public class ObjectiveSlider : MonoBehaviour
                     if (MainManager.Instance.objectiveOpen == true)
                     {
                         opacity.SetActive(true);
+                        if (GameObject.Find("Objectives").transform.GetChild(4).gameObject.activeSelf) //si une notification est activée
+                        {
+                            GameObject.Find("Objectives").transform.GetChild(4).gameObject.SetActive(false);// la désactive
+                        }
                     }
                     else
                     {
                         opacity.SetActive(false);
+
+                        if (GameObject.Find("ObjectivesList").transform.GetChild(4).gameObject.activeSelf) //si l'objectif est activé
+                        {
+                            GameObject.Find("ObjectivesList").transform.GetChild(4).GetChild(1).gameObject.SetActive(false);// désactive la notification
+                        }
+
+                        if (GameObject.Find("ObjectivesList").transform.GetChild(5).gameObject.activeSelf) //si l'objectif est activé
+                        {
+                            GameObject.Find("ObjectivesList").transform.GetChild(5).GetChild(1).gameObject.SetActive(false);// désactive la notification
+                        }
                     }
                 }
             }
