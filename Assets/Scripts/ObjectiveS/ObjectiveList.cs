@@ -205,80 +205,162 @@ public class ObjectiveList : MonoBehaviour
         }
 
         //CONDITIONS DE FIN
-        if (MainManager.Instance.allObjectives == false && !MainManager.Instance.allPlaced && !MainManager.Instance.finished)
+        if (MainManager.Instance.allObjectives == false && !MainManager.Instance.finished)
         {
             if (MainManager.Instance.Incendie && MainManager.Instance.HornStolen) //les 2 objectifs facultatifs ont été débloqués
             {
-                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli && objFiveRempli && objSixRempli)
+                if (objOneRempli && objTwoRempli && objThreeRempli && (objFourRempli || (objFourOneRempli && objFourTwoRempli && objFourThreeRempli)) && objFiveRempli && objSixRempli)
                 {
-                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced && MainManager.Instance.IsCrocoPlaced) //Tous les objets sont placés
+                    MainManager.Instance.allObjectives = true;
+
+                    if (MainManager.Instance.IsCrocoHere) // + croco
                     {
-                        Debug.Log("affiche fin !");
-                        EndManager.openEnd();
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced && MainManager.Instance.IsCrocoPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
+                            EndManager.openEnd();
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
                     }
-                    else //Il faut les placer
+                    else
                     {
-                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
-                        MainManager.Instance.allPlaced = false;
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
+                            EndManager.openEnd();
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
                     }
                 }
 
             }
             else if (MainManager.Instance.Incendie)
             {
-                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli && objSixRempli)
+                if (objOneRempli && objTwoRempli && objThreeRempli && (objFourRempli || (objFourOneRempli && objFourTwoRempli  && objFourThreeRempli)) && objSixRempli) //tous les objectifs de base + incendie
                 {
-                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced) //Tous les objets sont placés
-                    {
-                        Debug.Log("affiche fin !");
+                    MainManager.Instance.allObjectives = true;
 
-                        EndManager.openEnd();
-
-                        //Animation de fin
-                    }
-                    else //Il faut les placer
+                    if (MainManager.Instance.IsCrocoHere) // + croco
                     {
-                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
-                        MainManager.Instance.allPlaced = false;
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced && MainManager.Instance.IsCrocoPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
+
+                            EndManager.openEnd();
+
+                            //Animation de fin
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
                     }
+                    else //le croco n'a pas été récupéré
+                    {
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
+
+                            EndManager.openEnd();
+
+                            //Animation de fin
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
+                    }
+                    
                 }
 
             }
-            else if (MainManager.Instance.HornStolen)
+            else if (MainManager.Instance.HornStolen) 
             {
-                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli && objFiveRempli)
+                if (objOneRempli && objTwoRempli && objThreeRempli && (objFourRempli || (objFourOneRempli && objFourTwoRempli && objFourThreeRempli)) && objFiveRempli)//la corne a été volé mais pas d'incendie
                 {
-                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced) //Tous les objets sont placés
+                    MainManager.Instance.allObjectives = true;
+
+                    if (MainManager.Instance.IsCrocoHere) // + croco
                     {
-                        Debug.Log("affiche fin !");
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced && MainManager.Instance.IsCrocoPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
 
-                        EndManager.openEnd();
+                            EndManager.openEnd();
 
-                        //Animation de fin
+                            //Animation de fin
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
                     }
-                    else //Il faut les placer
+                    else
                     {
-                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
-                        MainManager.Instance.allPlaced = false;
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
+
+                            EndManager.openEnd();
+
+                            //Animation de fin
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
                     }
                 }
             }
             else  // aucun des 2 objectifs facultatifs
             {
-                if (objOneRempli && objTwoRempli && objThreeRempli && objFourRempli)
+                if (objOneRempli && objTwoRempli && objThreeRempli && (objFourRempli || (objFourOneRempli && objFourTwoRempli && objFourThreeRempli)))
                 {
-                    if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced) //Tous les objets sont placés
+                    MainManager.Instance.allObjectives = true;
+
+                    if (MainManager.Instance.IsCrocoHere) // + croco
                     {
-                        Debug.Log("affiche fin !");
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsCrocoPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
 
-                        EndManager.openEnd();
+                            EndManager.openEnd();
 
-                        //Animation de fin
+                            //Animation de fin
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
                     }
-                    else //Il faut les placer
+                    else
                     {
-                        PopUp_Manager.InstanceFact.PopUpAllObjetives();
-                        MainManager.Instance.allPlaced = false;
+                        if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced) //Tous les objets sont placés
+                        {
+                            Debug.Log("affiche fin !");
+
+                            EndManager.openEnd();
+
+                            //Animation de fin
+                        }
+                        else //Il faut les placer
+                        {
+                            PopUp_Manager.InstanceFact.PopUpAllObjetives();
+                            MainManager.Instance.allPlaced = false;
+                        }
                     }
                 }
             }
@@ -298,6 +380,13 @@ public class ObjectiveList : MonoBehaviour
             else if (MainManager.Instance.IsChoirPlaced && MainManager.Instance.IsOrganPlaced && MainManager.Instance.IsHornPlaced)
             {
                 MainManager.Instance.allPlaced = true;
+            }
+        }
+        else
+        {
+            if (!MainManager.Instance.IsCrocoPlaced && MainManager.Instance.IsCrocoHere) //croco vient d'être obtenu mais pas encore placé
+            {
+                MainManager.Instance.allPlaced = false;
             }
         }
 

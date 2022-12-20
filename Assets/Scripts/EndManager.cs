@@ -18,7 +18,7 @@ public class EndManager : MonoBehaviour
     private void Start()
     {
         end = this.transform.GetChild(0).gameObject;
-        //Debug.Log(end);
+        Debug.Log(end);
         bertrand = GameObject.Find("BertrandDialog");
 
         if (MainManager.Instance.Language == "fr")// FR

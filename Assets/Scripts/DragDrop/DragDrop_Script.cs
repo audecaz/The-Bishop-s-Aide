@@ -66,11 +66,19 @@ public class DragDrop_Script : MonoBehaviour
                 horn.SetActive(false);
             }
         }
-        else
+        else //la corne n'a pas encore été volée
         {
-            hornDrag.transform.position = hornDrag.slot.transform.position; //déjà à sa place
-            horn.transform.GetChild(0).GetComponent<Image>().enabled = false; //masque le visuel dans la box
-            hornDrag.inSlot = true;
+            if(MainManager.Instance.tutoActive == 0) //hors tuto
+            {
+                hornDrag.transform.position = hornDrag.slot.transform.position; //déjà à sa place
+                horn.transform.GetChild(0).GetComponent<Image>().enabled = false; //masque le visuel dans la box
+                hornDrag.inSlot = true;
+            }
+            else
+            {
+
+            }
+            
 
         }
 
