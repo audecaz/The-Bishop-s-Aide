@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
@@ -85,6 +86,9 @@ public class DialogDisplay : MonoBehaviour
             }
             else if(MainManager.Instance.tutoActive == 1) { //dans la cathédrale
                 dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 3");
+
+                //définit la corne posable
+
             }
 
             if (MainManager.Instance.tutoActive == 1)
@@ -290,7 +294,7 @@ public class DialogDisplay : MonoBehaviour
 
     public IEnumerator WaitTouchCath()
     {
-        yield return new WaitUntil(() => Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began);
+        yield return new WaitUntil(() => DragDrop_Script.hornDrag.inSlot == true);
         AdvanceMonologue();
 
         activeLineIndex = 0;

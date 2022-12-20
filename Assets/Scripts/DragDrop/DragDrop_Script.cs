@@ -15,7 +15,7 @@ public class DragDrop_Script : MonoBehaviour
 
     private Draggable choirDrag;
     private Draggable organDrag;
-    private Draggable hornDrag;
+    public static Draggable hornDrag;
     private Draggable crocoDrag;
 
     // Start is called before the first frame update
@@ -74,10 +74,7 @@ public class DragDrop_Script : MonoBehaviour
                 horn.transform.GetChild(0).GetComponent<Image>().enabled = false; //masque le visuel dans la box
                 hornDrag.inSlot = true;
             }
-            else
-            {
-
-            }
+            
             
 
         }
