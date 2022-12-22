@@ -18,6 +18,16 @@ public class DragDrop_Script : MonoBehaviour
     public static Draggable hornDrag;
     private Draggable crocoDrag;
 
+    public GameObject choir3D;
+    public GameObject organ3D;
+    public GameObject horn3D;
+    public GameObject croco3D;
+
+    public GameObject choirSlot;
+    public GameObject organSlot;
+    public GameObject hornSlot;
+    public GameObject crocoSlot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +40,30 @@ public class DragDrop_Script : MonoBehaviour
         {
             if (MainManager.Instance.IsChoirPlaced)
             {
-                choirDrag.transform.position = choirDrag.slot.transform.position;
+                choir3D.SetActive(true);
+                choirSlot.SetActive(false);
+
+                choir.transform.GetChild(1).GetComponent<Image>().enabled = false;
                 choirDrag.inSlot = true;
+                
             }
             if (MainManager.Instance.IsOrganPlaced)
             {
-                organDrag.transform.position = organDrag.slot.transform.position;
+                organ3D.SetActive(true);
+                organSlot.SetActive(false);
+
+                organ.transform.GetChild(1).GetComponent<Image>().enabled = false;
                 organDrag.inSlot = true;
             }
         }
         else
         {
+            choir3D.SetActive(false);
+            choirSlot.SetActive(true);
+
+            organ3D.SetActive(false);
+            organSlot.SetActive(true);
+
             choir.SetActive(false);
             organ.SetActive(false);
         }
@@ -51,18 +74,26 @@ public class DragDrop_Script : MonoBehaviour
             {
                 if (MainManager.Instance.IsHornPlaced)
                 {
-                    hornDrag.transform.position = hornDrag.slot.transform.position; //déjà à sa place
+                    horn3D.SetActive(true);
+
+                    horn.transform.GetChild(1).GetComponent<Image>().enabled = false;
                     hornDrag.inSlot = true;
                 }
                 else
                 {
+                    horn3D.SetActive(false);
+
                     hornDrag.transform.position = horn.transform.GetChild(0).transform.position; //Se place dans la box
+
                     horn.SetActive(true);
+                    horn.transform.GetChild(0).GetComponent<Image>().enabled = true; //masque le visuel dans la box
+
                 }
-                horn.transform.GetChild(0).GetComponent<Image>().enabled = true; //masque le visuel dans la box
             }
             else
             {
+                horn3D.SetActive(false);
+
                 horn.SetActive(false);
             }
         }
@@ -70,8 +101,10 @@ public class DragDrop_Script : MonoBehaviour
         {
             if(MainManager.Instance.tutoActive == 0) //hors tuto
             {
-                hornDrag.transform.position = hornDrag.slot.transform.position; //déjà à sa place
-                horn.transform.GetChild(0).GetComponent<Image>().enabled = false; //masque le visuel dans la box
+                //hornDrag.transform.position = hornDrag.slot.transform.position; //déjà à sa place
+                horn3D.SetActive(true);
+
+                horn.SetActive(false); //masque le visuel dans la box
                 hornDrag.inSlot = true;
             }
             
@@ -86,12 +119,15 @@ public class DragDrop_Script : MonoBehaviour
 
             if (MainManager.Instance.IsCrocoPlaced)
             {
-                crocoDrag.transform.position = crocoDrag.slot.transform.position;
+                croco3D.SetActive(true);
+
+                croco.transform.GetChild(0).GetComponent<Image>().enabled = true; //masque le visuel dans la box
                 crocoDrag.inSlot = true;
             }
         }
         else
         {
+            croco3D.SetActive(false);
             croco.SetActive(false);
         }
 
@@ -104,23 +140,35 @@ public class DragDrop_Script : MonoBehaviour
         {
             MainManager.Instance.IsChoirPlaced = true;
             PopUp_Manager.InstanceFact.PopUpChoeur();
+            choir3D.SetActive(true);
+            choirSlot.SetActive(false);
+            choir.transform.GetChild(1).GetComponent<Image>().enabled = false;
         }
         if (organDrag.inSlot && MainManager.Instance.IsOrganPlaced == false)
         {
             MainManager.Instance.IsOrganPlaced = true;
             PopUp_Manager.InstanceFact.PopUpOrgue();
+            organ3D.SetActive(true);
+            organSlot.SetActive(false);
+            organ.transform.GetChild(1).GetComponent<Image>().enabled = false;
 
         }
         if (hornDrag.inSlot && MainManager.Instance.IsHornPlaced == false)
         {
             MainManager.Instance.IsHornPlaced = true;
             PopUp_Manager.InstanceFact.PopUpLicorneTwo();
+            horn3D.SetActive(true);
+            horn.transform.GetChild(1).GetComponent<Image>().enabled = false;
 
         }
         if (crocoDrag.inSlot && MainManager.Instance.IsCrocoPlaced == false)
         {
             MainManager.Instance.IsCrocoPlaced = true;
             PopUp_Manager.InstanceFact.PopUpCrocoTwo();
+            croco3D.SetActive(true);
+            crocoSlot.SetActive(false);
+            croco.transform.GetChild(1).GetComponent<Image>().enabled = false;
+
         }
     }
 }
