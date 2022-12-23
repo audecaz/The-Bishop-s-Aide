@@ -10226,8 +10226,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.000005
-  m_Size: 0.71066123
+  m_Value: 1.0000007
+  m_Size: 0.7119562
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13619,13 +13619,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
         type: 3}
+      propertyPath: ShapeModule.type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
+        type: 3}
       propertyPath: ShapeModule.angle
-      value: 20.38
+      value: 15.71
       objectReference: {fileID: 0}
     - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 1.14
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
         type: 3}
@@ -13634,8 +13639,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
         type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 8.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 6.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
+        type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439104540439108178, guid: 1decc913975a5a8419a7380f158087c2,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 3096005229128696518, guid: 1decc913975a5a8419a7380f158087c2,
         type: 3}
@@ -24680,7 +24700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.5107}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51028}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -25801,6 +25821,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639755499716479300, guid: fda4ddb46586ac74fbb53dd0b404734c,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639755499716479300, guid: fda4ddb46586ac74fbb53dd0b404734c,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8639755499716479302, guid: fda4ddb46586ac74fbb53dd0b404734c,
         type: 3}
