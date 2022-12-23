@@ -145,7 +145,7 @@ public class ObjectiveList : MonoBehaviour
         }
 
         //Objective FOUR THREE
-        if (MainManager.Instance.GoldCount >= 520)
+        if (MainManager.Instance.GoldCount >= 550)
         {
             IfComplete(objFourThree, objFourThreeRempli);
             objFourThreeRempli = true;
@@ -231,18 +231,25 @@ public class ObjectiveList : MonoBehaviour
             }
         }
         
-        if (MainManager.Instance.ArtisanCount >= objectiveSix)
+        if (MainManager.Instance.ArtisanCount >= objectiveSix && MainManager.Instance.Incendie && !objSixRempli)
         {
             objSix.GetComponent<TextMeshProUGUI>().fontStyle = TMPro.FontStyles.Strikethrough;
             //objSix.fontStyle = TMPro.FontStyles.Strikethrough;
             objSixRempli = true;
+
+            if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
+            {
+                StartCoroutine(PopUpWait());
+            }
         }
-        else
+        else if(MainManager.Instance.ArtisanCount < objectiveSix)
         {
             objSix.GetComponent<TextMeshProUGUI>().fontStyle = TMPro.FontStyles.Normal;
             objSixRempli = false;
 
         }
+
+        
 
         //CONDITIONS DE FIN
         if (MainManager.Instance.allObjectives == false && !MainManager.Instance.finished)
@@ -436,6 +443,12 @@ public class ObjectiveList : MonoBehaviour
             EndManager.openEnd();
         }
 
+    }
+
+    public IEnumerator PopUpWait()
+    {
+        yield return new WaitUntil(() => !MainManager.Instance.popupOpen);
+        City_Effects.CityFxInstance.CityFireOff(); //masque les fx de l'incendie
     }
 
     void IfComplete(TextMeshProUGUI objective, bool isComplete)

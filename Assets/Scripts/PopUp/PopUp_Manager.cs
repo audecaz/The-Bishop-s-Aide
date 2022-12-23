@@ -725,8 +725,8 @@ public class PopUp_Manager : MonoBehaviour
         int randomNumber = Random.Range(1, 16); //valeur max exclue
         Debug.Log(randomNumber);
 
-        if(randomNumber == 15)
-        //if (randomNumber < 19)
+        //if(randomNumber == 15)
+        if (randomNumber < 19)
             {
             int randomEvent = Random.Range(1, 7); //valeur max exclue
             if (randomEvent <= 3) //event positif
@@ -746,13 +746,13 @@ public class PopUp_Manager : MonoBehaviour
             }
             else //event negatif
             {
-                if (randomEvent == 4)
-                //if (randomEvent < 2)
+                //if (randomEvent == 4)
+                if (randomEvent < 2)
                 {
                     PopUpFamine();
                 }
-                else if (randomEvent == 5)
-                //else if (randomEvent <2)
+                //else if (randomEvent == 5)
+                else if (randomEvent <2)
                 {
                     PopUpEpidemie();
 
@@ -760,7 +760,7 @@ public class PopUp_Manager : MonoBehaviour
                 else if(!MainManager.Instance.Incendie)
                 {
                     PopUpIncendie();
-
+                    City_Effects.CityFxInstance.CityFireOn();
                 }
             }
             
