@@ -41,23 +41,25 @@ public class MenuManager : MonoBehaviour
 
     public void NextPanel()
     {
-        langageScreen.SetActive(false);
+        if (MainManager.Instance.Language != "0")
+        {
+            langageScreen.SetActive(false);
 
-        if (MainManager.Instance.Language == "fr")
-        {
-            disclaimerFR.SetActive(true);
-        }
-        else
-        {
-            disclaimerENG.SetActive(true);
+            if (MainManager.Instance.Language == "fr")
+            {
+                disclaimerFR.SetActive(true);
+            }
+            else
+            {
+                disclaimerENG.SetActive(true);
+            }
         }
     }
 
     public void startGame()
     {
-        if(MainManager.Instance.Language != "0")
-        {
-            SceneManager.LoadScene(1);
-        }
+        
+        SceneManager.LoadScene(1);
+        
     }
 }

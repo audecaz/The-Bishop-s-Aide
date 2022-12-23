@@ -37,7 +37,7 @@ public class DetectTouchTest : MonoBehaviour
                 {
                     Debug.Log(hit.collider.gameObject.name);
                     
-                    if (hit.collider.gameObject.CompareTag("Character") && MainManager.Instance.objectiveOpen == false && (!tutorial.activeSelf || MainManager.Instance.tutoActive <= 0) && !MainManager.Instance.finished)
+                    if (hit.collider.gameObject.CompareTag("Character") && !MainManager.Instance.objectiveOpen && !MainManager.Instance.paramOpen && (!tutorial.activeSelf || MainManager.Instance.tutoActive <= 0) && !MainManager.Instance.finished)
                     {   
                         //Debug.Log(hit.collider.gameObject.name);
                         chosenChara = hit.collider.gameObject;//récupère le personnage sélectionné
@@ -131,7 +131,7 @@ public class DetectTouchTest : MonoBehaviour
                     {
                         slider.ShowHideObjective();
                     }
-                    else if (hit.collider.gameObject.name == "City" && !anim.GetBool("Forward") && /*(MainManager.Instance.tutoActive == 1 || */MainManager.Instance.tutoActive == 0) 
+                    else if (hit.collider.gameObject.name == "City" && !anim.GetBool("Forward") && /*(MainManager.Instance.tutoActive == 1 || */MainManager.Instance.tutoActive == 0 && !MainManager.Instance.paramOpen) 
                     {
                         //SceneManager.LoadScene(1);
                         //CameraForward.InstanceAnim.ForBackwardCam();

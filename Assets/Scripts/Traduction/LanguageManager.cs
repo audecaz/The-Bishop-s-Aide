@@ -5,16 +5,22 @@ using UnityEngine;
 [System.Serializable]
 public class LanguageManager : MonoBehaviour
 {
+    public static LanguageManager LanguageInstance;
 
     public TextString[] texts;
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        LanguageInstance = this;
+    }
+
     void Start()
     {
         ChangeLanguage();
     }
 
     // Update is called once per frame
-    void ChangeLanguage()
+    public void ChangeLanguage()
     {
         for (int i = 0; i < texts.Length; i++)
         {
