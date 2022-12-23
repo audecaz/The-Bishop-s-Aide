@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour
 
     public GameObject startScreen;
     public GameObject langageScreen;
+    public GameObject disclaimerFR;
+    public GameObject disclaimerENG;
 
     /*public void Start()
     {
@@ -34,6 +36,20 @@ public class MenuManager : MonoBehaviour
         {
             MainManager.Instance.Language = "eng";
             Debug.Log("Anglais !");
+        }
+    }
+
+    public void NextPanel()
+    {
+        langageScreen.SetActive(false);
+
+        if (MainManager.Instance.Language == "fr")
+        {
+            disclaimerFR.SetActive(true);
+        }
+        else
+        {
+            disclaimerENG.SetActive(true);
         }
     }
 

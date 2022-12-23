@@ -30,7 +30,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if(Vector3.Distance(transform.position, slot.transform.position) < 8)
+        if(Vector3.Distance(transform.position, slot.transform.position) < 50)
         {
             transform.position = slot.transform.position;
             inSlot = true;
