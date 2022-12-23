@@ -253,6 +253,7 @@ public class DialogDisplay : MonoBehaviour
         dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto");
         //Debug.Log(Resources.Load<Dialog>("Dialogue/Tuto"));
         activeLineIndex = 0;
+        MainManager.Instance.IsHornPlaced = false;
 
     }
 

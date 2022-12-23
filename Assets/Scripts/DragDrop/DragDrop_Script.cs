@@ -120,9 +120,14 @@ public class DragDrop_Script : MonoBehaviour
             if (MainManager.Instance.IsCrocoPlaced)
             {
                 croco3D.SetActive(true);
+                crocoSlot.SetActive(false);
 
                 croco.transform.GetChild(0).GetComponent<Image>().enabled = true; //masque le visuel dans la box
                 crocoDrag.inSlot = true;
+            }
+            else
+            {
+                croco3D.SetActive(false);
             }
         }
         else
@@ -155,8 +160,11 @@ public class DragDrop_Script : MonoBehaviour
         }
         if (hornDrag.inSlot && MainManager.Instance.IsHornPlaced == false)
         {
+            if (MainManager.Instance.tutoActive == 0)
+            {
+                PopUp_Manager.InstanceFact.PopUpLicorneTwo();
+            }
             MainManager.Instance.IsHornPlaced = true;
-            PopUp_Manager.InstanceFact.PopUpLicorneTwo();
             horn3D.SetActive(true);
             horn.transform.GetChild(1).GetComponent<Image>().enabled = false;
 
@@ -170,5 +178,6 @@ public class DragDrop_Script : MonoBehaviour
             croco.transform.GetChild(1).GetComponent<Image>().enabled = false;
 
         }
+
     }
 }
