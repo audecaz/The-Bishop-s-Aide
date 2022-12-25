@@ -12,6 +12,7 @@ using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using static Unity.VisualScripting.Icons;
 using static UnityEngine.Rendering.DebugUI.Table;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
 using Image = UnityEngine.UI.Image;
@@ -27,6 +28,7 @@ public class PopUp_Manager : MonoBehaviour
 
     private TextMeshProUGUI FactTitle;
     private TextMeshProUGUI FactContent;
+    private Image FactImage;
     private Image FactPicto;
 
     private TextMeshProUGUI ObjectTitle;
@@ -34,7 +36,14 @@ public class PopUp_Manager : MonoBehaviour
     private TextMeshProUGUI ObjectContent;
     public bool IsActive = false;
 
-    
+    public Sprite illuRecolte;
+    public Sprite illuMiracle;
+    public Sprite illuArtisanat;
+    public Sprite illuFamine;
+    public Sprite illuIncendie;
+    public Sprite illuEpidemie;
+    public Sprite illuVoleur;
+
     public void Start()
     {
         //Debug.Log(FactEvent);
@@ -42,11 +51,22 @@ public class PopUp_Manager : MonoBehaviour
 
         FactTitle = gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
         FactContent = gameObject.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        FactImage = gameObject.transform.GetChild(1).GetChild(2).GetComponent<Image>();
         FactPicto = gameObject.transform.GetChild(1).GetChild(3).GetComponent<Image>();
 
         ObjectTitle = gameObject.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
         ObjectUnderTitle = gameObject.transform.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
         ObjectContent = gameObject.transform.GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>();
+
+
+        illuRecolte = Resources.Load<Sprite>("Illus/bonne_recolte");
+        illuMiracle = Resources.Load<Sprite>("Illus/miracle");
+        illuArtisanat = Resources.Load<Sprite>("Illus/artisanat");
+        illuFamine = Resources.Load<Sprite>("Illus/famine");
+        illuIncendie = Resources.Load<Sprite>("Illus/incendie");
+        illuEpidemie = Resources.Load<Sprite>("Illus/epidemie");
+        illuVoleur = Resources.Load<Sprite>("Illus/voleur");
+
     }
 
     public void Open(GameObject popUp) {
@@ -204,6 +224,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuRecolte;
+
             int randomGold = Random.Range(18, 23);
             if (MainManager.Instance.Language == "fr")
             {
@@ -234,6 +256,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuMiracle;
+
             int randomFaith = Random.Range(18, 23);
             if (MainManager.Instance.Language == "fr")
             {
@@ -264,6 +288,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuArtisanat;
+
             int randomSkills = Random.Range(13, 17);
 
             if (MainManager.Instance.Language == "fr")
@@ -299,6 +325,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuIncendie;
+
             int randomGold = Random.Range(10, 15);
 
             if (MainManager.Instance.Language == "fr")
@@ -342,6 +370,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuFamine;
+
             int randomGold = Random.Range(18, 23);
 
             if (MainManager.Instance.Language == "fr")
@@ -373,6 +403,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuEpidemie;
+
             int randomFaith = Random.Range(18, 23);
             int randomSkill = Random.Range(13, 17);
 
@@ -404,6 +436,8 @@ public class PopUp_Manager : MonoBehaviour
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
+        FactImage.sprite = illuVoleur;
+
         if (MainManager.Instance.Language == "fr")
         {
             FactTitle.SetText("Voleur");
@@ -431,21 +465,8 @@ public class PopUp_Manager : MonoBehaviour
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
-        /*
-        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
-        {
-            StartCoroutine(PopUpWait(PopUpSpeVoleur(chosenChara));
-        }
-        else
-        {
-            FactTitle.SetText("Voleur");
-            FactContent.SetText("Malheur ! Ayant entendu parler de la fameuse corne de licorne et la convoitant, un voleur se fait passer pour un pèlerin et vous dérobe la corne !  \r\n \r\n" +
-                "Vous perdez " + chara.ressourceOne + " d’OR  \r\n" +
-                "Vous perdez la Corne de Licorne de Saint Bertrand. \r\n" +
-                "Vous devez désormais récupérer la corne avant de terminer l’Age ");
+        FactImage.sprite = illuVoleur;
 
-            Open(FactEvent);
-        }*/
         if (MainManager.Instance.Language == "fr")
         {
             FactTitle.SetText("Voleur");
@@ -746,13 +767,13 @@ public class PopUp_Manager : MonoBehaviour
             }
             else //event negatif
             {
-                //if (randomEvent == 4)
-                if (randomEvent < 2)
+                if (randomEvent == 4)
+                //if (randomEvent < 2)
                 {
                     PopUpFamine();
                 }
-                //else if (randomEvent == 5)
-                else if (randomEvent <2)
+                else if (randomEvent == 5)
+                //else if (randomEvent <2)
                 {
                     PopUpEpidemie();
 
