@@ -46,7 +46,7 @@ public class DetectTouchTest : MonoBehaviour
                         {
                             if(chosenChara.name == "Pel 2")
                             {
-                                CharacterInfos.AddInfosToGlobal(chosenChara);
+                                CharacterInfos.InstanceCharaInfos.AddInfosToGlobal(chosenChara);
                                 MainManager.Instance.tutoActive = 3;
 
                                 RandomCharacter.GenerateNewCharacter();
@@ -91,7 +91,7 @@ public class DetectTouchTest : MonoBehaviour
                                 MainManager.Instance.IsNicolasRecruted = true;
                             }
 
-                            CharacterInfos.AddInfosToGlobal(chosenChara);
+                            CharacterInfos.InstanceCharaInfos.AddInfosToGlobal(chosenChara);
 
                             MainManager.Instance.PilgrinsCount++;
 

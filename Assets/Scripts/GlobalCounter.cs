@@ -22,4 +22,6 @@ public class GlobalCounter : MonoBehaviour
         skill.SetText(MainManager.Instance.SkillCount.ToString());
         artisan.SetText(MainManager.Instance.ArtisanCount.ToString());
     }
+
+
 }

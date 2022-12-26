@@ -243,7 +243,10 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.GoldCount += randomGold;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount + randomGold, "gold");
+
+            //MainManager.Instance.GoldCount += randomGold;
         }
         Debug.Log("Recolte !");
     }
@@ -275,7 +278,10 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.FaithCount += randomFaith;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount + randomFaith, "faith");
+
+            //MainManager.Instance.FaithCount += randomFaith;
         }
         Debug.Log("Miracle !");
     }
@@ -310,8 +316,11 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.SkillCount += randomSkills;
-            MainManager.Instance.ArtisanCount += 2;
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.SkillCount, MainManager.Instance.SkillCount + randomSkills, "skill");
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.ArtisanCount, MainManager.Instance.ArtisanCount + 2, "artisan");
+
+            //MainManager.Instance.SkillCount += randomSkills;
+            //MainManager.Instance.ArtisanCount += 2;
         }
 
         Debug.Log("Artisanat !");
@@ -357,7 +366,9 @@ public class PopUp_Manager : MonoBehaviour
             }*/
 
             Open(FactEvent);
-            MainManager.Instance.GoldCount -= randomGold;
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount - randomGold, "gold");
+
+            //MainManager.Instance.GoldCount -= randomGold;
         }
         Debug.Log("Incendie !");
     }
@@ -390,7 +401,9 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.GoldCount -= randomGold;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount - randomGold, "gold");
+            //MainManager.Instance.GoldCount -= randomGold;
         }
         Debug.Log("Famine !");
     }
@@ -426,8 +439,11 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.FaithCount -= randomFaith;
-            MainManager.Instance.SkillCount -= randomSkill;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount - randomFaith , "faith");
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.SkillCount, MainManager.Instance.SkillCount - randomSkill, "skill");
+            //MainManager.Instance.FaithCount -= randomFaith;
+            //MainManager.Instance.SkillCount -= randomSkill;
         }
         Debug.Log("Epidemie !");
     }

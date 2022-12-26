@@ -3467,7 +3467,7 @@ MonoBehaviour:
   RessourceUI: 0
   objectiveOpen: 0
   popupOpen: 0
-  tutoActive: 1
+  tutoActive: 0
   allObjectives: 0
   finished: 0
   allPlaced: 0
