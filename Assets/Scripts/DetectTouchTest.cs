@@ -17,9 +17,14 @@ public class DetectTouchTest : MonoBehaviour
     Animator anim;
     public GameObject tutorial;
 
+    public GameObject bertrand;
+
     public void Start()
     {
         anim = GameObject.Find("Main Camera").GetComponent<Animator>();
+
+        bertrand = GameObject.Find("BertrandDialog");
+
     }
 
 
@@ -46,7 +51,7 @@ public class DetectTouchTest : MonoBehaviour
                         {
                             if(chosenChara.name == "Pel 2")
                             {
-                                CharacterInfos.InstanceCharaInfos.AddInfosToGlobal(chosenChara);
+                                //CharacterInfos.InstanceCharaInfos.AddInfosToGlobal(chosenChara);
                                 MainManager.Instance.tutoActive = 3;
 
                                 RandomCharacter.GenerateNewCharacter();
@@ -141,7 +146,7 @@ public class DetectTouchTest : MonoBehaviour
                             anim.SetBool("Forward", !forward);
                         }
                     }
-                    else if(hit.collider.gameObject.name == "Cathedrale" && anim.GetBool("Forward") /*&& !MainManager.Instance.tutoActive*/)
+                    else if(hit.collider.gameObject.name == "Cathedrale" && anim.GetBool("Forward") && (bertrand.activeSelf || MainManager.Instance.tutoActive == 0))
                     {
                         SceneManager.LoadScene(2);
 

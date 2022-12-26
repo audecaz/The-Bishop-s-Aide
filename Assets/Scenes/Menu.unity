@@ -302,6 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 4
   ressourceTwo: 5
@@ -560,6 +564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 4
   ressourceTwo: 6
@@ -1202,6 +1210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 10
   ressourceTwo: 9
@@ -2234,6 +2246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 6
   ressourceTwo: 7
@@ -3467,7 +3483,7 @@ MonoBehaviour:
   RessourceUI: 0
   objectiveOpen: 0
   popupOpen: 0
-  tutoActive: 0
+  tutoActive: 1
   allObjectives: 0
   finished: 0
   allPlaced: 0

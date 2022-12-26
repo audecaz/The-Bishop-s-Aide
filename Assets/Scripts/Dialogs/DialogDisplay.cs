@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -317,6 +318,9 @@ public class DialogDisplay : MonoBehaviour
         textDialog = bertrand.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         bertrand.SetActive(true);
         coinsBG.SetActive(true);
+
+        CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount + 9, "gold");
+        CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount + 10, "faith");
     }
 
     public IEnumerator WaitTouchObjectives()
