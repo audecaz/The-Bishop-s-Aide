@@ -744,10 +744,10 @@ public class PopUp_Manager : MonoBehaviour
     public void EventAleatoire()
     {
         int randomNumber = Random.Range(1, 16); //valeur max exclue
-        Debug.Log(randomNumber);
+        //Debug.Log(randomNumber);
 
-        //if(randomNumber == 15)
-        if (randomNumber < 19)
+        if(randomNumber >= 14)
+        //if (randomNumber < 19)
             {
             int randomEvent = Random.Range(1, 7); //valeur max exclue
             if (randomEvent <= 3) //event positif
