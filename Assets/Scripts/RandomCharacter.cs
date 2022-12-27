@@ -35,11 +35,19 @@ public class RandomCharacter : MonoBehaviour
     public static Sprite pel1;
     public static Sprite pel2;
     public static Sprite pel3;
+    public static Sprite pel4;
+    public static Sprite pel5;
+    public static Sprite pelOr;
+    public static Sprite pelFoi;
+
 
     //artisan
     public static Sprite artisan1;
     public static Sprite artisan2;
     public static Sprite artisan3;
+    public static Sprite artisan4;
+    public static Sprite artisan5;
+
 
     //spécial
     public static Sprite nicolas;
@@ -53,10 +61,18 @@ public class RandomCharacter : MonoBehaviour
         pel1 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin1");
         pel2 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin2");
         pel3 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin3");
+        pel4 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin4");
+        pel5 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin5");
+        pelOr = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin_or");
+        pelFoi = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin_foi");
+
 
         artisan1 = Resources.Load<Sprite>("Pelerins/Artisans/artisan1");
         artisan2 = Resources.Load<Sprite>("Pelerins/Artisans/artisan2");
         artisan3 = Resources.Load<Sprite>("Pelerins/Artisans/artisan3");
+        artisan4 = Resources.Load<Sprite>("Pelerins/Artisans/artisan4");
+        artisan5 = Resources.Load<Sprite>("Pelerins/Artisans/artisan5");
+
 
 
         nicolas = Resources.Load<Sprite>("Pelerins/Nicolas Bachelier/nicolasBachelier");
@@ -276,7 +292,7 @@ public class RandomCharacter : MonoBehaviour
             }
             else if(job == 1) // Artisan
             {
-                int randomSprite = Random.Range(1, 4); //4 exclu
+                int randomSprite = Random.Range(1, 6); //6 exclu
 
                 //Sprite
                 if (randomSprite == 1)
@@ -287,9 +303,17 @@ public class RandomCharacter : MonoBehaviour
                 {
                     skin.sprite = artisan2;
                 }
-                else
+                else if(randomSprite == 3)
                 {
                     skin.sprite = artisan3;
+                }
+                else if(randomSprite == 4)
+                {
+                    skin.sprite = artisan4;
+                }
+                else
+                {
+                    skin.sprite = artisan5;
                 }
 
                 character.GetComponent<CharacterInfos>().job = 1;
@@ -313,18 +337,38 @@ public class RandomCharacter : MonoBehaviour
                 int randomSprite = Random.Range(1, 4); //4 exclu
 
                 //Sprite
-                if (randomSprite == 1)
+                if(ressourceOne > 17) //or > 17
                 {
-                    skin.sprite = pel1;
+                    skin.sprite = pelOr;
                 }
-                else if (randomSprite == 2)
+                else if(ressourceTwo > 17)
                 {
-                    skin.sprite = pel2;
+                    skin.sprite = pelFoi;
                 }
-                else
+                else //pelerin classique
                 {
-                    skin.sprite = pel3;
+                    if (randomSprite == 1)
+                    {
+                        skin.sprite = pel1;
+                    }
+                    else if (randomSprite == 2)
+                    {
+                        skin.sprite = pel2;
+                    }
+                    else if (randomSprite == 3)
+                    {
+                        skin.sprite = pel3;
+                    }
+                    else if (randomSprite == 4)
+                    {
+                        skin.sprite = pel4;
+                    }
+                    else
+                    {
+                        skin.sprite = pel5;
+                    }
                 }
+                
 
 
                 if (job == 0 || job == 2) // pelerin "classique"

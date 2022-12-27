@@ -196,7 +196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 226c1bdb854f20047897d8cbfb1210a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 454ce860f0d988b4bbd75d3089d417dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3080,6 +3080,7 @@ MonoBehaviour:
   chosenChara: {fileID: 0}
   slider: {fileID: 935330286}
   tutorial: {fileID: 195611573}
+  bertrand: {fileID: 0}
 --- !u!95 &330585549
 Animator:
   serializedVersion: 4
@@ -5546,6 +5547,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 6
   ressourceTwo: 7
@@ -10549,7 +10554,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000007
+  m_Value: 1.0000091
   m_Size: 0.71201175
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10957,6 +10962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 5
   ressourceTwo: 4
@@ -11379,6 +11388,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 4
   ressourceTwo: 5
@@ -11455,7 +11468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 454ce860f0d988b4bbd75d3089d417dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20c442b82b47e9e4086008eb02236b74, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12341,6 +12354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 6
   ressourceTwo: 7
@@ -15195,6 +15212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 10
   ressourceTwo: 9
@@ -23527,6 +23548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 10
   ressourceTwo: 9
@@ -25393,6 +25418,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 4
   ressourceTwo: 6
@@ -26735,7 +26764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51028}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51097}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -30803,6 +30832,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a3ca400df300478f26b5668453e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: {fileID: 0}
+  faith: {fileID: 0}
+  skill: {fileID: 0}
+  artisan: {fileID: 0}
   job: 0
   ressourceOne: 4
   ressourceTwo: 6
