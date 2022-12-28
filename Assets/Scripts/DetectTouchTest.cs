@@ -19,11 +19,16 @@ public class DetectTouchTest : MonoBehaviour
 
     public GameObject bertrand;
 
+    public GameObject nomBatiment;
+    public GameObject enterBtn;
+    public GameObject lockImage;
+
+
     public void Start()
     {
         anim = GameObject.Find("Main Camera").GetComponent<Animator>();
 
-        bertrand = GameObject.Find("BertrandDialog");
+        //bertrand = GameObject.Find("BertrandDialog");
 
     }
 
@@ -132,10 +137,6 @@ public class DetectTouchTest : MonoBehaviour
                         }
 
                     }
-                    else if (hit.collider.gameObject.name == "Opacity" && MainManager.Instance.objectiveOpen && MainManager.Instance.tutoActive != 4) //Si le menu des objectifs est ouvert, le cache
-                    {
-                        slider.ShowHideObjective();
-                    }
                     else if (hit.collider.gameObject.name == "City" && !anim.GetBool("Forward") && /*(MainManager.Instance.tutoActive == 1 || */MainManager.Instance.tutoActive == 0 && !MainManager.Instance.paramOpen) 
                     {
                         //SceneManager.LoadScene(1);
@@ -146,11 +147,46 @@ public class DetectTouchTest : MonoBehaviour
                             anim.SetBool("Forward", !forward);
                         }
                     }
-                    else if(hit.collider.gameObject.name == "Cathedrale" && anim.GetBool("Forward") && (bertrand.activeSelf || MainManager.Instance.tutoActive == 0))
+                    else if(hit.collider.gameObject.CompareTag("Batiment") && anim.GetBool("Forward") && (bertrand.activeSelf || MainManager.Instance.tutoActive == 0))
                     {
-                        SceneManager.LoadScene(2);
+                        if (MainManager.Instance.tutoActive == 1 && hit.collider.gameObject.name == "Cathedrale Sainte Marie") //dans le tuto
+                        {
+                            SceneManager.LoadScene(2);
+                        }
+                        else
+                        {
+                            MainManager.Instance.placeSelected = true;
+
+                            nomBatiment.SetActive(true);
+
+                            nomBatiment.GetComponent<TextMeshProUGUI>().SetText(hit.collider.gameObject.name);
+
+
+                            if (hit.collider.gameObject.name == "Cathedrale Sainte Marie")
+                            {
+                                enterBtn.SetActive(true);
+                                lockImage.SetActive(false);
+
+                            }
+                            else
+                            {
+                                lockImage.SetActive(true);
+                                enterBtn.SetActive(false);
+                            }
+                        }
+
+
+
+                        //hit.collider.gameObject.name == "Cathedrale" && anim.GetBool("Forward") && (bertrand.activeSelf || MainManager.Instance.tutoActive == 0)
+                        //SceneManager.LoadScene(2);
 
                     }
+
+                    if (hit.collider.gameObject.name != "Plane" && MainManager.Instance.objectiveOpen && MainManager.Instance.tutoActive != 4) //Si le menu des objectifs est ouvert, le cache
+                    {
+                        slider.ShowHideObjective();
+                    }
+
 
                 }
             }
