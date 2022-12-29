@@ -5567,6 +5567,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 6
   ressourceTwo: 7
+  objectName: 
 --- !u!1001 &495693403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10707,8 +10708,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000007
-  m_Size: 0.7120117
+  m_Value: 1.0000014
+  m_Size: 0.7119865
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11122,6 +11123,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 5
   ressourceTwo: 4
+  objectName: 
 --- !u!1 &535051466
 GameObject:
   m_ObjectHideFlags: 0
@@ -11548,6 +11550,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 4
   ressourceTwo: 5
+  objectName: 
 --- !u!1 &615645316
 GameObject:
   m_ObjectHideFlags: 0
@@ -12514,6 +12517,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 6
   ressourceTwo: 7
+  objectName: 
 --- !u!1 &725456073
 GameObject:
   m_ObjectHideFlags: 0
@@ -15372,6 +15376,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 10
   ressourceTwo: 9
+  objectName: 
 --- !u!1 &977187918
 GameObject:
   m_ObjectHideFlags: 0
@@ -23864,6 +23869,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 10
   ressourceTwo: 9
+  objectName: 
 --- !u!1 &1329787833
 GameObject:
   m_ObjectHideFlags: 0
@@ -25868,6 +25874,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 4
   ressourceTwo: 6
+  objectName: 
 --- !u!1 &1471106363
 GameObject:
   m_ObjectHideFlags: 0
@@ -27207,7 +27214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.5103}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51036}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -27541,7 +27548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1166, y: -402}
+  m_AnchoredPosition: {x: 1166, y: -507}
   m_SizeDelta: {x: 431, y: 431}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622997747
@@ -28111,6 +28118,11 @@ MonoBehaviour:
   illuVoleur: {fileID: 0}
   illuCoffre: {fileID: 0}
   illuCalice: {fileID: 0}
+  illuNicolas: {fileID: 0}
+  illuStBertrand: {fileID: 0}
+  illuBertrand: {fileID: 0}
+  illuCathedrale: {fileID: 0}
+  illuCloitre: {fileID: 0}
 --- !u!1001 &1658729320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31360,6 +31372,7 @@ MonoBehaviour:
   job: 0
   ressourceOne: 4
   ressourceTwo: 6
+  objectName: 
 --- !u!1 &1973468181
 GameObject:
   m_ObjectHideFlags: 0

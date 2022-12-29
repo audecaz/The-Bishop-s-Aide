@@ -48,6 +48,13 @@ public class PopUp_Manager : MonoBehaviour
     public Sprite illuVoleur;
     public Sprite illuCoffre;
     public Sprite illuCalice;
+    public Sprite illuNicolas;
+    public Sprite illuStBertrand;
+    public Sprite illuBertrand;
+    public Sprite illuCathedrale;
+    public Sprite illuCloitre;
+
+
 
     public void Start()
     {
@@ -73,9 +80,13 @@ public class PopUp_Manager : MonoBehaviour
         illuVoleur = Resources.Load<Sprite>("Illus/voleur");
         illuCoffre = Resources.Load<Sprite>("Illus/coffre");
         illuCalice = Resources.Load<Sprite>("Illus/calice");
+        illuNicolas = Resources.Load<Sprite>("Illus/nicolas");
+        illuStBertrand = Resources.Load<Sprite>("Illus/stbertrand");
+        illuBertrand = Resources.Load<Sprite>("Illus/bertrand");
+        illuCathedrale = Resources.Load<Sprite>("Illus/cathedrale");
+        illuCloitre = Resources.Load<Sprite>("Illus/cloitre");
 
-
-        factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
+    factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
         factPictoEng = Resources.Load<Sprite>("Ui/sceau_eng");
 }
 
@@ -111,6 +122,7 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuStBertrand;
 
             if (MainManager.Instance.Language == "fr")
             {
@@ -148,6 +160,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuBertrand;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Bertrand de Goth");
@@ -183,6 +197,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuCathedrale;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("La cathédrale Notre Dame");
@@ -218,6 +234,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuCloitre;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Le cloître de la cathédrale");
@@ -587,6 +605,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuNicolas;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Nicolas Bachelier");
