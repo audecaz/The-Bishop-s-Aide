@@ -10707,8 +10707,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000061
-  m_Size: 0.69378567
+  m_Value: 1.0000007
+  m_Size: 0.7120117
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12325,7 +12325,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d581e179415387e45972f2a06ade9be4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 144.60416
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d581e179415387e45972f2a06ade9be4,
         type: 3}
@@ -23169,7 +23169,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b6a08fc78cdad7b49927541bd06488a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 120.6
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b6a08fc78cdad7b49927541bd06488a0,
         type: 3}
@@ -27207,7 +27207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51074}
+  m_AnchoredPosition: {x: -91.49921, y: -189.5103}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -28109,6 +28109,8 @@ MonoBehaviour:
   illuIncendie: {fileID: 0}
   illuEpidemie: {fileID: 0}
   illuVoleur: {fileID: 0}
+  illuCoffre: {fileID: 0}
+  illuCalice: {fileID: 0}
 --- !u!1001 &1658729320
 PrefabInstance:
   m_ObjectHideFlags: 0

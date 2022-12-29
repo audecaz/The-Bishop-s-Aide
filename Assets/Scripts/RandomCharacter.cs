@@ -473,12 +473,14 @@ public class RandomCharacter : MonoBehaviour
                             int randomValue = Random.Range(14, 18);
                             if (randomObject == 0)
                             {
+                                character.GetComponent<CharacterInfos>().objectName = "calice";
                                 RTwoText.SetText("Calice en or : +"+randomValue+" d'OR");
                                 ressourceTwo = randomValue;
                                 character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
                             }
                             else
                             {
+                                character.GetComponent<CharacterInfos>().objectName = "coffre";
                                 RTwoText.SetText("Coffre précieux : +"+randomValue+" d'OR");
                                 ressourceTwo = randomValue;
                                 character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;

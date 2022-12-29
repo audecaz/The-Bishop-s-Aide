@@ -16,6 +16,8 @@ public class CharacterInfos : MonoBehaviour
     public int ressourceOne;
     public int ressourceTwo;
 
+    public string objectName;
+
     //public PopUp_Manager popUp_Manager;
     public void Start()
     {

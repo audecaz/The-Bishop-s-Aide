@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -54,7 +55,9 @@ public class EndManager : MonoBehaviour
 
     public void backMenu()
     {
+        MenuManager.ResetGame();
         SceneManager.LoadScene(0);
+        
     }
 
 }

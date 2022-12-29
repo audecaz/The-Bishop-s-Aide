@@ -99,6 +99,8 @@ public class UI_Buttons : MonoBehaviour
 
     public void BackMenu()
     {
+        MenuManager.ResetGame();
+
         SceneManager.LoadScene(0);
 
     }
