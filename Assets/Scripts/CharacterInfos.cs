@@ -120,19 +120,19 @@ public class CharacterInfos : MonoBehaviour
                 else if (ressourceName == "faith")
                 {
                     MainManager.Instance.FaithCount = oldValue;
-                    gold.color = new Color(0.1f, 0.6f, 0.2f);
+                    faith.color = new Color(0.1f, 0.6f, 0.2f);
                     faith.SetText(MainManager.Instance.FaithCount.ToString());
                 }
                 else if (ressourceName == "skill")
                 {
                     MainManager.Instance.SkillCount = oldValue;
-                    gold.color = new Color(0.1f, 0.6f, 0.2f);
+                    skill.color = new Color(0.1f, 0.6f, 0.2f);
                     skill.SetText(MainManager.Instance.SkillCount.ToString());
                 }
                 else
                 {
                     MainManager.Instance.ArtisanCount = oldValue;
-                    gold.color = new Color(0.1f, 0.6f, 0.2f);
+                    artisan.color = new Color(0.1f, 0.6f, 0.2f);
 
                     artisan.SetText(MainManager.Instance.ArtisanCount.ToString());
 

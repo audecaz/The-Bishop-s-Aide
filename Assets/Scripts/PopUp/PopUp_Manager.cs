@@ -78,7 +78,7 @@ public class PopUp_Manager : MonoBehaviour
         illuCathedrale = Resources.Load<Sprite>("Illus/cathedrale");
         illuCloitre = Resources.Load<Sprite>("Illus/cloitre");
 
-    factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
+        factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
         factPictoEng = Resources.Load<Sprite>("Ui/sceau_eng");
 }
 
@@ -662,7 +662,7 @@ public class PopUp_Manager : MonoBehaviour
         {
             FactTitle.SetText("The choir");
             FactContent.SetText("It was made <b>to separate the canons from the people and the pilgrims</b> during celebrations by creating a closed area within the cathedral.\r\n \r\n" +
-            "This jube is composed of <b>66 carved stalls.</b> They are particularly rich in details. ");
+            "This jube is composed of <b>66 carved stalls. </b> They are particularly rich in details. ");
         }
 
         Open(FactEvent);
@@ -675,7 +675,7 @@ public class PopUp_Manager : MonoBehaviour
             FactTitle.SetText("L'orgue d'angle");
             FactContent.SetText("L’orgue de la cathédrale a la particularité <b>d'être construit en angle</b>, chose très rare.\r\n" +
             "En effet, le portail ne permettant pas de construire un orgue au-dessus, l’orgue a été construit sur le côté, en faisant un <b>instrument unique.</b> \r\n \r\n" +
-            "Il est <b>classé Monument Historique</b> depuis 1840 et considéré comme <b>l’un des plus beaux orgues d’Europe./b>");
+            "Il est <b>classé Monument Historique</b> depuis 1840 et considéré comme <b>l’un des plus beaux orgues d’Europe.</b>");
         }
         else
         {
