@@ -31,6 +31,9 @@ public class PopUp_Manager : MonoBehaviour
     private Image FactImage;
     private Image FactPicto;
 
+    private Sprite factPictoFr;
+    private Sprite factPictoEng;
+
     private TextMeshProUGUI ObjectTitle;
     private TextMeshProUGUI ObjectUnderTitle;
     private TextMeshProUGUI ObjectContent;
@@ -43,6 +46,15 @@ public class PopUp_Manager : MonoBehaviour
     public Sprite illuIncendie;
     public Sprite illuEpidemie;
     public Sprite illuVoleur;
+    public Sprite illuCoffre;
+    public Sprite illuCalice;
+    public Sprite illuNicolas;
+    public Sprite illuStBertrand;
+    public Sprite illuBertrand;
+    public Sprite illuCathedrale;
+    public Sprite illuCloitre;
+
+
 
     public void Start()
     {
@@ -66,8 +78,17 @@ public class PopUp_Manager : MonoBehaviour
         illuIncendie = Resources.Load<Sprite>("Illus/incendie");
         illuEpidemie = Resources.Load<Sprite>("Illus/epidemie");
         illuVoleur = Resources.Load<Sprite>("Illus/voleur");
+        illuCoffre = Resources.Load<Sprite>("Illus/coffre");
+        illuCalice = Resources.Load<Sprite>("Illus/calice");
+        illuNicolas = Resources.Load<Sprite>("Illus/nicolas");
+        illuStBertrand = Resources.Load<Sprite>("Illus/stbertrand");
+        illuBertrand = Resources.Load<Sprite>("Illus/bertrand");
+        illuCathedrale = Resources.Load<Sprite>("Illus/cathedrale");
+        illuCloitre = Resources.Load<Sprite>("Illus/cloitre");
 
-    }
+    factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
+        factPictoEng = Resources.Load<Sprite>("Ui/sceau_eng");
+}
 
     public void Open(GameObject popUp) {
         Bg.SetActive(true);
@@ -101,13 +122,16 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
-            if(MainManager.Instance.Language == "fr")
+            FactImage.sprite = illuStBertrand;
+
+            if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Le saviez vous : Saint Bertrand");
                 FactContent.SetText("<b>Bertrand de l'Isle</b> fut évêque de la cité de 1073 à sa mort et participa grandement à l'élévation de la ville de <i>Lugdunum Convenarum.</i>\r\n" +
                 "Il fait construire la <b>cathédrale romane</b> et érige le <b>cloître.</b>\r\n" +
                 "Il y reste évêque jusqu'à sa mort en 1123 et est canonisé en 1222. La ville prend alors son nom. \r\n \r\n" +
                 "Saint Bertrand est connu pour <b>sa bienveillance</b> et sa volonté de <b>faire régner la paix.</b>");
+                FactPicto.sprite = factPictoFr;
             }
             else
             {
@@ -116,6 +140,8 @@ public class PopUp_Manager : MonoBehaviour
                 "He built the <b>romanesque cathedral</b> and the <b>cloister.</b>\r\n" +
                 "He stayed bishop until his death in 1123 and was canonized in 1222. On that occasion, the city took his name \r\n \r\n" +
                 "Saint Bertrand is well known for <b>his kindness</b> and <b>his desire to bring peace.</b>");
+                FactPicto.sprite = factPictoEng;
+
             }
 
             FactPicto.enabled = true;
@@ -134,12 +160,17 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuBertrand;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Bertrand de Goth");
                 FactContent.SetText("Évêque de Comminges de <b>1294 à 1299</b>, Bertrand de Goth participe à l'essor de la ville en élevant les reliques de Saint Bertrand " +
                 "et soutenant l'afflux de pèlerins <b>des chemins de St Jacques.</b> Pour cela, il lance l'<b>agrandissement de la cathédrale romane</b> déjà existante en y ajoutant un style gothique. \r\n \r\n" +
                 "Il devient archevêque de Bordeaux en 1300 et est <b>sacré pape</b> en 1305 sous le nom de <b>Clément V.</b>\r\n");
+
+                FactPicto.sprite = factPictoFr;
+
             }
             else
             {
@@ -147,6 +178,9 @@ public class PopUp_Manager : MonoBehaviour
                 FactContent.SetText("Bishop of Comminges from <b>1294 to 1299</b>, Bertrand de Goth participates in the development of the city by elevating Saint Bertrand’s relics " +
                 "and supporting the amount of pilgrims coming to the city through the <b>Way of Saint James.</b> To achieve it, he starts the <b>enlargement and embellishment of the already existing romanesque cathedral</b> with a more gothic style.\r\n \r\n" +
                 "He becomes archbishop of Bordeaux in 1300 and is <b>crowned pope</b> in 1305 under the name of <b>Clement V.</b>\r\n");
+
+                FactPicto.sprite = factPictoEng;
+
             }
             FactPicto.enabled = true;
 
@@ -163,12 +197,17 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuCathedrale;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("La cathédrale Notre Dame");
                 FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                 "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
                 "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+
+                FactPicto.sprite = factPictoFr;
+
             }
             else
             {
@@ -176,8 +215,11 @@ public class PopUp_Manager : MonoBehaviour
                 FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                 "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
                 "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+
+                FactPicto.sprite = factPictoEng;
+
             }
-                
+
             FactPicto.enabled = true;
 
             Open(FactEvent);
@@ -192,12 +234,17 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuCloitre;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Le cloître de la cathédrale");
                 FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                 "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
                 "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+
+                FactPicto.sprite = factPictoFr;
+
             }
             else
             {
@@ -205,8 +252,11 @@ public class PopUp_Manager : MonoBehaviour
                 FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                 "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
                 "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+
+                FactPicto.sprite = factPictoEng;
+
             }
-            
+
             FactPicto.enabled = true;
 
             Open(FactEvent);
@@ -243,7 +293,10 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.GoldCount += randomGold;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount + randomGold, "gold");
+
+            //MainManager.Instance.GoldCount += randomGold;
         }
         Debug.Log("Recolte !");
     }
@@ -275,7 +328,10 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.FaithCount += randomFaith;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount + randomFaith, "faith");
+
+            //MainManager.Instance.FaithCount += randomFaith;
         }
         Debug.Log("Miracle !");
     }
@@ -310,8 +366,11 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.SkillCount += randomSkills;
-            MainManager.Instance.ArtisanCount += 2;
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.SkillCount, MainManager.Instance.SkillCount + randomSkills, "skill");
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.ArtisanCount, MainManager.Instance.ArtisanCount + 2, "artisan");
+
+            //MainManager.Instance.SkillCount += randomSkills;
+            //MainManager.Instance.ArtisanCount += 2;
         }
 
         Debug.Log("Artisanat !");
@@ -357,7 +416,9 @@ public class PopUp_Manager : MonoBehaviour
             }*/
 
             Open(FactEvent);
-            MainManager.Instance.GoldCount -= randomGold;
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount - randomGold, "gold");
+
+            //MainManager.Instance.GoldCount -= randomGold;
         }
         Debug.Log("Incendie !");
     }
@@ -390,7 +451,9 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.GoldCount -= randomGold;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount - randomGold, "gold");
+            //MainManager.Instance.GoldCount -= randomGold;
         }
         Debug.Log("Famine !");
     }
@@ -426,8 +489,11 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
-            MainManager.Instance.FaithCount -= randomFaith;
-            MainManager.Instance.SkillCount -= randomSkill;
+
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount - randomFaith , "faith");
+            CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.SkillCount, MainManager.Instance.SkillCount - randomSkill, "skill");
+            //MainManager.Instance.FaithCount -= randomFaith;
+            //MainManager.Instance.SkillCount -= randomSkill;
         }
         Debug.Log("Epidemie !");
     }
@@ -493,31 +559,35 @@ public class PopUp_Manager : MonoBehaviour
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
-        /*
-        if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
-        {
-            StartCoroutine(PopUpWait("PopUpObjetSpe"));
-        }
-        else
-        {
-            FactTitle.SetText("Titre Objet");
-            FactContent.SetText("Quelle chance !" +
-                "\r\nLe pèlerin que vous venez de recruter vous offre un objet précieux" +
-                "\r\n \r\nVous obtenez " + chara.ressourceTwo + " d'OR");
-
-            Open(FactEvent);
-        }
-        */
+        
         if (MainManager.Instance.Language == "fr")
         {
-            FactTitle.SetText("Titre Objet");
+            if(chara.objectName == "coffre")
+            {
+                FactImage.sprite = illuCoffre;
+                FactTitle.SetText("Coffre précieux");
+            }
+            else
+            {
+                FactImage.sprite = illuCalice;
+                FactTitle.SetText("Calice en or");
+            }
             FactContent.SetText("Quelle chance !" +
             "\r\nLe pèlerin que vous venez de recruter vous offre un objet précieux" +
-            "\r\n \r\nVous obtenez " + chara.ressourceTwo + " d'OR");
+            "\r\n \r\n<b>Vous obtenez " + chara.ressourceTwo + " d'OR</b>");
         }
         else
         {
-            FactTitle.SetText("Object Title");
+            if (chara.objectName == "coffre")
+            {
+                FactImage.sprite = illuCoffre;
+                FactTitle.SetText("Precious chest");
+            }
+            else
+            {
+                FactImage.sprite = illuCalice;
+                FactTitle.SetText("Golden calice");
+            }
             FactContent.SetText("Great news !" +
             "\r\nThe pilgrim you just recruited gives you a precious item" +
             "\r\n \r\n <b>You gain " + chara.ressourceTwo + " GOLD </b>");
@@ -535,6 +605,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuNicolas;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Nicolas Bachelier");
@@ -744,10 +816,10 @@ public class PopUp_Manager : MonoBehaviour
     public void EventAleatoire()
     {
         int randomNumber = Random.Range(1, 16); //valeur max exclue
-        Debug.Log(randomNumber);
+        //Debug.Log(randomNumber);
 
-        //if(randomNumber == 15)
-        if (randomNumber < 19)
+        if(randomNumber >= 14)
+        //if (randomNumber < 19)
             {
             int randomEvent = Random.Range(1, 7); //valeur max exclue
             if (randomEvent <= 3) //event positif

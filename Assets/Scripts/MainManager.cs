@@ -10,7 +10,6 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
 
     public string Language;
 
-
     public int GoldCount = 500;
     public int FaithCount = 400;
     public int SkillCount = 200;
@@ -46,6 +45,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public bool notifHorn = false;
 
     public bool paramOpen = false;
+    public bool placeSelected = false;
 
     public GameObject pelerinInfos; //Instance des informations sur les pelerins
 
@@ -59,6 +59,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
         }
 
         Instance = this;
+
         DontDestroyOnLoad(gameObject);
 
     }

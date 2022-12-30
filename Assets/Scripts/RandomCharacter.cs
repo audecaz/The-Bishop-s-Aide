@@ -35,11 +35,19 @@ public class RandomCharacter : MonoBehaviour
     public static Sprite pel1;
     public static Sprite pel2;
     public static Sprite pel3;
+    public static Sprite pel4;
+    public static Sprite pel5;
+    public static Sprite pelOr;
+    public static Sprite pelFoi;
+
 
     //artisan
     public static Sprite artisan1;
     public static Sprite artisan2;
     public static Sprite artisan3;
+    public static Sprite artisan4;
+    public static Sprite artisan5;
+
 
     //spécial
     public static Sprite nicolas;
@@ -53,10 +61,18 @@ public class RandomCharacter : MonoBehaviour
         pel1 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin1");
         pel2 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin2");
         pel3 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin3");
+        pel4 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin4");
+        pel5 = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin5");
+        pelOr = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin_or");
+        pelFoi = Resources.Load<Sprite>("Pelerins/Pelerins/pelerin_foi");
+
 
         artisan1 = Resources.Load<Sprite>("Pelerins/Artisans/artisan1");
         artisan2 = Resources.Load<Sprite>("Pelerins/Artisans/artisan2");
         artisan3 = Resources.Load<Sprite>("Pelerins/Artisans/artisan3");
+        artisan4 = Resources.Load<Sprite>("Pelerins/Artisans/artisan4");
+        artisan5 = Resources.Load<Sprite>("Pelerins/Artisans/artisan5");
+
 
 
         nicolas = Resources.Load<Sprite>("Pelerins/Nicolas Bachelier/nicolasBachelier");
@@ -227,8 +243,25 @@ public class RandomCharacter : MonoBehaviour
             //Debug.Log(character.name);
             
             GenerateJob();
-            ressourceOne = GenerateRessourceValue();
-            ressourceTwo = GenerateRessourceValue();
+            //ressourceOne = GenerateRessourceValue();
+            //ressourceTwo = GenerateRessourceValue();
+
+            if(job == 1)//artisan
+            {
+                ressourceOne = NewGenerateRessource();
+                ressourceTwo = GenerateRessourceValue();
+            }
+            else if(job != 6 && job != 5)
+            {
+                ressourceOne = NewGenerateRessource();
+                ressourceTwo = NewGenerateRessource();
+            }
+            else
+            {
+                ressourceOne = GenerateRessourceValue();
+                ressourceTwo = GenerateRessourceValue();
+            }
+            
 
             //Debug.Log(character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>());
             skin = character.gameObject.transform.GetChild(0).GetComponent<Image>();
@@ -259,7 +292,7 @@ public class RandomCharacter : MonoBehaviour
             }
             else if(job == 1) // Artisan
             {
-                int randomSprite = Random.Range(1, 4); //4 exclu
+                int randomSprite = Random.Range(1, 6); //6 exclu
 
                 //Sprite
                 if (randomSprite == 1)
@@ -270,9 +303,17 @@ public class RandomCharacter : MonoBehaviour
                 {
                     skin.sprite = artisan2;
                 }
-                else
+                else if(randomSprite == 3)
                 {
                     skin.sprite = artisan3;
+                }
+                else if(randomSprite == 4)
+                {
+                    skin.sprite = artisan4;
+                }
+                else
+                {
+                    skin.sprite = artisan5;
                 }
 
                 character.GetComponent<CharacterInfos>().job = 1;
@@ -296,18 +337,38 @@ public class RandomCharacter : MonoBehaviour
                 int randomSprite = Random.Range(1, 4); //4 exclu
 
                 //Sprite
-                if (randomSprite == 1)
+                if(ressourceOne > 17) //or > 17
                 {
-                    skin.sprite = pel1;
+                    skin.sprite = pelOr;
                 }
-                else if (randomSprite == 2)
+                else if(ressourceTwo > 17)
                 {
-                    skin.sprite = pel2;
+                    skin.sprite = pelFoi;
                 }
-                else
+                else //pelerin classique
                 {
-                    skin.sprite = pel3;
+                    if (randomSprite == 1)
+                    {
+                        skin.sprite = pel1;
+                    }
+                    else if (randomSprite == 2)
+                    {
+                        skin.sprite = pel2;
+                    }
+                    else if (randomSprite == 3)
+                    {
+                        skin.sprite = pel3;
+                    }
+                    else if (randomSprite == 4)
+                    {
+                        skin.sprite = pel4;
+                    }
+                    else
+                    {
+                        skin.sprite = pel5;
+                    }
                 }
+                
 
 
                 if (job == 0 || job == 2) // pelerin "classique"
@@ -409,16 +470,19 @@ public class RandomCharacter : MonoBehaviour
                             ROneText.SetText("FOI : +" + ressourceOne);
 
                             int randomObject = Random.Range(0, 2);
+                            int randomValue = Random.Range(14, 18);
                             if (randomObject == 0)
                             {
-                                RTwoText.SetText("Calice en or : +12 d'OR");
-                                ressourceTwo = 12;
+                                character.GetComponent<CharacterInfos>().objectName = "calice";
+                                RTwoText.SetText("Calice en or : +"+randomValue+" d'OR");
+                                ressourceTwo = randomValue;
                                 character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
                             }
                             else
                             {
-                                RTwoText.SetText("Coffre précieux : +15 d'OR");
-                                ressourceTwo = 15;
+                                character.GetComponent<CharacterInfos>().objectName = "coffre";
+                                RTwoText.SetText("Coffre précieux : +"+randomValue+" d'OR");
+                                ressourceTwo = randomValue;
                                 character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
                             }
                         }
@@ -427,16 +491,18 @@ public class RandomCharacter : MonoBehaviour
                             ROneText.SetText("FAITH : +" + ressourceOne);
 
                             int randomObject = Random.Range(0, 2);
+                            int randomValue = Random.Range(14, 18);
+
                             if (randomObject == 0)
                             {
-                                RTwoText.SetText("Golden Calice : +12 GOLD");
-                                ressourceTwo = 12;
+                                RTwoText.SetText("Golden Calice : +"+randomValue+" GOLD");
+                                ressourceTwo = randomValue;
                                 character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
                             }
                             else
                             {
-                                RTwoText.SetText("Precious Chest : +15 GOLD");
-                                ressourceTwo = 15;
+                                RTwoText.SetText("Precious Chest : +"+randomValue+" GOLD");
+                                ressourceTwo = randomValue;
                                 character.GetComponent<CharacterInfos>().ressourceTwo = ressourceTwo;
                             }
                         }
@@ -552,8 +618,46 @@ public class RandomCharacter : MonoBehaviour
 
     public static int GenerateRessourceValue()
     {
-        int randomNumber = Random.Range(5, 10);
+        int randomNumber = Random.Range(5, 11);
         return randomNumber;
+    }
+
+    public static int NewGenerateRessource()
+    {
+        float randomNumberOne = 0;
+        float randomNumberTwo = 0;
+        float randomNumberThree = 0;
+
+        float minNumber;
+
+        //personnage particulièrement vertueux
+        int randomNumber = Random.Range(1, 21); //valeur max exclue
+
+        if (randomNumber == 20)
+        {
+            minNumber = Random.Range(18, 22);
+        }
+        else
+        {
+            // génération de 3 valeurs
+            for (int i = 0; i < 2; i++)
+            {
+                randomNumberOne += Random.Range(3, 10);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                randomNumberTwo += Random.Range(2, 10);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                randomNumberThree += Random.Range(2, 10);
+            }
+
+            //révupère la plus petite des 3
+            minNumber = Mathf.Min(randomNumberThree, randomNumberTwo, randomNumberThree);
+        }
+
+        return (int)minNumber;
     }
 
     public static int GenerateRolls(int diceNum)

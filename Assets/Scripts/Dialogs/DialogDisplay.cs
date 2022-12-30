@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,7 +18,7 @@ public class DialogDisplay : MonoBehaviour
 
     Animator anim;
     public MeshCollider cathedrale;
-    private GameObject nextButton;
+    public GameObject nextButton;
     public GameObject bertrand;
     private GameObject bertrandTwo;
 
@@ -80,8 +81,8 @@ public class DialogDisplay : MonoBehaviour
 
                 //autre
                 anim = GameObject.Find("Main Camera").GetComponent<Animator>();
-                cathedrale = GameObject.Find("Cathedrale").GetComponent<MeshCollider>();
-                nextButton = GameObject.Find("NextButton");
+                cathedrale = GameObject.Find("Cathedrale Sainte Marie").GetComponent<MeshCollider>();
+                //nextButton = GameObject.Find("NextButton");
                 nextButton.SetActive(false);
             }
             else if(MainManager.Instance.tutoActive == 1) { //dans la cathédrale
@@ -289,6 +290,8 @@ public class DialogDisplay : MonoBehaviour
 
     public IEnumerator WaitTurnCity()
     {
+        nextButton.SetActive(false);
+
         yield return new WaitUntil(() => Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Moved);
         nextButton.SetActive(true);
     }
@@ -317,6 +320,9 @@ public class DialogDisplay : MonoBehaviour
         textDialog = bertrand.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         bertrand.SetActive(true);
         coinsBG.SetActive(true);
+
+        CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount + 9, "gold");
+        CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount + 10, "faith");
     }
 
     public IEnumerator WaitTouchObjectives()

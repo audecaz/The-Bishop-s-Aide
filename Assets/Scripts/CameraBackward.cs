@@ -11,10 +11,14 @@ public class CameraBackward : MonoBehaviour
     private MeshCollider cathedrale;
     public Canvas panelCity;
 
+    public GameObject nomBatiment;
+    public GameObject enterBtn;
+    public GameObject lockImage;
+
     void Start()
     {
         anim = cameraGame.GetComponent<Animator>();
-        cathedrale = GameObject.Find("Cathedrale").GetComponent<MeshCollider>();
+        cathedrale = GameObject.Find("Cathedrale Sainte Marie").GetComponent<MeshCollider>();
     }
 
     public void Update()
@@ -32,6 +36,7 @@ public class CameraBackward : MonoBehaviour
         {
             cathedrale.enabled = false;
             panelCity.enabled = false;
+
         }
     }
 
@@ -43,6 +48,15 @@ public class CameraBackward : MonoBehaviour
             {
                 bool forward = anim.GetBool("Forward");
                 anim.SetBool("Forward", !forward);
+
+                MainManager.Instance.placeSelected = false;
+
+                nomBatiment.SetActive(false);
+                enterBtn.SetActive(false);
+                lockImage.SetActive(false);
+
+                MainManager.Instance.placeSelected = false;
+
             }
         }
 
