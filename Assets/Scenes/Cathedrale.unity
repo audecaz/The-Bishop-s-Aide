@@ -8060,6 +8060,7 @@ MonoBehaviour:
   textDialog: {fileID: 927085012}
   buttonTutorial: {fileID: 987247648}
   cathedrale: {fileID: 0}
+  nextButton: {fileID: 0}
   bertrand: {fileID: 18263126}
   opacity: {fileID: 1918364847}
   endButtonMenu: {fileID: 0}
@@ -11714,6 +11715,13 @@ MonoBehaviour:
   illuIncendie: {fileID: 0}
   illuEpidemie: {fileID: 0}
   illuVoleur: {fileID: 0}
+  illuCoffre: {fileID: 0}
+  illuCalice: {fileID: 0}
+  illuNicolas: {fileID: 0}
+  illuStBertrand: {fileID: 0}
+  illuBertrand: {fileID: 0}
+  illuCathedrale: {fileID: 0}
+  illuCloitre: {fileID: 0}
 --- !u!114 &2036628349
 MonoBehaviour:
   m_ObjectHideFlags: 0
