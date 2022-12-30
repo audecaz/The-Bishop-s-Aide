@@ -39,7 +39,7 @@ public class UI_Buttons : MonoBehaviour
     }
     IEnumerator BackToMainAfterAnimation()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         SceneManager.LoadScene(1);
 
     }

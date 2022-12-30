@@ -86,7 +86,7 @@ public class MenuManager : MonoBehaviour
 
     IEnumerator StartAfterAnimation()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         SceneManager.LoadScene(1);
 
     }

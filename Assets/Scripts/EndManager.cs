@@ -58,7 +58,7 @@ public class EndManager : MonoBehaviour
 
     IEnumerator EndAfterAnimation()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
 
         //Debug.Log("Fin !");
         end.SetActive(false);
@@ -83,7 +83,7 @@ public class EndManager : MonoBehaviour
 
     IEnumerator MenuAfterAnimation()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         confettis.SetActive(false);
 
         MenuManager.ResetGame();

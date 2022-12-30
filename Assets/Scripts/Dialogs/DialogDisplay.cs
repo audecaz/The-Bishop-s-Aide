@@ -296,7 +296,7 @@ public class DialogDisplay : MonoBehaviour
 
     public IEnumerator TutoAfterAnimation(string tutoOrNot)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
 
         if (tutoOrNot == "yes")
         {
@@ -397,7 +397,7 @@ public class DialogDisplay : MonoBehaviour
     }
     public IEnumerator NextBertrandAfterAnimation()
     {
-        yield return new WaitForSeconds(0.5f); //attend 0.5s
+        yield return new WaitForSeconds(0.4f); //attend 0.5s
 
         //continue le tutoriel
         cathedrale.enabled = true;

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using static Unity.VisualScripting.Icons;
 
 public class CameraBackward : MonoBehaviour
 {
@@ -57,7 +56,7 @@ public class CameraBackward : MonoBehaviour
 
     public IEnumerator BackwardAfterAnimation()
     {
-        yield return new WaitForSeconds(0.5f); //attend 0.5s
+        yield return new WaitForSeconds(0.4f); //attend 0.5s
 
         bool forward = anim.GetBool("Forward");
         anim.SetBool("Forward", !forward);
@@ -79,7 +78,7 @@ public class CameraBackward : MonoBehaviour
 
     public IEnumerator EnterAfterAnimation()
     {
-        yield return new WaitForSeconds(0.5f); //attend 0.5s
+        yield return new WaitForSeconds(0.4f); //attend 0.5s
 
         SceneManager.LoadScene(2);
 

@@ -138,7 +138,7 @@ public class CharacterInfos : MonoBehaviour
 
                 }
 
-                yield return new WaitForSeconds(1*0.01f);
+                yield return new WaitForSeconds(1*0.1f);
 
             }
 
@@ -205,7 +205,7 @@ public class CharacterInfos : MonoBehaviour
 
                 }
 
-                yield return new WaitForSeconds(1* 0.01f);
+                yield return new WaitForSeconds(1* 0.1f);
             }
 
             if (ressourceName == "gold")

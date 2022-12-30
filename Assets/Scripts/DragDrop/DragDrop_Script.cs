@@ -31,6 +31,8 @@ public class DragDrop_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hornSlot.SetActive(true);
+
         choirDrag = choir.transform.GetChild(1).GetComponent<Draggable>();
         organDrag = organ.transform.GetChild(1).GetComponent<Draggable>();
         hornDrag = horn.transform.GetChild(1).GetComponent<Draggable>();
