@@ -33,8 +33,15 @@ public class UI_Buttons : MonoBehaviour
     {
         if (!MainManager.Instance.popupOpen)
         {
-            SceneManager.LoadScene(1);
+            EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+            StartCoroutine(BackToMainAfterAnimation());
         }
+    }
+    IEnumerator BackToMainAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(1);
+
     }
 
     //Touch les ressources dans l'UI

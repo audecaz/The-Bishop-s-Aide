@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
@@ -115,25 +114,25 @@ public class CharacterInfos : MonoBehaviour
                 {
                     MainManager.Instance.GoldCount = oldValue;
                     //Debug.Log(oldValue);
-                    gold.color = new Color(0, 1, 0);
+                    gold.color = new Color(0.1f, 0.6f, 0.2f);
                     gold.SetText(MainManager.Instance.GoldCount.ToString());
                 }
                 else if (ressourceName == "faith")
                 {
                     MainManager.Instance.FaithCount = oldValue;
-                    faith.color = new Color(0, 1, 0);
+                    gold.color = new Color(0.1f, 0.6f, 0.2f);
                     faith.SetText(MainManager.Instance.FaithCount.ToString());
                 }
                 else if (ressourceName == "skill")
                 {
                     MainManager.Instance.SkillCount = oldValue;
-                    skill.color = new Color(0, 1, 0);
+                    gold.color = new Color(0.1f, 0.6f, 0.2f);
                     skill.SetText(MainManager.Instance.SkillCount.ToString());
                 }
                 else
                 {
                     MainManager.Instance.ArtisanCount = oldValue;
-                    artisan.color = new Color(0, 1, 0);
+                    gold.color = new Color(0.1f, 0.6f, 0.2f);
 
                     artisan.SetText(MainManager.Instance.ArtisanCount.ToString());
 

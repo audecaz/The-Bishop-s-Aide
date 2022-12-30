@@ -11,19 +11,32 @@ public class MenuManager : MonoBehaviour
     public GameObject disclaimerFR;
     public GameObject disclaimerENG;
 
+    public GameObject playStart;
+
     public void Start()
     {
-        
+
     }
 
     public void playButton()
     {
+        playStart.GetComponent<Animation>().Play("Button");
+        StartCoroutine(PlayAfterAnimation());     
+    }
+
+
+
+    IEnumerator PlayAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
         startScreen.SetActive(false);
         langageScreen.SetActive(true);
     }
 
     public void ChooseLanguage()
     {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+
         //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
         string buttonTouched = EventSystem.current.currentSelectedGameObject.name;
 
@@ -41,6 +54,14 @@ public class MenuManager : MonoBehaviour
 
     public void NextPanel()
     {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        StartCoroutine(LanguageAfterAnimation());
+   
+    }
+    IEnumerator LanguageAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+
         if (MainManager.Instance.Language != "0")
         {
             langageScreen.SetActive(false);
@@ -58,9 +79,16 @@ public class MenuManager : MonoBehaviour
 
     public void startGame()
     {
-        
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        StartCoroutine(StartAfterAnimation());
+
+    }
+
+    IEnumerator StartAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(1);
-        
+
     }
 
     public static void ResetGame()

@@ -4,17 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using TMPro;
-using Unity.Burst.Intrinsics;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
-using UnityEngine.Profiling;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using static Unity.VisualScripting.Icons;
-using static UnityEngine.Rendering.DebugUI.Table;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 

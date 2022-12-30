@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using Image = UnityEngine.UI.Image;
+
 
 public class DialogDisplay : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class DialogDisplay : MonoBehaviour
     public TextMeshProUGUI textDialog;
 
     public GameObject buttonTutorial;
+    private Image buttonYes;
+    private Image buttonNo;
 
     Animator anim;
     public MeshCollider cathedrale;
@@ -39,18 +44,31 @@ public class DialogDisplay : MonoBehaviour
 
     private void Start()
     {
+        buttonYes = buttonTutorial.transform.GetChild(0).gameObject.GetComponent<Image>();
+        buttonNo = buttonTutorial.transform.GetChild(1).gameObject.GetComponent<Image>();
 
         //Récupération de la langue de jeu sélectionnée
-        if(MainManager.Instance.Language == "fr")// FR
+        if (MainManager.Instance.Language == "fr")// FR
         {
             language = "FR/";
+
+            buttonYes.sprite = Resources.Load<Sprite>("Ui/oui");
+            buttonNo.sprite = Resources.Load<Sprite>("Ui/non");
+
+            nextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Ui/suivant");
         }
         else if(MainManager.Instance.Language == "eng") //ENG
         {
             language = "EN/";
+
+            buttonYes.sprite = Resources.Load<Sprite>("Ui/yes");
+            buttonNo.sprite = Resources.Load<Sprite>("Ui/no");
+
+            nextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Ui/next");
+
         }
 
-        
+
 
         if (MainManager.Instance.tutoActive !=0)
         {
@@ -249,7 +267,7 @@ public class DialogDisplay : MonoBehaviour
     }
 
     //Première question Tuto yes no
-    public void LaunchTuto()
+    /*public void LaunchTuto()
     {
         dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto");
         //Debug.Log(Resources.Load<Dialog>("Dialogue/Tuto"));
@@ -262,6 +280,40 @@ public class DialogDisplay : MonoBehaviour
     {
         dialog = Resources.Load<Dialog>("Dialogue/" + language + "NoTuto");
         activeLineIndex = 0;
+    }*/
+
+    public void LaunchTuto()
+    {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        StartCoroutine(TutoAfterAnimation("yes"));
+
+    }
+    public void NoLaunchTuto()
+    {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        StartCoroutine(TutoAfterAnimation("no"));
+    }
+
+    public IEnumerator TutoAfterAnimation(string tutoOrNot)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        if (tutoOrNot == "yes")
+        {
+            dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto");
+            //Debug.Log(Resources.Load<Dialog>("Dialogue/Tuto"));
+            activeLineIndex = 0;
+            MainManager.Instance.IsHornPlaced = false;
+            AdvanceMonologue();
+
+        }
+        else
+        {
+            dialog = Resources.Load<Dialog>("Dialogue/" + language + "NoTuto");
+            activeLineIndex = 0;
+            AdvanceMonologue();
+
+        }
     }
 
 
@@ -340,17 +392,24 @@ public class DialogDisplay : MonoBehaviour
     //Après avoir fait tourné la cité, appuie sur le bouton, déclanche cette fonction
     public void TutoAfterTurn()
     {
-        //activeLineIndex += 1;
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button"); //lance anim du touch button
+        StartCoroutine(NextBertrandAfterAnimation());
+    }
+    public IEnumerator NextBertrandAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f); //attend 0.5s
+
+        //continue le tutoriel
         cathedrale.enabled = true;
 
         bertrand.SetActive(true);
 
         dialog = Resources.Load<Dialog>("Dialogue/" + language + "Tuto 2");
-        //Debug.Log(Resources.Load<Dialog>("Dialogue/Tuto"));
+
         activeLineIndex = 0;
+        AdvanceMonologue();
 
     }
 
-    
 }
 

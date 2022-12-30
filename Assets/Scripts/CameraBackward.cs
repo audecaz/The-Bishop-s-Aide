@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using static Unity.VisualScripting.Icons;
 
 public class CameraBackward : MonoBehaviour
 {
@@ -46,20 +49,39 @@ public class CameraBackward : MonoBehaviour
         {
             if (anim != null && anim.GetBool("Forward"))
             {
-                bool forward = anim.GetBool("Forward");
-                anim.SetBool("Forward", !forward);
-
-                MainManager.Instance.placeSelected = false;
-
-                nomBatiment.SetActive(false);
-                enterBtn.SetActive(false);
-                lockImage.SetActive(false);
-
-                MainManager.Instance.placeSelected = false;
-
+                EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button"); //lance anim du touch button
+                StartCoroutine(BackwardAfterAnimation());
             }
         }
+    }
 
+    public IEnumerator BackwardAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f); //attend 0.5s
+
+        bool forward = anim.GetBool("Forward");
+        anim.SetBool("Forward", !forward);
+
+        MainManager.Instance.placeSelected = false;
+
+        nomBatiment.SetActive(false);
+        enterBtn.SetActive(false);
+        lockImage.SetActive(false);
+
+        MainManager.Instance.placeSelected = false;
+    }
+
+    public void PlaceSelection() //selection de la cathédrale
+    {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button"); //lance anim du touch button
+        StartCoroutine(EnterAfterAnimation());
+    }
+
+    public IEnumerator EnterAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f); //attend 0.5s
+
+        SceneManager.LoadScene(2);
 
     }
 }
