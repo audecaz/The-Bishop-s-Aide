@@ -45,6 +45,10 @@ public class PopUp_Manager : MonoBehaviour
     public Sprite illuBertrand;
     public Sprite illuCathedrale;
     public Sprite illuCloitre;
+    public Sprite illuCorne;
+    public Sprite illuChoeur;
+    public Sprite illuOrgue;
+    public Sprite illuCroco;
 
 
 
@@ -77,6 +81,10 @@ public class PopUp_Manager : MonoBehaviour
         illuBertrand = Resources.Load<Sprite>("Illus/bertrand");
         illuCathedrale = Resources.Load<Sprite>("Illus/cathedrale");
         illuCloitre = Resources.Load<Sprite>("Illus/cloitre");
+        illuCorne = Resources.Load<Sprite>("Illus/licorne");
+        illuChoeur = Resources.Load<Sprite>("Illus/choeur");
+        illuOrgue = Resources.Load<Sprite>("Illus/orgue");
+        illuCroco = Resources.Load<Sprite>("Illus/croco");
 
         factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
         factPictoEng = Resources.Load<Sprite>("Ui/sceau_eng");
@@ -621,6 +629,7 @@ public class PopUp_Manager : MonoBehaviour
 
 
     //----------------------------- POP UPS OBTENTION OBJETS SPECIAUX --------------------------------------
+    //Quand le choeur et l'orgue sont obtenus
     public void PopUpOrgueChoeur()
     {
         if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
@@ -630,6 +639,7 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+
             if (MainManager.Instance.Language == "fr")
             {
                 ObjectTitle.SetText("Félicitations !");
@@ -650,8 +660,11 @@ public class PopUp_Manager : MonoBehaviour
         }
     }
 
+    //Quand le choeur est placé
     public void PopUpChoeur()
     {
+        FactImage.sprite = illuChoeur;
+
         if (MainManager.Instance.Language == "fr")
         {
             FactTitle.SetText("Le choeur de la cathédrale");
@@ -668,8 +681,11 @@ public class PopUp_Manager : MonoBehaviour
         Open(FactEvent);
     }
 
+    //Quand l'orgue est placé
     public void PopUpOrgue()
     {
+        FactImage.sprite = illuOrgue;
+
         if (MainManager.Instance.Language == "fr")
         {
             FactTitle.SetText("L'orgue d'angle");
@@ -687,7 +703,8 @@ public class PopUp_Manager : MonoBehaviour
 
         Open(FactEvent);
     }
-
+    
+    //Quand la corne est récupérée
     public void PopUpLicorneoOne()
     {
         if (MainManager.Instance.Language == "fr")
@@ -710,8 +727,11 @@ public class PopUp_Manager : MonoBehaviour
 
     }
 
+    //Quand la corne est placée
     public void PopUpLicorneTwo()
     {
+        FactImage.sprite = illuCorne;
+
         if (MainManager.Instance.Language == "fr")
         {
             FactTitle.SetText("Le vol de la corne de licorne");
@@ -730,9 +750,10 @@ public class PopUp_Manager : MonoBehaviour
         Open(FactEvent);
     }
 
-
+    //Quand le croco est obtenu
     public void PopUpCrocoOne()
     {
+
         if (MainManager.Instance.Language == "fr")
         {
             ObjectTitle.SetText("Félicitations !");
@@ -751,8 +772,11 @@ public class PopUp_Manager : MonoBehaviour
         Open(ObtentionObject);
     }
 
+    //Quand le croco est placé
     public void PopUpCrocoTwo()
     {
+        FactImage.sprite = illuCroco;
+
         if (MainManager.Instance.Language == "fr")
         {
             FactTitle.SetText("Le crocodile de St Bertrand");

@@ -123,6 +123,7 @@ public class DragDrop_Script : MonoBehaviour
             {
                 croco3D.SetActive(true);
                 crocoSlot.SetActive(false);
+                croco.transform.GetChild(1).gameObject.SetActive(false);
 
                 croco.transform.GetChild(0).GetComponent<Image>().enabled = true; //masque le visuel dans la box
                 crocoDrag.inSlot = true;

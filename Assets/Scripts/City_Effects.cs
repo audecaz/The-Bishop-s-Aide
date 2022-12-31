@@ -42,7 +42,7 @@ public class City_Effects : MonoBehaviour
 
     public void CityFireOn()
     {
-        //Debug.Log("test");
+        Debug.Log("test");
         burnedHouse.GetComponent<Renderer>().material = matBurnedHouse;
         houseSmoke.SetActive(true);
         houseSmoke.GetComponent<ParticleSystem>().Play();
@@ -50,7 +50,7 @@ public class City_Effects : MonoBehaviour
 
     public void CityFireOff()
     {
-        //Debug.Log("off!");
+        Debug.Log("off!");
         burnedHouse.GetComponent<Renderer>().material = matNormalHouse;
         houseSmoke.SetActive(false);
         houseSmoke.GetComponent<ParticleSystem>().Stop();

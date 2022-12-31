@@ -241,6 +241,10 @@ public class ObjectiveList : MonoBehaviour
             {
                 StartCoroutine(PopUpWait());
             }
+            else
+            {
+                City_Effects.CityFxInstance.CityFireOff(); //masque les fx de l'incendie
+            }
         }
         else if(MainManager.Instance.ArtisanCount < objectiveSix)
         {
