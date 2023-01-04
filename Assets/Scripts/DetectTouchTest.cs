@@ -106,21 +106,21 @@ public class DetectTouchTest : MonoBehaviour
                             MainManager.Instance.PilgrinsCount++;
 
                             //Apparition des popups historiques
-                            if (MainManager.Instance.PilgrinsCount >= 8)
+                            if (MainManager.Instance.PilgrinsCount >= 5)
                             {
-                                if (MainManager.Instance.PilgrinsCount == 8)
+                                if (MainManager.Instance.PilgrinsCount == 5)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpStBertrand();
                                 }
-                                else if (MainManager.Instance.PilgrinsCount == 16)
+                                else if (MainManager.Instance.PilgrinsCount == 12)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpBertrandGoth();
                                 }
-                                else if (MainManager.Instance.PilgrinsCount == 24)
+                                else if (MainManager.Instance.PilgrinsCount == 20)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpCathedrale();
                                 }
-                                else if (MainManager.Instance.PilgrinsCount == 34)
+                                else if (MainManager.Instance.PilgrinsCount == 28)
                                 {
                                     PopUp_Manager.InstanceFact.PopUpCloitre();
                                 }

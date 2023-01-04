@@ -105,8 +105,10 @@ public class RandomCharacter : MonoBehaviour
 
                 if (jobLocal == 0 || jobLocal == 2) //si pelerin
                 {
+                    
                     if (MainManager.Instance.Language == "fr")
                     {
+                        /*
                         if (jobLocal == 2)
                         {
                             jobTextLocal.SetText("Voleur");
@@ -114,12 +116,15 @@ public class RandomCharacter : MonoBehaviour
                         else
                         {
                             jobTextLocal.SetText("Pèlerin");
-                        }
+                        }*/
+                        jobTextLocal.SetText("Pèlerin");
+
                         ROneTextLocal.SetText("OR : +" + ressourceOneLocal);
                         RTwoTextLocal.SetText("FOI : +" + ressourceTwoLocal);
                     }
                     else //eng
                     {
+                        /*
                         if (jobLocal == 2)
                         {
                             jobTextLocal.SetText("Thief");
@@ -127,7 +132,10 @@ public class RandomCharacter : MonoBehaviour
                         else
                         {
                             jobTextLocal.SetText("Pilgrim");
-                        }
+                        }*/
+
+                        jobTextLocal.SetText("Pilgrim");
+
                         ROneTextLocal.SetText("GOLD : +" + ressourceOneLocal);
                         RTwoTextLocal.SetText("FAITH : +" + ressourceTwoLocal);
                     }
@@ -375,6 +383,7 @@ public class RandomCharacter : MonoBehaviour
                 {
                     if (MainManager.Instance.Language == "fr")
                     {
+                        /*
                         if (job == 2)
                         {
                             jobText.SetText("Voleur");
@@ -384,6 +393,17 @@ public class RandomCharacter : MonoBehaviour
                         {
                             jobText.SetText("Pèlerin");
                             character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
+                        }*/
+
+                        jobText.SetText("Pèlerin");
+
+                        if (job == 2)
+                        {
+                            character.GetComponent<CharacterInfos>().job = 2;
+                        }
+                        else
+                        {
+                            character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
                         }
 
                         ROneText.SetText("OR : +" + ressourceOne);
@@ -391,6 +411,7 @@ public class RandomCharacter : MonoBehaviour
                     }
                     else
                     {
+                        /*
                         if (job == 2)
                         {
                             jobText.SetText("Thief");
@@ -399,6 +420,17 @@ public class RandomCharacter : MonoBehaviour
                         else
                         {
                             jobText.SetText("Pilgrim");
+                            character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
+                        }*/
+
+                        jobText.SetText("Pilgrim");
+
+                        if (job == 2)
+                        {
+                            character.GetComponent<CharacterInfos>().job = 2;
+                        }
+                        else
+                        {
                             character.GetComponent<CharacterInfos>().job = 0; //stocke les infos générés directement sur les personnages
                         }
 
