@@ -31,26 +31,28 @@ public class PopUp_Manager : MonoBehaviour
     private TextMeshProUGUI ObjectContent;
     public bool IsActive = false;
 
-    public Sprite illuRecolte;
-    public Sprite illuMiracle;
-    public Sprite illuArtisanat;
-    public Sprite illuFamine;
-    public Sprite illuIncendie;
-    public Sprite illuEpidemie;
-    public Sprite illuVoleur;
-    public Sprite illuCoffre;
-    public Sprite illuCalice;
-    public Sprite illuNicolas;
-    public Sprite illuStBertrand;
-    public Sprite illuBertrand;
-    public Sprite illuCathedrale;
-    public Sprite illuCloitre;
-    public Sprite illuCorne;
-    public Sprite illuChoeur;
-    public Sprite illuOrgue;
-    public Sprite illuCroco;
+    private Sprite illuRecolte;
+    private Sprite illuMiracle;
+    private Sprite illuArtisanat;
+    private Sprite illuFamine;
+    private Sprite illuIncendie;
+    private Sprite illuEpidemie;
+    private Sprite illuVoleur;
+    private Sprite illuCoffre;
+    private Sprite illuCalice;
+    private Sprite illuNicolas;
+    private Sprite illuStBertrand;
+    private Sprite illuBertrand;
+    private Sprite illuCathedrale;
+    private Sprite illuCloitre;
+    private Sprite illuCorne;
+    private Sprite illuChoeur;
+    private Sprite illuOrgue;
+    private Sprite illuCroco;
 
-
+    public GameObject ObtentionCroco;
+    public GameObject ObtentionCorne;
+    public GameObject ObtentionOrgue;
 
     public void Start()
     {
@@ -639,6 +641,10 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            ObtentionCorne.SetActive(false);
+            ObtentionCroco.SetActive(false);
+
+            ObtentionOrgue.SetActive(true);
 
             if (MainManager.Instance.Language == "fr")
             {
@@ -707,6 +713,11 @@ public class PopUp_Manager : MonoBehaviour
     //Quand la corne est récupérée
     public void PopUpLicorneoOne()
     {
+        ObtentionOrgue.SetActive(false);
+        ObtentionCroco.SetActive(false);
+
+        ObtentionCorne.SetActive(true);
+
         if (MainManager.Instance.Language == "fr")
         {
             ObjectTitle.SetText("Félicitations !");
@@ -753,6 +764,10 @@ public class PopUp_Manager : MonoBehaviour
     //Quand le croco est obtenu
     public void PopUpCrocoOne()
     {
+        ObtentionOrgue.SetActive(false);
+        ObtentionCorne.SetActive(false);
+
+        ObtentionCroco.SetActive(true);
 
         if (MainManager.Instance.Language == "fr")
         {
