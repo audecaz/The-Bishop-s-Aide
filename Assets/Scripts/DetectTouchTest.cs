@@ -23,12 +23,20 @@ public class DetectTouchTest : MonoBehaviour
     public GameObject enterBtn;
     public GameObject lockImage;
 
+    public GameObject cathedral;
+    public GameObject maisonBrid;
+    public GameObject cloitre;
+
 
     public void Start()
     {
         anim = GameObject.Find("Main Camera").GetComponent<Animator>();
 
         //bertrand = GameObject.Find("BertrandDialog");
+
+        maisonBrid.GetComponent<Animation>().Stop();
+        cathedral.GetComponent<Animation>().Stop();
+        cloitre.GetComponent<Animation>().Stop();
 
     }
 
@@ -147,7 +155,7 @@ public class DetectTouchTest : MonoBehaviour
                             anim.SetBool("Forward", !forward);
                         }
                     }
-                    else if(hit.collider.gameObject.CompareTag("Batiment") && anim.GetBool("Forward") && (bertrand.activeSelf || MainManager.Instance.tutoActive == 0))
+                    else if(hit.collider.gameObject.CompareTag("Batiment") && anim.GetBool("Forward") && (bertrand.activeSelf || MainManager.Instance.tutoActive == 0)) // touche un bâtiment de la ville
                     {
                         if (MainManager.Instance.tutoActive == 1 && hit.collider.gameObject.name == "Cathedrale Sainte Marie") //dans le tuto
                         {
@@ -159,19 +167,61 @@ public class DetectTouchTest : MonoBehaviour
 
                             nomBatiment.SetActive(true);
 
-                            nomBatiment.GetComponent<TextMeshProUGUI>().SetText(hit.collider.gameObject.name);
-
-
-                            if (hit.collider.gameObject.name == "Cathedrale Sainte Marie")
+                            if (hit.collider.gameObject == cathedral)
                             {
+                                if (MainManager.Instance.Language == "fr")
+                                {
+                                    nomBatiment.GetComponent<TextMeshProUGUI>().SetText("Cathédrale Sainte Marie");
+                                }
+                                else //anglais
+                                {
+                                    nomBatiment.GetComponent<TextMeshProUGUI>().SetText("Saint Mary's Cathedral");
+                                }
+
+                                cloitre.GetComponent<Animation>().Stop();
+                                maisonBrid.GetComponent<Animation>().Stop();
+                                cathedral.GetComponent<Animation>().Play("SelectedCathedral");
+
                                 enterBtn.SetActive(true);
                                 lockImage.SetActive(false);
-
                             }
                             else
                             {
                                 lockImage.SetActive(true);
                                 enterBtn.SetActive(false);
+
+                                if (hit.collider.gameObject == maisonBrid)
+                                {
+                                    if (MainManager.Instance.Language == "fr")
+                                    {
+                                        nomBatiment.GetComponent<TextMeshProUGUI>().SetText("Maison Bridault");
+                                    }
+                                    else //anglais
+                                    {
+                                        nomBatiment.GetComponent<TextMeshProUGUI>().SetText("House Bridault");
+                                    }
+
+                                    cloitre.GetComponent<Animation>().Stop();
+                                    cathedral.GetComponent<Animation>().Stop();
+                                    maisonBrid.GetComponent<Animation>().Play("SelectedBrid");
+
+                                }
+                                else //cloitre
+                                {
+                                    if (MainManager.Instance.Language == "fr")
+                                    {
+                                        nomBatiment.GetComponent<TextMeshProUGUI>().SetText("Cloître");
+                                    }
+                                    else //anglais
+                                    {
+                                        nomBatiment.GetComponent<TextMeshProUGUI>().SetText("Cloister");
+                                    }
+
+                                    maisonBrid.GetComponent<Animation>().Stop();
+                                    cathedral.GetComponent<Animation>().Stop();
+                                    cloitre.GetComponent<Animation>().Play("SelectedCloitre");
+
+                                }
                             }
                         }
 
@@ -186,7 +236,7 @@ public class DetectTouchTest : MonoBehaviour
                     {
                         slider.ShowHideObjective();
                     }
-
+                    
 
                 }
             }

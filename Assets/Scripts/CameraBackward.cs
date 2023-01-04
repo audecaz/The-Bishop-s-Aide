@@ -17,6 +17,10 @@ public class CameraBackward : MonoBehaviour
     public GameObject enterBtn;
     public GameObject lockImage;
 
+    public GameObject cathedral;
+    public GameObject maisonBrid;
+    public GameObject cloitre;
+
     void Start()
     {
         anim = cameraGame.GetComponent<Animator>();
@@ -66,6 +70,11 @@ public class CameraBackward : MonoBehaviour
         nomBatiment.SetActive(false);
         enterBtn.SetActive(false);
         lockImage.SetActive(false);
+
+        maisonBrid.GetComponent<Animation>().Stop();
+        cathedral.GetComponent<Animation>().Stop();
+        cloitre.GetComponent<Animation>().Stop();
+        
 
         MainManager.Instance.placeSelected = false;
     }

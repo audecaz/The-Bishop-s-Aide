@@ -2984,6 +2984,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f272b75007c2e3b448b8a4d75d2d5cff,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f272b75007c2e3b448b8a4d75d2d5cff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f272b75007c2e3b448b8a4d75d2d5cff,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -6
       objectReference: {fileID: 0}
@@ -3075,6 +3085,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2599348310142753896, guid: d0ab46a322c7a1e4197f60d447911348, type: 3}
+--- !u!111 &327117067
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327117065}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a13932474894b344f87fa5befd8501a5, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a13932474894b344f87fa5befd8501a5, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,6 +3241,9 @@ MonoBehaviour:
   nomBatiment: {fileID: 499939897}
   enterBtn: {fileID: 1353717869}
   lockImage: {fileID: 1756901607}
+  cathedral: {fileID: 327117065}
+  maisonBrid: {fileID: 1245836303}
+  cloitre: {fileID: 495693405}
 --- !u!95 &330585549
 Animator:
   serializedVersion: 4
@@ -3252,6 +3281,9 @@ MonoBehaviour:
   nomBatiment: {fileID: 499939897}
   enterBtn: {fileID: 1353717869}
   lockImage: {fileID: 1756901607}
+  cathedral: {fileID: 327117065}
+  maisonBrid: {fileID: 1245836303}
+  cloitre: {fileID: 495693405}
 --- !u!1 &333764246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5841,6 +5873,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a76e795ce92917429c04e7d246f663d,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a76e795ce92917429c04e7d246f663d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a76e795ce92917429c04e7d246f663d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.299988
       objectReference: {fileID: 0}
@@ -5852,7 +5894,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7a76e795ce92917429c04e7d246f663d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 59.099976
+      value: 59.09998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a76e795ce92917429c04e7d246f663d,
         type: 3}
@@ -5932,6 +5974,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2279265454553154077, guid: 34a09991addaf6547aaa660cc268d140, type: 3}
+--- !u!111 &495693407
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495693405}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 32b5d497c1e127f48adad0b5813b744d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &499939897
 GameObject:
   m_ObjectHideFlags: 0
@@ -10967,8 +11025,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000025
-  m_Size: 0.71201175
+  m_Value: 1.0000014
+  m_Size: 0.7120065
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -23693,6 +23751,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ef7ea0cbefe39b478587ce4dd195269,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ef7ea0cbefe39b478587ce4dd195269,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ef7ea0cbefe39b478587ce4dd195269,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ef7ea0cbefe39b478587ce4dd195269,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.299988
       objectReference: {fileID: 0}
@@ -23704,7 +23777,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1ef7ea0cbefe39b478587ce4dd195269,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 56.200012
+      value: 56.20001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ef7ea0cbefe39b478587ce4dd195269,
         type: 3}
@@ -23784,6 +23857,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6734390025221582547, guid: b1877bf854d96c64b980d3d5f17d81bd, type: 3}
+--- !u!111 &1245836305
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245836303}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: bb3b1417e7777154c8045887bde4f440, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1255346957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28128,7 +28217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51042}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51038}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
