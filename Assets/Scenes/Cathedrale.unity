@@ -13321,6 +13321,10 @@ MonoBehaviour:
   illuBertrand: {fileID: 0}
   illuCathedrale: {fileID: 0}
   illuCloitre: {fileID: 0}
+  illuCorne: {fileID: 0}
+  illuChoeur: {fileID: 0}
+  illuOrgue: {fileID: 0}
+  illuCroco: {fileID: 0}
 --- !u!114 &2036628349
 MonoBehaviour:
   m_ObjectHideFlags: 0
