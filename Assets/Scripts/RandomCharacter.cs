@@ -627,7 +627,7 @@ public class RandomCharacter : MonoBehaviour
             if (randomNumber < 7)
             {
                 randomNumber = Random.Range(0, 10);
-                if (randomNumber < 0.5) //voleur
+                if (randomNumber < 0.45) //voleur
                 {
                     job = 2;
                 }
