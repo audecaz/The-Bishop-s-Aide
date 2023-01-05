@@ -45,6 +45,9 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public bool notifHorn = false;
 
     public bool paramOpen = false;
+    public bool soundOn = true;
+    public bool musicOn = true;
+
     public bool placeSelected = false;
 
     public GameObject pelerinInfos; //Instance des informations sur les pelerins

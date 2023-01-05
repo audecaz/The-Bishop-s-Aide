@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
+using static Unity.VisualScripting.Icons;
+using Image = UnityEngine.UI.Image;
 
 
 public class UI_Buttons : MonoBehaviour
@@ -20,12 +22,26 @@ public class UI_Buttons : MonoBehaviour
     private TextMeshProUGUI music;
     private TextMeshProUGUI languageTitle;
 
+    public Image soundImage;
+    public Image musicImage;
+
+    private Sprite soundOn;
+    private Sprite soundOff;
+
+    private Sprite musicOn;
+    private Sprite musicOff;
+
     public void Start()
     {
         title = this.transform.GetChild(0).GetChild(3).transform.GetComponent<TextMeshProUGUI>();
         soundTitle = this.transform.GetChild(0).GetChild(4).transform.GetComponent<TextMeshProUGUI>();
         languageTitle = this.transform.GetChild(0).GetChild(5).transform.GetComponent<TextMeshProUGUI>();
 
+        soundOn = Resources.Load<Sprite>("Ui/soundOn");
+        soundOff = Resources.Load<Sprite>("Ui/soundOff");
+
+        musicOn = Resources.Load<Sprite>("Ui/musicOn");
+        musicOff = Resources.Load<Sprite>("Ui/musicOff");
     }
 
     //Sortie de la cathédrale
@@ -104,16 +120,61 @@ public class UI_Buttons : MonoBehaviour
 
     }
 
+    //SOUNDS
+
+    public void SoundOnOff()
+    {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+
+        MainManager.Instance.soundOn = !MainManager.Instance.soundOn;
+
+        if (MainManager.Instance.soundOn)
+        {
+            soundImage.sprite = soundOn;
+        }
+        else
+        {
+            soundImage.sprite = soundOff;
+        }
+    }
+
+    public void MusicOnOff()
+    {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+
+        MainManager.Instance.musicOn = !MainManager.Instance.musicOn;
+
+        if (MainManager.Instance.musicOn)
+        {
+            musicImage.sprite = musicOn;
+        }
+        else
+        {
+            musicImage.sprite = musicOff;
+        }
+    }
+
     public void BackMenu()
     {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        StartCoroutine(BackMenuAfterAnimation());
+    }
+
+    public IEnumerator BackMenuAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.4f);
         MenuManager.ResetGame();
 
         SceneManager.LoadScene(0);
 
     }
 
+    
+
     public void ChangeLanguage()
     {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+
         string buttonTouched = EventSystem.current.currentSelectedGameObject.name;
 
         if (buttonTouched == "ButtonFrench")
