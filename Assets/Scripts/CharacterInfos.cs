@@ -17,9 +17,12 @@ public class CharacterInfos : MonoBehaviour
 
     public string objectName;
 
+    private static GameObject echaffautOne;
+
     //public PopUp_Manager popUp_Manager;
     public void Start()
     {
+
         if(SceneManager.GetActiveScene().name != "Menu")
         {
             InstanceCharaInfos = this;
@@ -30,7 +33,7 @@ public class CharacterInfos : MonoBehaviour
             artisan = GameObject.Find("ArtisanCount").GetComponent<TextMeshProUGUI>();
         }
 
-        
+        echaffautOne = GameObject.Find("City").transform.GetChild(5).gameObject;
     }
     public void AddInfosToGlobal(GameObject chosenChara)
     {
@@ -66,6 +69,13 @@ public class CharacterInfos : MonoBehaviour
             UpdateValue(MainManager.Instance.SkillCount, MainManager.Instance.SkillCount + chara.ressourceOne, "skill");
             UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount - chara.ressourceTwo, "gold");
             UpdateValue(MainManager.Instance.ArtisanCount, MainManager.Instance.ArtisanCount + 1, "artisan");
+
+            if (MainManager.Instance.ArtisanCount >= 1 && !echaffautOne.activeSelf) //premier artisan
+            {
+                echaffautOne.SetActive(true);
+            }
+            
+
 
             //MainManager.Instance.SkillCount += chara.ressourceOne;
             //MainManager.Instance.GoldCount -= chara.ressourceTwo;

@@ -15,6 +15,7 @@ public class RandomCharacter : MonoBehaviour
     public static int ressourceTwo;
 
     public static Image skin;
+    public static RectTransform skinHeight;
     public static TextMeshProUGUI jobText;
     public static TextMeshProUGUI ROneText;
     public static TextMeshProUGUI RTwoText;
@@ -273,15 +274,18 @@ public class RandomCharacter : MonoBehaviour
 
             //Debug.Log(character.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>());
             skin = character.gameObject.transform.GetChild(0).GetComponent<Image>();
+            skinHeight = character.gameObject.transform.GetChild(0).GetComponent<RectTransform>();
             jobText = character.gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
             ROneText = character.gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
             RTwoText = character.gameObject.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
 
             //Debug.Log(skin);
             //Debug.Log(jobText);
-                     
-            
-            if(job == 4) //Nicolas
+            float randomHeight = Random.Range(150f, 175f);
+            skinHeight.sizeDelta = new Vector2(225, randomHeight);
+
+
+            if (job == 4) //Nicolas
             {
                 skin.sprite = nicolas;
 

@@ -37,7 +37,10 @@ public class ObjectiveList : MonoBehaviour
     public bool objFiveRempli = false;
     public bool objSixRempli = false;
 
-
+    private static GameObject echaffautOne;
+    private static GameObject echaffautTwo;
+    private static GameObject contrefort;
+    private static GameObject sparklesContrefort;
 
     void Start()
     {
@@ -49,10 +52,11 @@ public class ObjectiveList : MonoBehaviour
         objFourTwo = gameObject.transform.GetChild(3).GetChild(2).GetComponent<TextMeshProUGUI>();
         objFourThree = gameObject.transform.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>();
 
-        if(MainManager.Instance.tutoActive == 0)
-        {
+        echaffautOne = GameObject.Find("City").transform.GetChild(5).gameObject;
+        echaffautTwo = GameObject.Find("City").transform.GetChild(6).gameObject;
+        contrefort = GameObject.Find("City").transform.GetChild(7).gameObject;
+        sparklesContrefort = GameObject.Find("City").transform.GetChild(9).GetChild(5).gameObject;
 
-        }
         //objFive.SetActive(false);
 
         //objSix.SetActive(false); //invisible au début car corne pas encore volée
@@ -119,8 +123,10 @@ public class ObjectiveList : MonoBehaviour
             {
                 MainManager.Instance.IsChoirGotten = true;
                 MainManager.Instance.GoldCount -= 20; //paye l'objet une fois
-                PopUp_Manager.InstanceFact.PopUpOrgueChoeur();            
-            
+                PopUp_Manager.InstanceFact.PopUpOrgueChoeur();
+
+                echaffautTwo.SetActive(true);
+
             }
             objFourRempli = true;
 
@@ -290,6 +296,11 @@ public class ObjectiveList : MonoBehaviour
                             MainManager.Instance.allPlaced = false;
                         }
                     }
+
+                    echaffautOne.SetActive(false);
+                    echaffautTwo.SetActive(false);
+                    contrefort.SetActive(true);
+                    sparklesContrefort.SetActive(true);
                 }
 
             }
@@ -331,7 +342,12 @@ public class ObjectiveList : MonoBehaviour
                             MainManager.Instance.allPlaced = false;
                         }
                     }
-                    
+
+                    echaffautOne.SetActive(false);
+                    echaffautTwo.SetActive(false);
+                    contrefort.SetActive(true);
+                    sparklesContrefort.SetActive(true);
+
                 }
 
             }
@@ -373,6 +389,12 @@ public class ObjectiveList : MonoBehaviour
                             MainManager.Instance.allPlaced = false;
                         }
                     }
+
+                    echaffautOne.SetActive(false);
+                    echaffautTwo.SetActive(false);
+                    contrefort.SetActive(true);
+                    sparklesContrefort.SetActive(true);
+
                 }
             }
             else  // aucun des 2 objectifs facultatifs
@@ -413,6 +435,12 @@ public class ObjectiveList : MonoBehaviour
                             MainManager.Instance.allPlaced = false;
                         }
                     }
+
+                    echaffautOne.SetActive(false);
+                    echaffautTwo.SetActive(false);
+                    contrefort.SetActive(true);
+                    sparklesContrefort.SetActive(true);
+
                 }
             }
 
@@ -444,6 +472,12 @@ public class ObjectiveList : MonoBehaviour
 
         if (MainManager.Instance.allObjectives && MainManager.Instance.allPlaced && SceneManager.GetActiveScene().name == "Main" && !MainManager.Instance.finished)
         {
+            echaffautOne.SetActive(false);
+            echaffautTwo.SetActive(false);
+            contrefort.SetActive(true);
+            sparklesContrefort.SetActive(true);
+
+
             EndManager.openEnd();
         }
 

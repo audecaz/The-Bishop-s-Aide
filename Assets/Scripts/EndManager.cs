@@ -19,10 +19,18 @@ public class EndManager : MonoBehaviour
 
     public GameObject nextButton;
 
+    private static GameObject echaffautOne;
+    private static GameObject echaffautTwo;
+    private static GameObject contrefort;
+
+
     private void Start()
     {
         confettis = this.transform.GetChild(0).gameObject;
         end = this.transform.GetChild(1).gameObject;
+
+        
+
         Debug.Log(end);
         bertrand = GameObject.Find("BertrandDialog");
 
@@ -46,6 +54,7 @@ public class EndManager : MonoBehaviour
     {
         end.SetActive(true);
         confettis.SetActive(true);
+
         MainManager.Instance.finished = true;
     }
 
