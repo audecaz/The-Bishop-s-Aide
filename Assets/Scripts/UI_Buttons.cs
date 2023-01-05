@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
-using static Unity.VisualScripting.Icons;
 using Image = UnityEngine.UI.Image;
 
 
