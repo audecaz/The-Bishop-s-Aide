@@ -32,9 +32,13 @@ public class UI_Buttons : MonoBehaviour
 
     public void Start()
     {
-        title = this.transform.GetChild(0).GetChild(3).transform.GetComponent<TextMeshProUGUI>();
-        soundTitle = this.transform.GetChild(0).GetChild(4).transform.GetComponent<TextMeshProUGUI>();
-        languageTitle = this.transform.GetChild(0).GetChild(5).transform.GetComponent<TextMeshProUGUI>();
+        if(this.name == "Parameters")
+        {
+            title = this.transform.GetChild(0).GetChild(3).transform.GetComponent<TextMeshProUGUI>();
+            soundTitle = this.transform.GetChild(0).GetChild(4).transform.GetComponent<TextMeshProUGUI>();
+            languageTitle = this.transform.GetChild(0).GetChild(5).transform.GetComponent<TextMeshProUGUI>();
+        }
+        
 
         soundOn = Resources.Load<Sprite>("Ui/soundOn");
         soundOff = Resources.Load<Sprite>("Ui/soundOff");
@@ -104,7 +108,9 @@ public class UI_Buttons : MonoBehaviour
 
     public void OpenParam()
     {
-        if(MainManager.Instance.tutoActive == 0)
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
+        if (MainManager.Instance.tutoActive == 0)
         {
             this.transform.GetChild(0).gameObject.SetActive(true);
             MainManager.Instance.paramOpen = true;
@@ -114,6 +120,8 @@ public class UI_Buttons : MonoBehaviour
 
     public void CloseParam()
     {
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         this.transform.GetChild(0).gameObject.SetActive(false);
         MainManager.Instance.paramOpen = false;
 
@@ -124,6 +132,7 @@ public class UI_Buttons : MonoBehaviour
     public void SoundOnOff()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
 
         MainManager.Instance.soundOn = !MainManager.Instance.soundOn;
 
@@ -140,6 +149,7 @@ public class UI_Buttons : MonoBehaviour
     public void MusicOnOff()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
 
         MainManager.Instance.musicOn = !MainManager.Instance.musicOn;
 
@@ -156,6 +166,8 @@ public class UI_Buttons : MonoBehaviour
     public void BackMenu()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(BackMenuAfterAnimation());
     }
 
@@ -173,6 +185,8 @@ public class UI_Buttons : MonoBehaviour
     public void ChangeLanguage()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
 
         string buttonTouched = EventSystem.current.currentSelectedGameObject.name;
 

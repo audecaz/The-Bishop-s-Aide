@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 
@@ -59,8 +60,10 @@ public class DetectTouchTest : MonoBehaviour
                     {   
                         //Debug.Log(hit.collider.gameObject.name);
                         chosenChara = hit.collider.gameObject;//récupère le personnage sélectionné
+                        hit.collider.gameObject.GetComponent<AudioSource>().Play();
 
-                        if(MainManager.Instance.tutoActive < 0) //cas du choix forcé de pelerin pendant le tuto
+
+                        if (MainManager.Instance.tutoActive < 0) //cas du choix forcé de pelerin pendant le tuto
                         {
                             if(chosenChara.name == "Pel 2")
                             {
@@ -163,6 +166,8 @@ public class DetectTouchTest : MonoBehaviour
                         }
                         else
                         {
+                            hit.collider.gameObject.GetComponent<AudioSource>().Play();
+
                             MainManager.Instance.placeSelected = true;
 
                             nomBatiment.SetActive(true);

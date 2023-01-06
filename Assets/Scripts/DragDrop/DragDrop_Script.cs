@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -146,6 +147,8 @@ public class DragDrop_Script : MonoBehaviour
     {
         if (choirDrag.inSlot && MainManager.Instance.IsChoirPlaced == false)
         {
+            choir.GetComponent<AudioSource>().Play();
+
             MainManager.Instance.IsChoirPlaced = true;
             PopUp_Manager.InstanceFact.PopUpChoeur();
             choir3D.SetActive(true);
@@ -154,6 +157,8 @@ public class DragDrop_Script : MonoBehaviour
         }
         if (organDrag.inSlot && MainManager.Instance.IsOrganPlaced == false)
         {
+            organ.GetComponent<AudioSource>().Play();
+
             MainManager.Instance.IsOrganPlaced = true;
             PopUp_Manager.InstanceFact.PopUpOrgue();
             organ3D.SetActive(true);
@@ -163,6 +168,7 @@ public class DragDrop_Script : MonoBehaviour
         }
         if (hornDrag.inSlot && MainManager.Instance.IsHornPlaced == false)
         {
+            horn.GetComponent<AudioSource>().Play();
             if (MainManager.Instance.tutoActive == 0)
             {
                 PopUp_Manager.InstanceFact.PopUpLicorneTwo();
@@ -174,6 +180,8 @@ public class DragDrop_Script : MonoBehaviour
         }
         if (crocoDrag.inSlot && MainManager.Instance.IsCrocoPlaced == false)
         {
+            croco.GetComponent<AudioSource>().Play();
+
             MainManager.Instance.IsCrocoPlaced = true;
             PopUp_Manager.InstanceFact.PopUpCrocoTwo();
             croco3D.SetActive(true);

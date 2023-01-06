@@ -61,6 +61,8 @@ public class EndManager : MonoBehaviour
     public void closeEnd()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(EndAfterAnimation());
 
     }
@@ -86,6 +88,8 @@ public class EndManager : MonoBehaviour
     public void backMenu()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(MenuAfterAnimation());
                
     }

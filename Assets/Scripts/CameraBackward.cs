@@ -53,6 +53,8 @@ public class CameraBackward : MonoBehaviour
             if (anim != null && anim.GetBool("Forward"))
             {
                 EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button"); //lance anim du touch button
+                EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
                 StartCoroutine(BackwardAfterAnimation());
             }
         }
@@ -82,6 +84,8 @@ public class CameraBackward : MonoBehaviour
     public void PlaceSelection() //selection de la cathédrale
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button"); //lance anim du touch button
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(EnterAfterAnimation());
     }
 

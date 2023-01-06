@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Xml;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -92,7 +94,8 @@ public class PopUp_Manager : MonoBehaviour
         factPictoEng = Resources.Load<Sprite>("Ui/sceau_eng");
 }
 
-    public void Open(GameObject popUp) {
+    public void Open(GameObject popUp) 
+    {
         Bg.SetActive(true);
         popUp.SetActive(true);
         IsActive = true;
@@ -101,8 +104,20 @@ public class PopUp_Manager : MonoBehaviour
 
     public void Close(GameObject popUp)
     {
+        EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
+        StartCoroutine(MenuAfterAnimation(popUp));
+    }
+
+    IEnumerator MenuAfterAnimation(GameObject popUp)
+    {
+        yield return new WaitForSeconds(0.4f);
+
+
         Bg.SetActive(false);
         popUp.SetActive(false);
+        ObtentionObject.SetActive(false);
         IsActive = false;
         MainManager.Instance.popupOpen = false;
         FactPicto.enabled = false;
@@ -112,6 +127,7 @@ public class PopUp_Manager : MonoBehaviour
             Debug.Log("fin du jeu");
         }
     }
+
 
     //POPUPS FACTS HISTORIQUES
 
