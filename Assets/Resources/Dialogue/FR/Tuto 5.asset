@@ -18,12 +18,12 @@ MonoBehaviour:
   - text: "<b>Passons maintenant \xE0 la s\xE9lection des p\xE8lerins.\r</b>"
     questionTuto: 0
   - text: "<b>Devant vous se pr\xE9sente un choix de personnages. \r</b>\nTous entreront
-      dans la cit\xE9 mais il ne tient qu\u2019\xE0 vous de les <b>recruter</b> pour
+      dans la cit\xE9 mais il ne tient qu\u2019\xE0 vous de les <b>recruter</b> \npour
       vous aider \xE0 d\xE9velopper la ville.\r"
     questionTuto: 0
   - text: "<b>Chaque personnage a des statistiques diff\xE9rentes. </b>\nCertains
       apportent de <b>l\u2019OR</b>, d\u2019autres augmentent la <b>FOI</b> ou encore
-      le <b>SAVOIR-FAIRE.\r</b>\n"
+      \nle <b>SAVOIR-FAIRE.\r</b>\n"
     questionTuto: 0
   - text: "<b>Celui-ci me semble le plus int\xE9ressant, recrutons le !\r</b>\n"
     questionTuto: 0

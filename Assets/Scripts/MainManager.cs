@@ -30,6 +30,7 @@ public class MainManager : MonoBehaviour //g?re la conservation de donn?es d'une
     public bool IsCrocoPlaced = false;
 
     public bool Incendie = false;
+    public bool IncendieOff = false;
 
     public bool RessourceUI = false;  //false rien d'ouvert, true une ressource affichée
 

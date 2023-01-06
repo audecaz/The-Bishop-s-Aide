@@ -25,18 +25,20 @@ MonoBehaviour:
     questionTuto: 0
   - text: "Les <b>p\xE8lerins sp\xE9ciaux</b>. Ils apportent les m\xEAmes ressources
       que les p\xE8lerins mais \xE9galement des objets sp\xE9ciaux, restez attentif
-      !\n\r\nLes <b>artisans</b>, qui apportent du <b>SAVOIR-FAIRE</b> mais co\xFBtent
-      de <b>l\u2019OR</b> \xE0 recruter.\r\n"
+      !\n"
+    questionTuto: 0
+  - text: "Les <b>artisans</b>, qui apportent du <b>SAVOIR-FAIRE</b> mais co\xFBtent
+      de <b>l\u2019OR</b> \xE0 recruter.\r"
     questionTuto: 0
   - text: "Enfin, les <b>voleurs</b> ! \nIls se d\xE9guisent en p\xE8lerins et une
-      fois recrut\xE9s, vous volent de l\u2019<b>OR. </b>\n"
+      fois recrut\xE9s, vous volent de l\u2019<b>OR. </b>"
     questionTuto: 0
   - text: "Les autres p\xE8lerins de la cit\xE9 ne se sentent pas en s\xE9curit\xE9
       et s'arr\xEAtent moins \xE0 Saint Bertrand. Cela baisse donc aussi la <b>FOI</b>
       de la cit\xE9. \n<b>Faites attention !\r</b>"
     questionTuto: 0
   - text: "Ce choix de personnages va servir \xE0 atteindre les objectifs de l\u2019Age
-      dans lequel vous \xE9voluez.\r"
+      dans lequel vous \xE9voluez."
     questionTuto: 0
   - text: <b>Touchez l'onglet objectifs !</b>
     questionTuto: 0

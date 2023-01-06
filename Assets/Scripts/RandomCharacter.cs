@@ -346,7 +346,7 @@ public class RandomCharacter : MonoBehaviour
             }
             else { //pelerin
 
-                int randomSprite = Random.Range(1, 4); //4 exclu
+                int randomSprite = Random.Range(1, 6); //6 exclu
 
                 //Sprite
                 if(ressourceOne > 17) //or > 17

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using Image = UnityEngine.UI.Image;
+
 
 public class MenuManager : MonoBehaviour
 {
@@ -13,24 +15,13 @@ public class MenuManager : MonoBehaviour
 
     public GameObject playStart;
 
+    public Sprite playFr;
+    public Sprite playEng;
+
     public void Start()
     {
-
-    }
-
-    public void playButton()
-    {
-        playStart.GetComponent<Animation>().Play("Button");
-        StartCoroutine(PlayAfterAnimation());     
-    }
-
-
-
-    IEnumerator PlayAfterAnimation()
-    {
-        yield return new WaitForSeconds(0.5f);
-        startScreen.SetActive(false);
-        langageScreen.SetActive(true);
+        playFr = Resources.Load<Sprite>("Ui/jouer");
+        playEng = Resources.Load<Sprite>("Ui/play");
     }
 
     public void ChooseLanguage()
@@ -44,11 +35,16 @@ public class MenuManager : MonoBehaviour
         {
             MainManager.Instance.Language = "fr";
             Debug.Log("Français !");
+
+            playStart.GetComponent<Image>().sprite = playFr;
         }
         else
         {
             MainManager.Instance.Language = "eng";
             Debug.Log("Anglais !");
+
+            playStart.GetComponent<Image>().sprite = playEng;
+
         }
     }
 
@@ -65,7 +61,9 @@ public class MenuManager : MonoBehaviour
         if (MainManager.Instance.Language != "0")
         {
             langageScreen.SetActive(false);
+            startScreen.SetActive(true);
 
+            /*
             if (MainManager.Instance.Language == "fr")
             {
                 disclaimerFR.SetActive(true);
@@ -73,7 +71,28 @@ public class MenuManager : MonoBehaviour
             else
             {
                 disclaimerENG.SetActive(true);
-            }
+            }*/
+        }
+    }
+
+    public void playButton()
+    {
+        playStart.GetComponent<Animation>().Play("Button");
+        StartCoroutine(PlayAfterAnimation());
+    }
+
+    IEnumerator PlayAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        startScreen.SetActive(false);
+        
+        if(MainManager.Instance.Language == "fr")
+        {
+            disclaimerFR.SetActive(true);
+        }
+        else
+        {
+            disclaimerENG.SetActive(true);
         }
     }
 

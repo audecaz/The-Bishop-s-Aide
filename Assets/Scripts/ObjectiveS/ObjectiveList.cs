@@ -67,6 +67,24 @@ public class ObjectiveList : MonoBehaviour
         objThree.SetText("Atteindre 50 de SAVOIR FAIRE");
         */
 
+        if (MainManager.Instance.ArtisanCount >= 1)
+        {
+            echaffautOne.SetActive(true);
+        }
+        if (MainManager.Instance.IsChoirGotten)
+        {
+            echaffautTwo.SetActive(true);
+        }
+        if (MainManager.Instance.allObjectives)
+        {
+            contrefort.SetActive(true);
+            sparklesContrefort.SetActive(true);
+        }
+        if (MainManager.Instance.Incendie && !MainManager.Instance.IncendieOff)
+        {
+            City_Effects.CityFxInstance.CityFireOn();
+        }
+
     }
 
     // Update is called once per frame
@@ -242,6 +260,7 @@ public class ObjectiveList : MonoBehaviour
             objSix.GetComponent<TextMeshProUGUI>().fontStyle = TMPro.FontStyles.Strikethrough;
             //objSix.fontStyle = TMPro.FontStyles.Strikethrough;
             objSixRempli = true;
+            MainManager.Instance.IncendieOff = true;
 
             if (MainManager.Instance.popupOpen) //si une popup est déjà ouverte
             {

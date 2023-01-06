@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Intro
   m_EditorClassIdentifier: 
   lines:
-  - text: "Hello and welcome on [GameName]! \r"
+  - text: "Hello and welcome on The Bishop's Aide ! \r"
     questionTuto: 0
   - text: "My name is <b>Bertrand de Goth</b>, bishop of Comminges from 1294 to 1299.\r\nContrary
       to what you may think, <b>I am not Saint Bertrand</b>. He is one of my predecessors:

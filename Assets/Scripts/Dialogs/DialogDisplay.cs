@@ -183,7 +183,7 @@ public class DialogDisplay : MonoBehaviour
                 {
                     ressourceBG.SetActive(false);
                     fullBG.SetActive(true);
-                }else if(activeLineIndex == 7)
+                }else if(activeLineIndex == 8)
                 {
                     fullBG.SetActive(false);
                     objectiveBG.SetActive(true);
