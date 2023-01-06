@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ObjectiveSlider : MonoBehaviour
 {
@@ -26,8 +27,11 @@ public class ObjectiveSlider : MonoBehaviour
 
     public void ShowHideObjective()
     {
-        if(timerSlider <= 0 && !PopUp_Manager.InstanceFact.IsActive && (MainManager.Instance.tutoActive == 0 || MainManager.Instance.tutoActive == 4) && !MainManager.Instance.paramOpen)
+
+        if (timerSlider <= 0 && !PopUp_Manager.InstanceFact.IsActive && (MainManager.Instance.tutoActive == 0 || MainManager.Instance.tutoActive == 4) && !MainManager.Instance.paramOpen)
         {
+            EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
             timerSlider = 1f; //initialise le cooldown du slider 
             if (ObjectivePanel != null)
             {

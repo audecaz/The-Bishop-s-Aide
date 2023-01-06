@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using static Unity.VisualScripting.Member;
 using Image = UnityEngine.UI.Image;
 
 
@@ -18,10 +19,13 @@ public class MenuManager : MonoBehaviour
     public Sprite playFr;
     public Sprite playEng;
 
+    private AudioSource buttonSound;
+
     public void Start()
     {
         playFr = Resources.Load<Sprite>("Ui/jouer");
         playEng = Resources.Load<Sprite>("Ui/play");
+
     }
 
     public void ChooseLanguage()
@@ -36,12 +40,16 @@ public class MenuManager : MonoBehaviour
             MainManager.Instance.Language = "fr";
             Debug.Log("Français !");
 
+            EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
             playStart.GetComponent<Image>().sprite = playFr;
         }
         else
         {
             MainManager.Instance.Language = "eng";
             Debug.Log("Anglais !");
+
+            EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
 
             playStart.GetComponent<Image>().sprite = playEng;
 
@@ -51,6 +59,8 @@ public class MenuManager : MonoBehaviour
     public void NextPanel()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(LanguageAfterAnimation());
    
     }
@@ -78,6 +88,8 @@ public class MenuManager : MonoBehaviour
     public void playButton()
     {
         playStart.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(PlayAfterAnimation());
     }
 
@@ -99,6 +111,8 @@ public class MenuManager : MonoBehaviour
     public void startGame()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(StartAfterAnimation());
 
     }

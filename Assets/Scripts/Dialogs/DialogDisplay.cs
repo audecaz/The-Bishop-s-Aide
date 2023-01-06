@@ -285,12 +285,16 @@ public class DialogDisplay : MonoBehaviour
     public void LaunchTuto()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(TutoAfterAnimation("yes"));
 
     }
     public void NoLaunchTuto()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+        EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(TutoAfterAnimation("no"));
     }
 
