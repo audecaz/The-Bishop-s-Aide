@@ -2,13 +2,20 @@ using Mono.Cecil.Cil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Xml;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
+using static UnityEngine.EventSystems.EventTrigger;
+using static UnityEngine.ParticleSystem;
+using static UnityEngine.Rendering.DebugUI.MessageBox;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
@@ -238,9 +245,9 @@ public class PopUp_Manager : MonoBehaviour
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("La cathédrale Notre Dame");
-                FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
-                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+                FactContent.SetText("La cathédrale romane Sainte Marie a été bâtie <b>sur l’acropole de l’ancienne cité romaine</b> <i>Lugdunum Convernarum</i> aux environs de l’an 1100. \r\n"
+                +"C’est <b>Bertrand de l’Isle</b> qui la fit construire."
+                +"Elle resta <b>la cathédrale du diocèse de Comminges</b> jusqu’en 1801, ensuite raccordée au diocèse de Bayonne et l'archidiocèse de Toulouse. ");
 
                 FactPicto.sprite = factPictoFr;
 
@@ -248,9 +255,9 @@ public class PopUp_Manager : MonoBehaviour
             else
             {
                 FactTitle.SetText("The cathedral Notre Dame");
-                FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
-                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+                FactContent.SetText("The romanesque cathedral of Saint Mary was built <b>on the acropolis of the ancient roman city</b> <i>Lugdunum Convernarum</i> around 1100.\r\n"
+                +"It was <b>Bertrand de l’Isle</b> who ordered it.\r\n"
+                +"The cathedral stayed <b>the official church of the Comminges</b> diocese up to 1801 until it became linked to the diocese of Bayonne and to the archdiocese of Toulouse.");
 
                 FactPicto.sprite = factPictoEng;
 
@@ -275,9 +282,9 @@ public class PopUp_Manager : MonoBehaviour
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Le cloître de la cathédrale");
-                FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
-                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+                FactContent.SetText("Le cloître fut <b>construit au 12ème siècles pour les chanoines</b>. \r\n"
+                +"De cette période, il ne reste aujourd’hui plus que <b>les arcades romanes</b> de la galerie sud avec leurs arcs en plein cintre.\r\n" 
+                +"La galerie nord quant à elle fut construite <b>au 15ème siècle et est de style gothique</b> avec des croisées d’ogives caractéristiques de ce mouvement architectural. ");
 
                 FactPicto.sprite = factPictoFr;
 
@@ -285,14 +292,12 @@ public class PopUp_Manager : MonoBehaviour
             else
             {
                 FactTitle.SetText("The cathedral's cloister");
-                FactContent.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
-                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat");
+                FactContent.SetText("The cloister was <b>built in the 12th century for the canons.</b>\r\n"
+                +"From this period, only the southern gallery’s <b>romanesque arcades</b> remain with their semicircular arches.\r\n" 
+                +"The north gallery was built <b>in the 15th century</b>. It is characteristic of the Gothic architectural movement with its cross-ribs.");
 
                 FactPicto.sprite = factPictoEng;
-
             }
-
             FactPicto.enabled = true;
 
             Open(FactEvent);
