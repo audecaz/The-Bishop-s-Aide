@@ -39,12 +39,24 @@ public class UI_Buttons : MonoBehaviour
             languageTitle = this.transform.GetChild(0).GetChild(5).transform.GetComponent<TextMeshProUGUI>();
         }
         
-
         soundOn = Resources.Load<Sprite>("Ui/soundOn");
         soundOff = Resources.Load<Sprite>("Ui/soundOff");
 
         musicOn = Resources.Load<Sprite>("Ui/musicOn");
         musicOff = Resources.Load<Sprite>("Ui/musicOff");
+
+        //si musique déjà désactivée quand commence la scène
+        if (!MainManager.Instance.musicOn)
+        {
+            musicImage.sprite = musicOff;
+            GameObject.Find("Main Camera").transform.GetComponent<AudioSource>().Stop();
+        }
+        //si son déjà désactivé quand commence la scène
+        if (!MainManager.Instance.soundOn)
+        {
+            soundImage.sprite = soundOff;
+            SoundManager.soundOnOff();     
+        }
     }
 
     //Sortie de la cathédrale
@@ -53,6 +65,8 @@ public class UI_Buttons : MonoBehaviour
         if (!MainManager.Instance.popupOpen)
         {
             EventSystem.current.currentSelectedGameObject.GetComponent<Animation>().Play("Button");
+            EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+
             StartCoroutine(BackToMainAfterAnimation());
         }
     }
@@ -139,10 +153,14 @@ public class UI_Buttons : MonoBehaviour
         if (MainManager.Instance.soundOn)
         {
             soundImage.sprite = soundOn;
+            SoundManager.soundOnOff();
+
         }
         else
         {
             soundImage.sprite = soundOff;
+            SoundManager.soundOnOff();
+
         }
     }
 
@@ -156,10 +174,13 @@ public class UI_Buttons : MonoBehaviour
         if (MainManager.Instance.musicOn)
         {
             musicImage.sprite = musicOn;
+            GameObject.Find("Main Camera").transform.GetComponent<AudioSource>().Play();
         }
         else
         {
             musicImage.sprite = musicOff;
+            GameObject.Find("Main Camera").transform.GetComponent<AudioSource>().Stop();
+
         }
     }
 

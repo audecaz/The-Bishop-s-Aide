@@ -500,6 +500,12 @@ public class ObjectiveList : MonoBehaviour
             EndManager.openEnd();
         }
 
+        if (contrefort.activeSelf)
+        {
+            echaffautOne.SetActive(false);
+            echaffautTwo.SetActive(false);
+        }
+
     }
 
     public IEnumerator PopUpWait()

@@ -24,6 +24,7 @@ public class PopUp_Manager : MonoBehaviour
     private TextMeshProUGUI FactContent;
     private Image FactImage;
     private Image FactPicto;
+    private AudioSource FactSound;
 
     private Sprite factPictoFr;
     private Sprite factPictoEng;
@@ -56,6 +57,14 @@ public class PopUp_Manager : MonoBehaviour
     public GameObject ObtentionCorne;
     public GameObject ObtentionOrgue;
 
+    private AudioClip soundRecolte;
+    private AudioClip soundMiracle;
+    private AudioClip soundArtisanat;
+    private AudioClip soundFamine;
+    private AudioClip soundIncendie;
+    private AudioClip soundEpidemie;
+    private AudioClip soundVoleur;
+
     public void Start()
     {
         //Debug.Log(FactEvent);
@@ -65,6 +74,7 @@ public class PopUp_Manager : MonoBehaviour
         FactContent = gameObject.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
         FactImage = gameObject.transform.GetChild(1).GetChild(2).GetComponent<Image>();
         FactPicto = gameObject.transform.GetChild(1).GetChild(3).GetComponent<Image>();
+        FactSound = gameObject.transform.GetChild(1).GetComponent<AudioSource>();
 
         ObjectTitle = gameObject.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
         ObjectUnderTitle = gameObject.transform.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
@@ -92,6 +102,14 @@ public class PopUp_Manager : MonoBehaviour
 
         factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
         factPictoEng = Resources.Load<Sprite>("Ui/sceau_eng");
+
+        soundRecolte = Resources.Load<AudioClip>("Sounds/Popups/recolte");
+        soundMiracle = Resources.Load<AudioClip>("Sounds/Popups/miracle");
+        soundArtisanat = Resources.Load<AudioClip>("Sounds/Popups/artisanat");
+        soundFamine = Resources.Load<AudioClip>("Sounds/Popups/famine");
+        soundIncendie = Resources.Load<AudioClip>("Sounds/Popups/fire");
+        soundEpidemie = Resources.Load<AudioClip>("Sounds/Popups/epidemie");
+        soundVoleur = Resources.Load<AudioClip>("Sounds/Popups/thief");
 }
 
     public void Open(GameObject popUp) 
@@ -293,6 +311,7 @@ public class PopUp_Manager : MonoBehaviour
         else
         {
             FactImage.sprite = illuRecolte;
+            FactSound.clip = soundRecolte;
 
             int randomGold = Random.Range(18, 23);
             if (MainManager.Instance.Language == "fr")
@@ -311,6 +330,8 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
+            FactSound.Play();
+
 
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount + randomGold, "gold");
 
@@ -329,6 +350,8 @@ public class PopUp_Manager : MonoBehaviour
         {
             FactImage.sprite = illuMiracle;
 
+            FactSound.clip = soundMiracle;
+
             int randomFaith = Random.Range(18, 23);
             if (MainManager.Instance.Language == "fr")
             {
@@ -346,6 +369,8 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
+            FactSound.Play();
+
 
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount + randomFaith, "faith");
 
@@ -363,6 +388,8 @@ public class PopUp_Manager : MonoBehaviour
         else
         {
             FactImage.sprite = illuArtisanat;
+
+            FactSound.clip = soundArtisanat;
 
             int randomSkills = Random.Range(13, 17);
 
@@ -384,6 +411,8 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
+            FactSound.Play();
+
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.SkillCount, MainManager.Instance.SkillCount + randomSkills, "skill");
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.ArtisanCount, MainManager.Instance.ArtisanCount + 2, "artisan");
 
@@ -403,6 +432,8 @@ public class PopUp_Manager : MonoBehaviour
         else
         {
             FactImage.sprite = illuIncendie;
+
+            FactSound.clip = soundIncendie;
 
             int randomGold = Random.Range(10, 15);
 
@@ -434,6 +465,8 @@ public class PopUp_Manager : MonoBehaviour
             }*/
 
             Open(FactEvent);
+            FactSound.Play();
+
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount - randomGold, "gold");
 
             //MainManager.Instance.GoldCount -= randomGold;
@@ -450,6 +483,8 @@ public class PopUp_Manager : MonoBehaviour
         else
         {
             FactImage.sprite = illuFamine;
+
+            FactSound.clip = soundFamine;
 
             int randomGold = Random.Range(18, 23);
 
@@ -469,6 +504,8 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
+            FactSound.Play();
+
 
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.GoldCount, MainManager.Instance.GoldCount - randomGold, "gold");
             //MainManager.Instance.GoldCount -= randomGold;
@@ -485,6 +522,8 @@ public class PopUp_Manager : MonoBehaviour
         else
         {
             FactImage.sprite = illuEpidemie;
+
+            FactSound.clip = soundEpidemie;
 
             int randomFaith = Random.Range(18, 23);
             int randomSkill = Random.Range(13, 17);
@@ -507,6 +546,8 @@ public class PopUp_Manager : MonoBehaviour
             }
 
             Open(FactEvent);
+            FactSound.Play();
+
 
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.FaithCount, MainManager.Instance.FaithCount - randomFaith , "faith");
             CharacterInfos.InstanceCharaInfos.UpdateValue(MainManager.Instance.SkillCount, MainManager.Instance.SkillCount - randomSkill, "skill");
@@ -521,6 +562,8 @@ public class PopUp_Manager : MonoBehaviour
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
         FactImage.sprite = illuVoleur;
+
+        FactSound.clip = soundVoleur;
 
         if (MainManager.Instance.Language == "fr")
         {
@@ -542,14 +585,18 @@ public class PopUp_Manager : MonoBehaviour
         }
 
         Open(FactEvent);
+        FactSound.Play();
+
     }
 
-    
+
     public void PopUpSpeVoleur(GameObject chosenChara)
     {
         CharacterInfos chara = chosenChara.GetComponent<CharacterInfos>();
 
         FactImage.sprite = illuVoleur;
+
+        FactSound.clip = soundVoleur;
 
         if (MainManager.Instance.Language == "fr")
         {
@@ -571,6 +618,8 @@ public class PopUp_Manager : MonoBehaviour
         }
 
         Open(FactEvent);
+        FactSound.Play();
+
     }
 
     public void PopUpObjetSpe(GameObject chosenChara)

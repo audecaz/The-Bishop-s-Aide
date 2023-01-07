@@ -53,6 +53,8 @@ public class EndManager : MonoBehaviour
     public static void openEnd()
     {
         end.SetActive(true);
+        end.GetComponent<AudioSource>().Play();
+
         confettis.SetActive(true);
 
         MainManager.Instance.finished = true;
