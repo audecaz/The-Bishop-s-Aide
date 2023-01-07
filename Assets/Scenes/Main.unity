@@ -17035,8 +17035,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 1.0000025
-  m_Size: 0.71201175
+  m_Value: 0.99999964
+  m_Size: 0.7120117
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17363,6 +17363,7 @@ GameObject:
   - component: {fileID: 529253104}
   - component: {fileID: 529253107}
   - component: {fileID: 529253108}
+  - component: {fileID: 529253109}
   m_Layer: 0
   m_Name: Pel 3
   m_TagString: Character
@@ -17571,6 +17572,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &529253109
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529253102}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 1a9bf95c12794724b8ef27e0f420a26a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &535051466
 GameObject:
   m_ObjectHideFlags: 0
@@ -19109,6 +19126,7 @@ GameObject:
   - component: {fileID: 708946710}
   - component: {fileID: 708946713}
   - component: {fileID: 708946714}
+  - component: {fileID: 708946715}
   m_Layer: 0
   m_Name: Pel 4
   m_TagString: Character
@@ -19317,6 +19335,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &708946715
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708946708}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 1a9bf95c12794724b8ef27e0f420a26a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &722731178
 GameObject:
   m_ObjectHideFlags: 0
@@ -21731,6 +21765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectivePanel: {fileID: 935330281}
   opacity: {fileID: 0}
+  soundSlider: {fileID: 1783855403}
 --- !u!1 &940659472
 GameObject:
   m_ObjectHideFlags: 0
@@ -22476,6 +22511,7 @@ GameObject:
   - component: {fileID: 975943306}
   - component: {fileID: 975943309}
   - component: {fileID: 975943310}
+  - component: {fileID: 975943311}
   m_Layer: 0
   m_Name: Pel 2
   m_TagString: Character
@@ -22684,6 +22720,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &975943311
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975943304}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 1a9bf95c12794724b8ef27e0f420a26a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &977187918
 GameObject:
   m_ObjectHideFlags: 0
@@ -36297,7 +36349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51045}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51022}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -38226,7 +38278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1756901608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40658,6 +40710,7 @@ GameObject:
   - component: {fileID: 1968129501}
   - component: {fileID: 1968129504}
   - component: {fileID: 1968129505}
+  - component: {fileID: 1968129506}
   m_Layer: 0
   m_Name: Pel 1
   m_TagString: Character
@@ -40675,7 +40728,7 @@ Transform:
   m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
   m_LocalPosition: {x: -986, y: -345, z: 0}
   m_LocalScale: {x: 42.27161, y: 12.470766, z: 80.33367}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 424168534}
   - {fileID: 1830108553}
@@ -40866,6 +40919,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &1968129506
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968129499}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 1a9bf95c12794724b8ef27e0f420a26a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1973468181
 GameObject:
   m_ObjectHideFlags: 0
