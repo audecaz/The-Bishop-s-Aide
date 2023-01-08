@@ -8,6 +8,7 @@ public class ObjectiveSlider : MonoBehaviour
 
     public GameObject ObjectivePanel;
     public GameObject opacity;
+    public GameObject soundSlider;
 
     private float timerSlider = 0f;
 
@@ -30,7 +31,7 @@ public class ObjectiveSlider : MonoBehaviour
 
         if (timerSlider <= 0 && !PopUp_Manager.InstanceFact.IsActive && (MainManager.Instance.tutoActive == 0 || MainManager.Instance.tutoActive == 4) && !MainManager.Instance.paramOpen)
         {
-            EventSystem.current.currentSelectedGameObject.GetComponent<AudioSource>().Play();
+            soundSlider.GetComponent<AudioSource>().Play();
 
             timerSlider = 1f; //initialise le cooldown du slider 
             if (ObjectivePanel != null)

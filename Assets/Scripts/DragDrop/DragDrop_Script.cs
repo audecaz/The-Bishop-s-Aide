@@ -29,6 +29,8 @@ public class DragDrop_Script : MonoBehaviour
     public GameObject hornSlot;
     public GameObject crocoSlot;
 
+    public GameObject hollowHorn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,16 @@ public class DragDrop_Script : MonoBehaviour
         organDrag = organ.transform.GetChild(1).GetComponent<Draggable>();
         hornDrag = horn.transform.GetChild(1).GetComponent<Draggable>();
         crocoDrag = croco.transform.GetChild(1).GetComponent<Draggable>();
+
+        if(MainManager.Instance.tutoActive == 1 && !MainManager.Instance.IsHornPlaced)
+        {
+            hollowHorn.SetActive(true);
+            hollowHorn.transform.GetComponent<Animation>().Play("TutoHorn");
+        }
+        else
+        {
+            hollowHorn.SetActive(false);
+        }
 
         if (MainManager.Instance.IsChoirGotten)
         {
@@ -145,6 +157,11 @@ public class DragDrop_Script : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (MainManager.Instance.tutoActive == 1 && MainManager.Instance.IsHornPlaced)
+        {
+            hollowHorn.SetActive(false);
+        }
+
         if (choirDrag.inSlot && MainManager.Instance.IsChoirPlaced == false)
         {
             choir.GetComponent<AudioSource>().Play();

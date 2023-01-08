@@ -248,6 +248,18 @@ public class DialogDisplay : MonoBehaviour
     void DisplayLine()
     {
         Line line = dialog.lines[activeLineIndex];
+
+        if(dialog.name == "End" && activeLineIndex == 0)
+        {
+            if(MainManager.Instance.Language == "fr")
+            {
+                line.text = "<b>Félicitations !\r\n</b>\r\nVous avez rempli tous les objectifs en recrutant un total de <b>" + MainManager.Instance.PilgrinsCount + " pèlerins !";
+            }
+            else
+            {
+                line.text = "<b>Congratulations !\r\n</b>\r\nYou have completed all the objectives by recruting a total of <b>" + MainManager.Instance.PilgrinsCount + " pilgrims !";
+            }
+        }
         SetDialog(line.text);
 
         if (line.questionTuto)

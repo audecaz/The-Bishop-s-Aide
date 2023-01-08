@@ -143,9 +143,12 @@ public class DetectTouchTest : MonoBehaviour
                                 PopUp_Manager.InstanceFact.EventAleatoire();
                             }
 
-                            //Regenere de nouveaux persos
-                            RandomCharacter.GenerateNewCharacter();
+                            chosenChara.GetComponent<Animation>().Play("Pelerin");
+                            StartCoroutine(ChangePilgrimAfterAnimation());
                         }
+
+                        
+                    
 
                     }
                     else if (hit.collider.gameObject.name == "City" && !anim.GetBool("Forward") && /*(MainManager.Instance.tutoActive == 1 || */MainManager.Instance.tutoActive == 0 && !MainManager.Instance.paramOpen) 
@@ -260,6 +263,13 @@ public class DetectTouchTest : MonoBehaviour
             }
             
         }
+    }
+
+    IEnumerator ChangePilgrimAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.4f);
+        RandomCharacter.GenerateNewCharacter();
+
     }
 }
 

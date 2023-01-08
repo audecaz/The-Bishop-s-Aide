@@ -55,8 +55,8 @@ public class ObjectiveList : MonoBehaviour
         echaffautOne = GameObject.Find("City").transform.GetChild(5).gameObject;
         echaffautTwo = GameObject.Find("City").transform.GetChild(6).gameObject;
         contrefort = GameObject.Find("City").transform.GetChild(7).gameObject;
-        sparklesContrefort = GameObject.Find("City").transform.GetChild(9).GetChild(5).gameObject;
-
+        sparklesContrefort = GameObject.Find("City").transform.GetChild(8).GetChild(5).gameObject;
+        //Debug.Log(sparklesContrefort);
         //objFive.SetActive(false);
 
         //objSix.SetActive(false); //invisible au début car corne pas encore volée
