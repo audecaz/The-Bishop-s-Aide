@@ -17035,7 +17035,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427567863}
   m_HandleRect: {fileID: 427567862}
   m_Direction: 2
-  m_Value: 0.99999964
+  m_Value: 1.0000004
   m_Size: 0.7120117
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -36349,7 +36349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.49921, y: -189.51022}
+  m_AnchoredPosition: {x: -91.49921, y: -189.51025}
   m_SizeDelta: {x: 1053.203, y: 1432.726}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1597594773
@@ -38062,8 +38062,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -87
-  m_Sprite: {fileID: 21300000, guid: 18977b811bb579b47864a7d734dd40d9, type: 3}
-  m_Color: {r: 0.90588236, g: 0.73389626, b: 0.6431373, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b62ff5593b5d63e43a138e4040765cf8, type: 3}
+  m_Color: {r: 1, g: 0.8248285, b: 0.7311321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

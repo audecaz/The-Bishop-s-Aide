@@ -5,17 +5,8 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Xml;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.EventSystems.EventTrigger;
-using static UnityEngine.ParticleSystem;
-using static UnityEngine.Rendering.DebugUI.MessageBox;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
@@ -59,6 +50,7 @@ public class PopUp_Manager : MonoBehaviour
     private Sprite illuChoeur;
     private Sprite illuOrgue;
     private Sprite illuCroco;
+    private Sprite illuAllObjects;
 
     public GameObject ObtentionCroco;
     public GameObject ObtentionCorne;
@@ -106,6 +98,7 @@ public class PopUp_Manager : MonoBehaviour
         illuChoeur = Resources.Load<Sprite>("Illus/choeur");
         illuOrgue = Resources.Load<Sprite>("Illus/orgue");
         illuCroco = Resources.Load<Sprite>("Illus/croco");
+        illuAllObjects = Resources.Load<Sprite>("Illus/all");
 
         factPictoFr = Resources.Load<Sprite>("Ui/sceau_fr");
         factPictoEng = Resources.Load<Sprite>("Ui/sceau_eng");
@@ -171,8 +164,8 @@ public class PopUp_Manager : MonoBehaviour
             {
                 FactTitle.SetText("Le saviez vous : Saint Bertrand");
                 FactContent.SetText("<b>Bertrand de l'Isle</b> fut évêque de la cité de 1073 à sa mort et participa grandement à l'élévation de la ville de <i>Lugdunum Convenarum.</i>\r\n" +
-                "Il fait construire la <b>cathédrale romane</b> et érige le <b>cloître.</b>\r\n" +
-                "Il y reste évêque jusqu'à sa mort en 1123 et est canonisé en 1222. La ville prend alors son nom. \r\n \r\n" +
+                "Il fit construire la <b>cathédrale romane</b> et ériger le <b>cloître.</b>\r\n" +
+                "Il y resta évêque jusqu'à sa mort en 1123 et fut canonisé en 1222. La ville prit alors son nom. \r\n \r\n" +
                 "Saint Bertrand est connu pour <b>sa bienveillance</b> et sa volonté de <b>faire régner la paix.</b>");
                 FactPicto.sprite = factPictoFr;
             }
@@ -208,9 +201,9 @@ public class PopUp_Manager : MonoBehaviour
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Bertrand de Goth");
-                FactContent.SetText("Évêque de Comminges de <b>1294 à 1299</b>, Bertrand de Goth participe à l'essor de la ville en élevant les reliques de Saint Bertrand " +
-                "et soutenant l'afflux de pèlerins <b>des chemins de St Jacques.</b> Pour cela, il lance l'<b>agrandissement de la cathédrale romane</b> déjà existante en y ajoutant un style gothique. \r\n \r\n" +
-                "Il devient archevêque de Bordeaux en 1300 et est <b>sacré pape</b> en 1305 sous le nom de <b>Clément V.</b>\r\n");
+                FactContent.SetText("Évêque de Comminges de <b>1294 à 1299</b>, Bertrand de Goth participa à l'essor de la ville en élevant les reliques de Saint Bertrand " +
+                "et soutenant l'afflux de pèlerins <b>des chemins de St-Jacques.</b> Pour cela, il lança l'<b>agrandissement de la cathédrale romane</b> déjà existante dans le style gothique. \r\n \r\n" +
+                "Il devint archevêque de Bordeaux en 1300 et fut <b>sacré pape</b> en 1305 sous le nom de <b>Clément V.</b>\r\n");
 
                 FactPicto.sprite = factPictoFr;
 
@@ -721,8 +714,8 @@ public class PopUp_Manager : MonoBehaviour
                 ObjectTitle.SetText("Félicitations !");
                 ObjectUnderTitle.SetText("Vous avez obtenu le choeur et l'orgue !");
                 ObjectContent.SetText("Commandé par <b>l'évêque Jean de Mauléon</b> vers entre 1525 et 1550, \r\n" +
-                "le chœur en bois sculpté trône <b>au centre de la cathédrale Notre Dame</b> de Saint Bertrand de Comminges.\r\n" +
-                "La construction de l’orgue, également par Nicolas Bachelier, lui est postérieure.");
+                "le chœur en bois sculpté trône <b>au centre de la cathédrale Notre Dame</b> de Saint-Bertrand de Comminges.\r\n" +
+                "La construction de l’orgue, également par Nicolas Bachelier, est postérieure.");
             }
             else
             {
@@ -766,7 +759,7 @@ public class PopUp_Manager : MonoBehaviour
         {
             FactTitle.SetText("L'orgue d'angle");
             FactContent.SetText("L’orgue de la cathédrale a la particularité <b>d'être construit en angle</b>, chose très rare.\r\n" +
-            "En effet, le portail ne permettant pas de construire un orgue au-dessus, l’orgue a été construit sur le côté, en faisant un <b>instrument unique.</b> \r\n \r\n" +
+            "En effet, le portail ne permettant pas de construire un orgue au-dessus, l’orgue a été construit sur le côté, ce qui en fait un <b>instrument unique.</b> \r\n \r\n" +
             "Il est <b>classé Monument Historique</b> depuis 1840 et considéré comme <b>l’un des plus beaux orgues d’Europe.</b>");
         }
         else
@@ -816,7 +809,7 @@ public class PopUp_Manager : MonoBehaviour
         if (MainManager.Instance.Language == "fr")
         {
             FactTitle.SetText("Le vol de la corne de licorne");
-            FactContent.SetText("Suscitant les convoitises, <b>la corne de licorne</b>, ainsi que d’autres objets, sont <b>dérobés à la fin du XVIème siècle</b> lors d’une occupation de la cité. \r\n" +
+            FactContent.SetText("Suscitant les convoitises, <b>la corne de licorne</b>, ainsi que d’autres objets, ont été <b>dérobés à la fin du XVIème siècle</b> lors d’une occupation de la cité. \r\n" +
             "La corne ne revenant pas, l’Eglise écrit alors une lettre réclamant l’intervention du roi Henri III. \r\n\r\n" +
             "C’est après <b>l’intervention de Catherine de Médicis</b>, mère du roi, que la corne est <b>finalement restituée</b> à l’église de Saint Bertrand de Comminges <b>en 1601.</b>");
         }
@@ -889,6 +882,8 @@ public class PopUp_Manager : MonoBehaviour
         }
         else
         {
+            FactImage.sprite = illuAllObjects;
+
             if (MainManager.Instance.Language == "fr")
             {
                 FactTitle.SetText("Félicitations !");

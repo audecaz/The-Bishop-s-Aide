@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - text: "Hello and welcome on The Bishop's Aide ! \r"
     questionTuto: 0
-  - text: "My name is <b>Bertrand de Goth</b>, bishop of Comminges from 1294 to 1299.\r\nContrary
+  - text: "My name is <b>Bertrand de Goth</b>, bishop of Comminges since 1294.\r\nContrary
       to what you may think, <b>I am not Saint Bertrand</b>. He is one of my predecessors:
       <b>Bertrand de l\u2019Isle</b> who was bishop here from 1073 to 1123."
     questionTuto: 0
