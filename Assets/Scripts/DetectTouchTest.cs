@@ -28,10 +28,15 @@ public class DetectTouchTest : MonoBehaviour
     public GameObject maisonBrid;
     public GameObject cloitre;
 
+    public Animation animPelerinBG;
+
 
     public void Start()
     {
         anim = GameObject.Find("Main Camera").GetComponent<Animator>();
+        animPelerinBG = GameObject.Find("animationPelerin").GetComponent<Animation>();
+        //animPelerinBG.Play("pelerinAnimation");
+        Debug.Log("test !" +animPelerinBG);
 
         //bertrand = GameObject.Find("BertrandDialog");
 
@@ -61,7 +66,7 @@ public class DetectTouchTest : MonoBehaviour
                         //Debug.Log(hit.collider.gameObject.name);
                         chosenChara = hit.collider.gameObject;//récupère le personnage sélectionné
                         hit.collider.gameObject.GetComponent<AudioSource>().Play();
-
+                        animPelerinBG.Play("animPilgrimtest");
 
                         if (MainManager.Instance.tutoActive < 0) //cas du choix forcé de pelerin pendant le tuto
                         {
